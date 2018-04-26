@@ -19,7 +19,7 @@ class EightDotButtonsController {
         reactTo view: EightDotButtonsViewProtocol,
         depende buttonModel: DotButtonModelProtocol,
         command sheetModel: DotSheetModelProtocol
-        ) {
+    ) {
         self.sheetModel = sheetModel
         self.buttonModel = buttonModel
 
@@ -97,7 +97,8 @@ class EightDotButtonsController {
     }
 
     private func colors() -> DotButtonModelState.DotButtonEightColors? {
-        if case let .eight(colors: colors) = self.buttonModel.currentButtons {
+        if let current = self.buttonModel.currentButtons,
+            case let .eight(colors: colors) = current {
             return colors
         }
         return nil

@@ -11,7 +11,7 @@ import RxCocoa
 
 protocol DotButtonModelProtocol {
     var didChange: Driver<DotButtonModelState> { get }
-    var currentButtons: DotButtonModelState.DotButtonState { get }
+    var currentButtons: DotButtonModelState.DotButtonState? { get }
 
     func restart()
 }

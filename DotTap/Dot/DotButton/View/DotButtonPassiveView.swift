@@ -36,6 +36,17 @@ protocol EightDotButtonsViewProtocol {
     var button8: DotButton { get set }
 }
 
+class StubDotButtonView: FourDotButtonsViewProtocol, SixDotButtonsViewProtocol, EightDotButtonsViewProtocol {
+    var button1: DotButton = DotButton()
+    var button2: DotButton = DotButton()
+    var button3: DotButton = DotButton()
+    var button4: DotButton = DotButton()
+    var button5: DotButton = DotButton()
+    var button6: DotButton = DotButton()
+    var button7: DotButton = DotButton()
+    var button8: DotButton = DotButton()
+}
+
 class DotButtonPassiveView {
 
     typealias Views = (

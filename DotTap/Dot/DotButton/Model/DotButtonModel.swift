@@ -10,22 +10,26 @@ import RxCocoa
 import RxSwift
 
 class DotButtonModel: DotButtonModelProtocol {
-
     typealias Dependency = (
         colorRepository: ColorRepositoryProtocol,
         buttonCountRepository: DotButtonCountRepositoryProtosol
     )
 
     private let dependency: Dependency
-    private let replay: BehaviorRelay<DotButtonModelState>
+    private let relay: BehaviorRelay<DotButtonModelState>
     private let disposeBag = DisposeBag()
 
     var didChange: Driver<DotButtonModelState> {
-        return self.replay.asDriver()
+        return self.relay.asDriver()
     }
 
-    var currentState: DotButtonModelState {
-        return self.replay.value
+    var currentButtons: DotButtonModelState.DotButtonState? {
+        switch self.relay.value {
+        case .notSet:
+            return nil
+        case let .reset(buttons: buttons), let .restart(buttons: buttons):
+            return buttons
+        }
     }
 
     init(
@@ -33,7 +37,7 @@ class DotButtonModel: DotButtonModelProtocol {
         observe sheetModel: DotSheetModelProtocol
     ) {
         self.dependency = dependency
-        self.replay = BehaviorRelay<DotButtonModelState>(value: .notSet)
+        self.relay = BehaviorRelay<DotButtonModelState>(value: .notSet)
 
         sheetModel.didChange
             .drive(onNext: { [weak self] state in
@@ -41,7 +45,7 @@ class DotButtonModel: DotButtonModelProtocol {
 
                 switch state {
                 case .notCompare:
-                    this.replay.accept(
+                    this.relay.accept(
                         .reset(buttons: this.buttonState())
                     )
                 default:
@@ -52,7 +56,7 @@ class DotButtonModel: DotButtonModelProtocol {
     }
 
     func restart() {
-        self.replay.accept(
+        self.relay.accept(
             .restart(buttons: self.buttonState())
         )
     }

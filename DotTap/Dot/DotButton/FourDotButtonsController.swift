@@ -19,7 +19,7 @@ class FourDotButtonsController {
         reactTo view: FourDotButtonsViewProtocol,
         depende buttonModel: DotButtonModelProtocol,
         command sheetModel: DotSheetModelProtocol
-        ) {
+    ) {
         self.sheetModel = sheetModel
         self.buttonModel = buttonModel
 
@@ -61,7 +61,8 @@ class FourDotButtonsController {
     }
 
     private func colors() -> DotButtonModelState.DotButtonFourColors? {
-        if case let .four(colors: colors) = self.buttonModel.currentButtons {
+        if let current = self.buttonModel.currentButtons,
+            case let .four(colors: colors) = current {
             return colors
         }
         return nil

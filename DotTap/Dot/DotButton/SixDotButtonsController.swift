@@ -19,7 +19,7 @@ class SixDotButtonsController {
         reactTo view: SixDotButtonsViewProtocol,
         depende buttonModel: DotButtonModelProtocol,
         command sheetModel: DotSheetModelProtocol
-        ) {
+    ) {
         self.sheetModel = sheetModel
         self.buttonModel = buttonModel
 
@@ -79,7 +79,8 @@ class SixDotButtonsController {
     }
 
     private func colors() -> DotButtonModelState.DotButtonSixColors? {
-        if case let .six(colors: colors) = self.buttonModel.currentButtons {
+        if let current = self.buttonModel.currentButtons,
+            case let .six(colors: colors) = current {
             return colors
         }
         return nil

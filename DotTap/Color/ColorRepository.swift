@@ -19,6 +19,7 @@ class ColorRepository: ColorRepositoryProtocol {
     private(set) var colors: [Color] = []
 
     init(dependency buttonCountRepository: DotButtonCountRepositoryProtosol) {
+        self.buttonCountRepository = buttonCountRepository
         self.colors = self.makeColors()
     }
 
