@@ -51,6 +51,11 @@
 		3E8D4D7E208F03B300FE36E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */; };
 		3EC3C80F20921DA300FD8E65 /* DotButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */; };
 		3EC3C81320922B9300FD8E65 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C81220922B9300FD8E65 /* RestartButton.swift */; };
+		3EC3C8172092445C00FD8E65 /* DotButtonCountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C8162092445C00FD8E65 /* DotButtonCountRepository.swift */; };
+		3EC3C8192092447D00FD8E65 /* DotButtonCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C8182092447D00FD8E65 /* DotButtonCount.swift */; };
+		3EC3C81B20926C1400FD8E65 /* FourDotButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C81A20926C1400FD8E65 /* FourDotButtonsController.swift */; };
+		3EC3C81D20926C3A00FD8E65 /* SixDotButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C81C20926C3A00FD8E65 /* SixDotButtonsController.swift */; };
+		3EC3C81F20926CA000FD8E65 /* EightDotButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C81E20926CA000FD8E65 /* EightDotButtonsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +158,11 @@
 		3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonController.swift; sourceTree = "<group>"; };
 		3EC3C81220922B9300FD8E65 /* RestartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
+		3EC3C8162092445C00FD8E65 /* DotButtonCountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonCountRepository.swift; sourceTree = "<group>"; };
+		3EC3C8182092447D00FD8E65 /* DotButtonCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonCount.swift; sourceTree = "<group>"; };
+		3EC3C81A20926C1400FD8E65 /* FourDotButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourDotButtonsController.swift; sourceTree = "<group>"; };
+		3EC3C81C20926C3A00FD8E65 /* SixDotButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixDotButtonsController.swift; sourceTree = "<group>"; };
+		3EC3C81E20926CA000FD8E65 /* EightDotButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightDotButtonsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,9 +385,13 @@
 			isa = PBXGroup;
 			children = (
 				3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */,
-				3E332E942091BF37001AB310 /* DotButtonModel.swift */,
-				3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */,
+				3EC3C81A20926C1400FD8E65 /* FourDotButtonsController.swift */,
+				3EC3C81C20926C3A00FD8E65 /* SixDotButtonsController.swift */,
+				3EC3C81E20926CA000FD8E65 /* EightDotButtonsController.swift */,
+				3EC3C8152092443B00FD8E65 /* Model */,
 				3E3AD40A2090739000F1347A /* View */,
+				3EC3C8162092445C00FD8E65 /* DotButtonCountRepository.swift */,
+				3EC3C8182092447D00FD8E65 /* DotButtonCount.swift */,
 			);
 			path = DotButton;
 			sourceTree = "<group>";
@@ -520,6 +534,15 @@
 				3EC3C81220922B9300FD8E65 /* RestartButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3EC3C8152092443B00FD8E65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E332E942091BF37001AB310 /* DotButtonModel.swift */,
+				3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -700,17 +723,22 @@
 			files = (
 				3E3AD40C209073BB00F1347A /* DotViewFactory.swift in Sources */,
 				3E3AD402208F37BC00F1347A /* DotSheetView.swift in Sources */,
+				3EC3C8192092447D00FD8E65 /* DotButtonCount.swift in Sources */,
 				3E3AD400208F36FA00F1347A /* DotView.swift in Sources */,
 				3EC3C80F20921DA300FD8E65 /* DotButtonController.swift in Sources */,
 				3E3AD4082090735500F1347A /* Color.swift in Sources */,
+				3EC3C8172092445C00FD8E65 /* DotButtonCountRepository.swift in Sources */,
+				3EC3C81D20926C3A00FD8E65 /* SixDotButtonsController.swift in Sources */,
 				3E332E872090B925001AB310 /* DotSheetResetModel.swift in Sources */,
 				3E8D4D4F208F010C00FE36E1 /* ViewController.swift in Sources */,
 				3E332E8A2091777A001AB310 /* DotFactory.swift in Sources */,
 				3E332EDA20920A6C001AB310 /* DotSheet.swift in Sources */,
+				3EC3C81B20926C1400FD8E65 /* FourDotButtonsController.swift in Sources */,
 				3E8D4D4D208F010C00FE36E1 /* AppDelegate.swift in Sources */,
 				3E332E9B2091C468001AB310 /* DotSheetModelFactory.swift in Sources */,
 				3E332E9E2091C4BE001AB310 /* ColorRepository.swift in Sources */,
 				3E3AD4212090B3D700F1347A /* DotButtonPassiveView.swift in Sources */,
+				3EC3C81F20926CA000FD8E65 /* EightDotButtonsController.swift in Sources */,
 				3E3AD40E2090741D00F1347A /* DotSheetModel.swift in Sources */,
 				3E3AD40420905DEB00F1347A /* Dot.swift in Sources */,
 				3E3AD41D2090A57400F1347A /* DotSheetPassiveView.swift in Sources */,
