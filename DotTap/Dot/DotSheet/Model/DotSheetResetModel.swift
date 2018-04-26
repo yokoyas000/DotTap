@@ -34,7 +34,7 @@ class DotSheetResetModel: DotSheetModelProtocol {
     ) {
         self.dependency = dependency
         // FIXME: ランダムにするなら Repository 化
-        let dotLength = DotSheet.buttonCount + 2
+        let dotLength = DotSheet.maxUsingColorCount + 2
         self.innerModel = dependency.innerModelFactory.create(
             dotLength: dotLength,
             usingColors: dependency.colorRepository.colors
@@ -60,7 +60,7 @@ class DotSheetResetModel: DotSheetModelProtocol {
     }
 
     private func reset() {
-        let dotLength = DotSheet.buttonCount + 2
+        let dotLength = DotSheet.maxUsingColorCount + 2
         self.innerModel = self.dependency.innerModelFactory.create(
             dotLength: dotLength,
             usingColors: dependency.colorRepository.colors

@@ -8,5 +8,5 @@
 
 enum DotSheet {
     static let minUsingColorCount = 2
-    static let buttonCount = 4
+    static let maxUsingColorCount = 4
 }

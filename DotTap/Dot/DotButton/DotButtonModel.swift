@@ -48,7 +48,7 @@ class DotButtonModel: DotButtonModelProtocol {
         let colors = repository.colors
         var buttonColors: [Color] = colors
 
-        let more = DotSheet.buttonCount - colors.count
+        let more = DotSheet.maxUsingColorCount - colors.count
         if more > 0 {
             for _ in colors.count ..< (colors.count + more) {
                 let random = Int(arc4random_uniform(UInt32(colors.count)))
