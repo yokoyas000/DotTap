@@ -15,17 +15,10 @@ protocol ColorRepositoryProtocol {
 
 class ColorRepository: ColorRepositoryProtocol {
 
-    let minColorCount: Int
-    let maxColorCount: Int
-
+    private let buttonCountRepository: DotButtonCountRepositoryProtosol
     private(set) var colors: [Color] = []
 
-    init(minColorCount: Int, maxColorCount: Int) {
-        assert(Color.chromatic.count >= maxColorCount)
-        assert(maxColorCount > minColorCount)
-
-        self.minColorCount = minColorCount
-        self.maxColorCount = maxColorCount
+    init(dependency buttonCountRepository: DotButtonCountRepositoryProtosol) {
         self.colors = self.makeColors()
     }
 
@@ -34,18 +27,21 @@ class ColorRepository: ColorRepositoryProtocol {
     }
 
     private func makeColors() -> [Color] {
+        let minColorCount: Int = self.buttonCountRepository.count.rawValue / 2
+        let maxColorCount: Int = self.buttonCountRepository.count.rawValue
+
         var cases = Color.chromatic
         var colors: [Color] = []
 
-        for _ in 0 ..< self.maxColorCount {
+        for _ in 0 ..< maxColorCount {
             let i = Int(arc4random_uniform(UInt32(cases.count)))
             colors.append(cases[i])
 
             cases.remove(at: i)
         }
 
-        let randomLength = Int(arc4random_uniform(UInt32(self.maxColorCount)))
-        let colorLength = randomLength > self.minColorCount ? randomLength : self.minColorCount
+        let randomLength = Int(arc4random_uniform(UInt32(maxColorCount)))
+        let colorLength = randomLength > minColorCount ? randomLength : minColorCount
 
         return colors[0...colorLength].map { $0 }
     }
