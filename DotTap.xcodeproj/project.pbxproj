@@ -1,0 +1,1056 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E332E872090B925001AB310 /* DotSheetResetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E862090B925001AB310 /* DotSheetResetModel.swift */; };
+		3E332E8A2091777A001AB310 /* DotFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E892091777A001AB310 /* DotFactory.swift */; };
+		3E332E8E20917C6A001AB310 /* DotSheetResetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */; };
+		3E332E9020919838001AB310 /* DotSheetModelFactoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */; };
+		3E332E922091986E001AB310 /* SpyDotSheetTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */; };
+		3E332E952091BF37001AB310 /* DotButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E942091BF37001AB310 /* DotButtonModel.swift */; };
+		3E332E972091BF50001AB310 /* DotColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E962091BF50001AB310 /* DotColorModel.swift */; };
+		3E332E992091BF90001AB310 /* DotColorModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E982091BF90001AB310 /* DotColorModelProtocol.swift */; };
+		3E332E9B2091C468001AB310 /* DotSheetModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9A2091C468001AB310 /* DotSheetModelFactory.swift */; };
+		3E332E9E2091C4BE001AB310 /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9D2091C4BE001AB310 /* ColorRepository.swift */; };
+		3E332EA02091E84A001AB310 /* DotButtonModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */; };
+		3E332EA22091EAAF001AB310 /* DotButtonModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332EA12091EAAF001AB310 /* DotButtonModelTests.swift */; };
+		3E332EA72091F105001AB310 /* DotFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332EA62091F105001AB310 /* DotFactoryTests.swift */; };
+		3E332EAA2091F170001AB310 /* ColorRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332EA92091F170001AB310 /* ColorRepositoryTests.swift */; };
+		3E332ED82092001C001AB310 /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E332ED72092001C001AB310 /* MirrorDiffKit.framework */; };
+		3E332EDA20920A6C001AB310 /* DotSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332ED920920A6C001AB310 /* DotSheet.swift */; };
+		3E3AD3F1208F2D4300F1347A /* DotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F0208F2D4300F1347A /* DotButton.swift */; };
+		3E3AD3F3208F329C00F1347A /* DotButtonFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F2208F329C00F1347A /* DotButtonFieldView.xib */; };
+		3E3AD3F5208F340700F1347A /* DotButtonFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F4208F340700F1347A /* DotButtonFieldView.swift */; };
+		3E3AD3F9208F352300F1347A /* MainRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F8208F352300F1347A /* MainRootView.xib */; };
+		3E3AD3FB208F353500F1347A /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3FA208F353500F1347A /* MainRootView.swift */; };
+		3E3AD3FE208F36DF00F1347A /* DotSheetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AD3FD208F36DF00F1347A /* DotSheetView.xib */; };
+		3E3AD400208F36FA00F1347A /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3FF208F36FA00F1347A /* DotView.swift */; };
+		3E3AD402208F37BC00F1347A /* DotSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD401208F37BC00F1347A /* DotSheetView.swift */; };
+		3E3AD40420905DEB00F1347A /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40320905DEB00F1347A /* Dot.swift */; };
+		3E3AD40620905EAD00F1347A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AD40520905EAD00F1347A /* SnapKit.framework */; };
+		3E3AD4082090735500F1347A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4072090735500F1347A /* Color.swift */; };
+		3E3AD40C209073BB00F1347A /* DotViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40B209073BB00F1347A /* DotViewFactory.swift */; };
+		3E3AD40E2090741D00F1347A /* DotSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40D2090741D00F1347A /* DotSheetModel.swift */; };
+		3E3AD4102090844900F1347A /* DotSheetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */; };
+		3E3AD41220908DBE00F1347A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AD41120908DBE00F1347A /* RxTest.framework */; };
+		3E3AD41320908DCB00F1347A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */; };
+		3E3AD4162090983000F1347A /* DotSheetModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4152090983000F1347A /* DotSheetModelProtocol.swift */; };
+		3E3AD41B20909BDF00F1347A /* DotSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD41A20909BDF00F1347A /* DotSheetController.swift */; };
+		3E3AD41D2090A57400F1347A /* DotSheetPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD41C2090A57400F1347A /* DotSheetPassiveView.swift */; };
+		3E3AD4212090B3D700F1347A /* DotButtonPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */; };
+		3E8D4D4D208F010C00FE36E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D4C208F010C00FE36E1 /* AppDelegate.swift */; };
+		3E8D4D4F208F010C00FE36E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D4E208F010C00FE36E1 /* ViewController.swift */; };
+		3E8D4D52208F010C00FE36E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D4D50208F010C00FE36E1 /* Main.storyboard */; };
+		3E8D4D54208F010C00FE36E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D4D53208F010C00FE36E1 /* Assets.xcassets */; };
+		3E8D4D57208F010C00FE36E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D4D55208F010C00FE36E1 /* LaunchScreen.storyboard */; };
+		3E8D4D62208F010C00FE36E1 /* DotTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D61208F010C00FE36E1 /* DotTapTests.swift */; };
+		3E8D4D6D208F010C00FE36E1 /* DotTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D6C208F010C00FE36E1 /* DotTapUITests.swift */; };
+		3E8D4D7C208F039F00FE36E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */; };
+		3E8D4D7E208F03B300FE36E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */; };
+		3E8D4D86208F056C00FE36E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D85208F056C00FE36E1 /* Result.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E8D4D5E208F010C00FE36E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E8D4D41208F010C00FE36E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E8D4D48208F010C00FE36E1;
+			remoteInfo = RxExample;
+		};
+		3E8D4D69208F010C00FE36E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E8D4D41208F010C00FE36E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E8D4D48208F010C00FE36E1;
+			remoteInfo = RxExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E332E862090B925001AB310 /* DotSheetResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModel.swift; sourceTree = "<group>"; };
+		3E332E892091777A001AB310 /* DotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactory.swift; sourceTree = "<group>"; };
+		3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModelTests.swift; sourceTree = "<group>"; };
+		3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactoryTestDouble.swift; sourceTree = "<group>"; };
+		3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyDotSheetTestDouble.swift; sourceTree = "<group>"; };
+		3E332E942091BF37001AB310 /* DotButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonModel.swift; sourceTree = "<group>"; };
+		3E332E962091BF50001AB310 /* DotColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotColorModel.swift; sourceTree = "<group>"; };
+		3E332E982091BF90001AB310 /* DotColorModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotColorModelProtocol.swift; sourceTree = "<group>"; };
+		3E332E9A2091C468001AB310 /* DotSheetModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactory.swift; sourceTree = "<group>"; };
+		3E332E9D2091C4BE001AB310 /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
+		3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModelProtocol.swift; sourceTree = "<group>"; };
+		3E332EA12091EAAF001AB310 /* DotButtonModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModelTests.swift; sourceTree = "<group>"; };
+		3E332EA62091F105001AB310 /* DotFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactoryTests.swift; sourceTree = "<group>"; };
+		3E332EA92091F170001AB310 /* ColorRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepositoryTests.swift; sourceTree = "<group>"; };
+		3E332EAF20920011001AB310 /* DotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButton.swift; sourceTree = "<group>"; };
+		3E332EB020920011001AB310 /* DotButtonFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotButtonFieldView.xib; sourceTree = "<group>"; };
+		3E332EB120920011001AB310 /* DotButtonPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonPassiveView.swift; sourceTree = "<group>"; };
+		3E332EB220920011001AB310 /* DotButtonFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonFieldView.swift; sourceTree = "<group>"; };
+		3E332EB320920011001AB310 /* DotButtonModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModelProtocol.swift; sourceTree = "<group>"; };
+		3E332EB420920011001AB310 /* DotButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModel.swift; sourceTree = "<group>"; };
+		3E332EB520920011001AB310 /* DotColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotColorModel.swift; sourceTree = "<group>"; };
+		3E332EB720920011001AB310 /* DotSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetController.swift; sourceTree = "<group>"; };
+		3E332EB920920011001AB310 /* DotSheetModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelProtocol.swift; sourceTree = "<group>"; };
+		3E332EBA20920011001AB310 /* DotSheetResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModel.swift; sourceTree = "<group>"; };
+		3E332EBB20920011001AB310 /* DotSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModel.swift; sourceTree = "<group>"; };
+		3E332EBC20920011001AB310 /* DotSheetModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactory.swift; sourceTree = "<group>"; };
+		3E332EBE20920011001AB310 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		3E332EBF20920011001AB310 /* DotSheetPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetPassiveView.swift; sourceTree = "<group>"; };
+		3E332EC020920011001AB310 /* DotSheetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotSheetView.xib; sourceTree = "<group>"; };
+		3E332EC120920011001AB310 /* DotSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetView.swift; sourceTree = "<group>"; };
+		3E332EC220920011001AB310 /* DotViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotViewFactory.swift; sourceTree = "<group>"; };
+		3E332EC320920011001AB310 /* DotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactory.swift; sourceTree = "<group>"; };
+		3E332EC420920011001AB310 /* DotColorModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotColorModelProtocol.swift; sourceTree = "<group>"; };
+		3E332EC520920011001AB310 /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		3E332EC720920011001AB310 /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
+		3E332EC820920011001AB310 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3E332EC920920011001AB310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E332ECB20920011001AB310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3E332ECC20920011001AB310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3E332ECE20920011001AB310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E332ED020920011001AB310 /* MainRootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainRootView.xib; sourceTree = "<group>"; };
+		3E332ED220920011001AB310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E332ED320920011001AB310 /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
+		3E332ED420920011001AB310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E332ED620920011001AB310 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3E332ED72092001C001AB310 /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
+		3E332ED920920A6C001AB310 /* DotSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheet.swift; sourceTree = "<group>"; };
+		3E3AD3F0208F2D4300F1347A /* DotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButton.swift; sourceTree = "<group>"; };
+		3E3AD3F2208F329C00F1347A /* DotButtonFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotButtonFieldView.xib; sourceTree = "<group>"; };
+		3E3AD3F4208F340700F1347A /* DotButtonFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonFieldView.swift; sourceTree = "<group>"; };
+		3E3AD3F8208F352300F1347A /* MainRootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainRootView.xib; sourceTree = "<group>"; };
+		3E3AD3FA208F353500F1347A /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
+		3E3AD3FD208F36DF00F1347A /* DotSheetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotSheetView.xib; sourceTree = "<group>"; };
+		3E3AD3FF208F36FA00F1347A /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		3E3AD401208F37BC00F1347A /* DotSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetView.swift; sourceTree = "<group>"; };
+		3E3AD40320905DEB00F1347A /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		3E3AD40520905EAD00F1347A /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		3E3AD4072090735500F1347A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3E3AD40B209073BB00F1347A /* DotViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotViewFactory.swift; sourceTree = "<group>"; };
+		3E3AD40D2090741D00F1347A /* DotSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModel.swift; sourceTree = "<group>"; };
+		3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelTests.swift; sourceTree = "<group>"; };
+		3E3AD41120908DBE00F1347A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		3E3AD4152090983000F1347A /* DotSheetModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelProtocol.swift; sourceTree = "<group>"; };
+		3E3AD41A20909BDF00F1347A /* DotSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetController.swift; sourceTree = "<group>"; };
+		3E3AD41C2090A57400F1347A /* DotSheetPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetPassiveView.swift; sourceTree = "<group>"; };
+		3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonPassiveView.swift; sourceTree = "<group>"; };
+		3E8D4D49208F010C00FE36E1 /* DotTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8D4D4C208F010C00FE36E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3E8D4D4E208F010C00FE36E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E8D4D51208F010C00FE36E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E8D4D53208F010C00FE36E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E8D4D56208F010C00FE36E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3E8D4D58208F010C00FE36E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E8D4D5D208F010C00FE36E1 /* DotTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8D4D61208F010C00FE36E1 /* DotTapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotTapTests.swift; sourceTree = "<group>"; };
+		3E8D4D63208F010C00FE36E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E8D4D68208F010C00FE36E1 /* DotTapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotTapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8D4D6C208F010C00FE36E1 /* DotTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotTapUITests.swift; sourceTree = "<group>"; };
+		3E8D4D6E208F010D00FE36E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		3E8D4D7F208F03C800FE36E1 /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		3E8D4D85208F056C00FE36E1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E8D4D46208F010C00FE36E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3AD40620905EAD00F1347A /* SnapKit.framework in Frameworks */,
+				3E8D4D7E208F03B300FE36E1 /* RxCocoa.framework in Frameworks */,
+				3E8D4D7C208F039F00FE36E1 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8D4D5A208F010C00FE36E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E332ED82092001C001AB310 /* MirrorDiffKit.framework in Frameworks */,
+				3E3AD41320908DCB00F1347A /* RxBlocking.framework in Frameworks */,
+				3E3AD41220908DBE00F1347A /* RxTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8D4D65208F010C00FE36E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E332E882090B9B5001AB310 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E3AD40D2090741D00F1347A /* DotSheetModel.swift */,
+				3E3AD4152090983000F1347A /* DotSheetModelProtocol.swift */,
+				3E332E862090B925001AB310 /* DotSheetResetModel.swift */,
+				3E332E9A2091C468001AB310 /* DotSheetModelFactory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E332E932091BEE6001AB310 /* DotSheet */ = {
+			isa = PBXGroup;
+			children = (
+				3E3AD41A20909BDF00F1347A /* DotSheetController.swift */,
+				3E332ED920920A6C001AB310 /* DotSheet.swift */,
+				3E3AD4092090737300F1347A /* View */,
+				3E332E882090B9B5001AB310 /* Model */,
+			);
+			path = DotSheet;
+			sourceTree = "<group>";
+		};
+		3E332E9C2091C49D001AB310 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				3E3AD4072090735500F1347A /* Color.swift */,
+				3E332E9D2091C4BE001AB310 /* ColorRepository.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		3E332EA32091F0C1001AB310 /* DotButton */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EA12091EAAF001AB310 /* DotButtonModelTests.swift */,
+			);
+			path = DotButton;
+			sourceTree = "<group>";
+		};
+		3E332EA42091F0D2001AB310 /* Dot */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EA52091F0DA001AB310 /* DotSheet */,
+				3E332EA32091F0C1001AB310 /* DotButton */,
+				3E332EA62091F105001AB310 /* DotFactoryTests.swift */,
+			);
+			path = Dot;
+			sourceTree = "<group>";
+		};
+		3E332EA52091F0DA001AB310 /* DotSheet */ = {
+			isa = PBXGroup;
+			children = (
+				3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */,
+				3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */,
+				3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */,
+				3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */,
+			);
+			path = DotSheet;
+			sourceTree = "<group>";
+		};
+		3E332EA82091F15E001AB310 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EA92091F170001AB310 /* ColorRepositoryTests.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		3E332EAB20920011001AB310 /* DotTap */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EAC20920011001AB310 /* Dot */,
+				3E332EC620920011001AB310 /* Color */,
+				3E332EC920920011001AB310 /* Assets.xcassets */,
+				3E332ECA20920011001AB310 /* LaunchScreen.storyboard */,
+				3E332ECC20920011001AB310 /* AppDelegate.swift */,
+				3E332ECD20920011001AB310 /* Main */,
+				3E332ED420920011001AB310 /* Info.plist */,
+				3E332ED520920011001AB310 /* Share */,
+			);
+			path = DotTap;
+			sourceTree = "<group>";
+		};
+		3E332EAC20920011001AB310 /* Dot */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EAD20920011001AB310 /* DotButton */,
+				3E332EB520920011001AB310 /* DotColorModel.swift */,
+				3E332EB620920011001AB310 /* DotSheet */,
+				3E332EC320920011001AB310 /* DotFactory.swift */,
+				3E332EC420920011001AB310 /* DotColorModelProtocol.swift */,
+				3E332EC520920011001AB310 /* Dot.swift */,
+			);
+			path = Dot;
+			sourceTree = "<group>";
+		};
+		3E332EAD20920011001AB310 /* DotButton */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EAE20920011001AB310 /* View */,
+				3E332EB320920011001AB310 /* DotButtonModelProtocol.swift */,
+				3E332EB420920011001AB310 /* DotButtonModel.swift */,
+			);
+			path = DotButton;
+			sourceTree = "<group>";
+		};
+		3E332EAE20920011001AB310 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EAF20920011001AB310 /* DotButton.swift */,
+				3E332EB020920011001AB310 /* DotButtonFieldView.xib */,
+				3E332EB120920011001AB310 /* DotButtonPassiveView.swift */,
+				3E332EB220920011001AB310 /* DotButtonFieldView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E332EB620920011001AB310 /* DotSheet */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EB720920011001AB310 /* DotSheetController.swift */,
+				3E332EB820920011001AB310 /* Model */,
+				3E332EBD20920011001AB310 /* View */,
+			);
+			path = DotSheet;
+			sourceTree = "<group>";
+		};
+		3E332EB820920011001AB310 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EB920920011001AB310 /* DotSheetModelProtocol.swift */,
+				3E332EBA20920011001AB310 /* DotSheetResetModel.swift */,
+				3E332EBB20920011001AB310 /* DotSheetModel.swift */,
+				3E332EBC20920011001AB310 /* DotSheetModelFactory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E332EBD20920011001AB310 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EBE20920011001AB310 /* DotView.swift */,
+				3E332EBF20920011001AB310 /* DotSheetPassiveView.swift */,
+				3E332EC020920011001AB310 /* DotSheetView.xib */,
+				3E332EC120920011001AB310 /* DotSheetView.swift */,
+				3E332EC220920011001AB310 /* DotViewFactory.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E332EC620920011001AB310 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				3E332EC720920011001AB310 /* ColorRepository.swift */,
+				3E332EC820920011001AB310 /* Color.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		3E332ECD20920011001AB310 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3E332ECE20920011001AB310 /* ViewController.swift */,
+				3E332ECF20920011001AB310 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3E332ECF20920011001AB310 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E332ED020920011001AB310 /* MainRootView.xib */,
+				3E332ED120920011001AB310 /* Main.storyboard */,
+				3E332ED320920011001AB310 /* MainRootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E332ED520920011001AB310 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				3E332ED620920011001AB310 /* Result.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		3E3AD3F6208F34A900F1347A /* DotButton */ = {
+			isa = PBXGroup;
+			children = (
+				3E332E942091BF37001AB310 /* DotButtonModel.swift */,
+				3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */,
+				3E3AD40A2090739000F1347A /* View */,
+			);
+			path = DotButton;
+			sourceTree = "<group>";
+		};
+		3E3AD3F7208F34D100F1347A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D4E208F010C00FE36E1 /* ViewController.swift */,
+				3E8D4D87208F0D6000FE36E1 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3E3AD3FC208F36BE00F1347A /* Dot */ = {
+			isa = PBXGroup;
+			children = (
+				3E3AD40320905DEB00F1347A /* Dot.swift */,
+				3E332E962091BF50001AB310 /* DotColorModel.swift */,
+				3E332E982091BF90001AB310 /* DotColorModelProtocol.swift */,
+				3E332E892091777A001AB310 /* DotFactory.swift */,
+				3E332E932091BEE6001AB310 /* DotSheet */,
+				3E3AD3F6208F34A900F1347A /* DotButton */,
+			);
+			path = Dot;
+			sourceTree = "<group>";
+		};
+		3E3AD4092090737300F1347A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E3AD41C2090A57400F1347A /* DotSheetPassiveView.swift */,
+				3E3AD3FD208F36DF00F1347A /* DotSheetView.xib */,
+				3E3AD401208F37BC00F1347A /* DotSheetView.swift */,
+				3E3AD3FF208F36FA00F1347A /* DotView.swift */,
+				3E3AD40B209073BB00F1347A /* DotViewFactory.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E3AD40A2090739000F1347A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E3AD3F0208F2D4300F1347A /* DotButton.swift */,
+				3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */,
+				3E3AD3F2208F329C00F1347A /* DotButtonFieldView.xib */,
+				3E3AD3F4208F340700F1347A /* DotButtonFieldView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E8D4D40208F010C00FE36E1 = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D4B208F010C00FE36E1 /* DotTap */,
+				3E8D4D60208F010C00FE36E1 /* DotTapTests */,
+				3E8D4D6B208F010C00FE36E1 /* DotTapUITests */,
+				3E8D4D4A208F010C00FE36E1 /* Products */,
+				3E8D4D7A208F039F00FE36E1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3E8D4D4A208F010C00FE36E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D49208F010C00FE36E1 /* DotTap.app */,
+				3E8D4D5D208F010C00FE36E1 /* DotTapTests.xctest */,
+				3E8D4D68208F010C00FE36E1 /* DotTapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E8D4D4B208F010C00FE36E1 /* DotTap */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D84208F056500FE36E1 /* Share */,
+				3E3AD3F7208F34D100F1347A /* Main */,
+				3E332E9C2091C49D001AB310 /* Color */,
+				3E3AD3FC208F36BE00F1347A /* Dot */,
+				3E8D4D4C208F010C00FE36E1 /* AppDelegate.swift */,
+				3E8D4D53208F010C00FE36E1 /* Assets.xcassets */,
+				3E8D4D55208F010C00FE36E1 /* LaunchScreen.storyboard */,
+				3E8D4D58208F010C00FE36E1 /* Info.plist */,
+			);
+			path = DotTap;
+			sourceTree = "<group>";
+		};
+		3E8D4D60208F010C00FE36E1 /* DotTapTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D61208F010C00FE36E1 /* DotTapTests.swift */,
+				3E332EA82091F15E001AB310 /* Color */,
+				3E332EA42091F0D2001AB310 /* Dot */,
+				3E8D4D63208F010C00FE36E1 /* Info.plist */,
+			);
+			path = DotTapTests;
+			sourceTree = "<group>";
+		};
+		3E8D4D6B208F010C00FE36E1 /* DotTapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D6C208F010C00FE36E1 /* DotTapUITests.swift */,
+				3E8D4D6E208F010D00FE36E1 /* Info.plist */,
+			);
+			path = DotTapUITests;
+			sourceTree = "<group>";
+		};
+		3E8D4D7A208F039F00FE36E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E332ED72092001C001AB310 /* MirrorDiffKit.framework */,
+				3E332EAB20920011001AB310 /* DotTap */,
+				3E3AD41120908DBE00F1347A /* RxTest.framework */,
+				3E3AD40520905EAD00F1347A /* SnapKit.framework */,
+				3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */,
+				3E8D4D7F208F03C800FE36E1 /* RxBlocking.framework.dSYM */,
+				3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */,
+				3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E8D4D84208F056500FE36E1 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D85208F056C00FE36E1 /* Result.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		3E8D4D87208F0D6000FE36E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D4D50208F010C00FE36E1 /* Main.storyboard */,
+				3E3AD3F8208F352300F1347A /* MainRootView.xib */,
+				3E3AD3FA208F353500F1347A /* MainRootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E8D4D48208F010C00FE36E1 /* DotTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E8D4D71208F010D00FE36E1 /* Build configuration list for PBXNativeTarget "DotTap" */;
+			buildPhases = (
+				3E8D4D45208F010C00FE36E1 /* Sources */,
+				3E8D4D46208F010C00FE36E1 /* Frameworks */,
+				3E8D4D47208F010C00FE36E1 /* Resources */,
+				3E8D4D83208F041A00FE36E1 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DotTap;
+			productName = RxExample;
+			productReference = 3E8D4D49208F010C00FE36E1 /* DotTap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3E8D4D5C208F010C00FE36E1 /* DotTapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E8D4D74208F010D00FE36E1 /* Build configuration list for PBXNativeTarget "DotTapTests" */;
+			buildPhases = (
+				3E8D4D59208F010C00FE36E1 /* Sources */,
+				3E8D4D5A208F010C00FE36E1 /* Frameworks */,
+				3E8D4D5B208F010C00FE36E1 /* Resources */,
+				3E3AD41420908DD800F1347A /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E8D4D5F208F010C00FE36E1 /* PBXTargetDependency */,
+			);
+			name = DotTapTests;
+			productName = RxExampleTests;
+			productReference = 3E8D4D5D208F010C00FE36E1 /* DotTapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3E8D4D67208F010C00FE36E1 /* DotTapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E8D4D77208F010D00FE36E1 /* Build configuration list for PBXNativeTarget "DotTapUITests" */;
+			buildPhases = (
+				3E8D4D64208F010C00FE36E1 /* Sources */,
+				3E8D4D65208F010C00FE36E1 /* Frameworks */,
+				3E8D4D66208F010C00FE36E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E8D4D6A208F010C00FE36E1 /* PBXTargetDependency */,
+			);
+			name = DotTapUITests;
+			productName = RxExampleUITests;
+			productReference = 3E8D4D68208F010C00FE36E1 /* DotTapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E8D4D41208F010C00FE36E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = yokoyas000;
+				TargetAttributes = {
+					3E8D4D48208F010C00FE36E1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					3E8D4D5C208F010C00FE36E1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3E8D4D48208F010C00FE36E1;
+					};
+					3E8D4D67208F010C00FE36E1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3E8D4D48208F010C00FE36E1;
+					};
+				};
+			};
+			buildConfigurationList = 3E8D4D44208F010C00FE36E1 /* Build configuration list for PBXProject "DotTap" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3E8D4D40208F010C00FE36E1;
+			productRefGroup = 3E8D4D4A208F010C00FE36E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E8D4D48208F010C00FE36E1 /* DotTap */,
+				3E8D4D5C208F010C00FE36E1 /* DotTapTests */,
+				3E8D4D67208F010C00FE36E1 /* DotTapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E8D4D47208F010C00FE36E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E8D4D57208F010C00FE36E1 /* LaunchScreen.storyboard in Resources */,
+				3E8D4D54208F010C00FE36E1 /* Assets.xcassets in Resources */,
+				3E3AD3F9208F352300F1347A /* MainRootView.xib in Resources */,
+				3E3AD3F3208F329C00F1347A /* DotButtonFieldView.xib in Resources */,
+				3E3AD3FE208F36DF00F1347A /* DotSheetView.xib in Resources */,
+				3E8D4D52208F010C00FE36E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8D4D5B208F010C00FE36E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8D4D66208F010C00FE36E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E3AD41420908DD800F1347A /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MirrorDiffKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		3E8D4D83208F041A00FE36E1 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E8D4D45208F010C00FE36E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3AD40C209073BB00F1347A /* DotViewFactory.swift in Sources */,
+				3E332E972091BF50001AB310 /* DotColorModel.swift in Sources */,
+				3E3AD402208F37BC00F1347A /* DotSheetView.swift in Sources */,
+				3E332E992091BF90001AB310 /* DotColorModelProtocol.swift in Sources */,
+				3E8D4D86208F056C00FE36E1 /* Result.swift in Sources */,
+				3E3AD41B20909BDF00F1347A /* DotSheetController.swift in Sources */,
+				3E3AD400208F36FA00F1347A /* DotView.swift in Sources */,
+				3E3AD4082090735500F1347A /* Color.swift in Sources */,
+				3E332E872090B925001AB310 /* DotSheetResetModel.swift in Sources */,
+				3E8D4D4F208F010C00FE36E1 /* ViewController.swift in Sources */,
+				3E332E8A2091777A001AB310 /* DotFactory.swift in Sources */,
+				3E332EDA20920A6C001AB310 /* DotSheet.swift in Sources */,
+				3E8D4D4D208F010C00FE36E1 /* AppDelegate.swift in Sources */,
+				3E332E9B2091C468001AB310 /* DotSheetModelFactory.swift in Sources */,
+				3E332E9E2091C4BE001AB310 /* ColorRepository.swift in Sources */,
+				3E3AD4212090B3D700F1347A /* DotButtonPassiveView.swift in Sources */,
+				3E3AD40E2090741D00F1347A /* DotSheetModel.swift in Sources */,
+				3E3AD40420905DEB00F1347A /* Dot.swift in Sources */,
+				3E3AD41D2090A57400F1347A /* DotSheetPassiveView.swift in Sources */,
+				3E3AD4162090983000F1347A /* DotSheetModelProtocol.swift in Sources */,
+				3E3AD3FB208F353500F1347A /* MainRootView.swift in Sources */,
+				3E3AD3F1208F2D4300F1347A /* DotButton.swift in Sources */,
+				3E332EA02091E84A001AB310 /* DotButtonModelProtocol.swift in Sources */,
+				3E3AD3F5208F340700F1347A /* DotButtonFieldView.swift in Sources */,
+				3E332E952091BF37001AB310 /* DotButtonModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8D4D59208F010C00FE36E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E8D4D62208F010C00FE36E1 /* DotTapTests.swift in Sources */,
+				3E332E8E20917C6A001AB310 /* DotSheetResetModelTests.swift in Sources */,
+				3E332E922091986E001AB310 /* SpyDotSheetTestDouble.swift in Sources */,
+				3E332EA72091F105001AB310 /* DotFactoryTests.swift in Sources */,
+				3E332EA22091EAAF001AB310 /* DotButtonModelTests.swift in Sources */,
+				3E3AD4102090844900F1347A /* DotSheetModelTests.swift in Sources */,
+				3E332E9020919838001AB310 /* DotSheetModelFactoryTestDouble.swift in Sources */,
+				3E332EAA2091F170001AB310 /* ColorRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8D4D64208F010C00FE36E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E8D4D6D208F010C00FE36E1 /* DotTapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E8D4D5F208F010C00FE36E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E8D4D48208F010C00FE36E1 /* DotTap */;
+			targetProxy = 3E8D4D5E208F010C00FE36E1 /* PBXContainerItemProxy */;
+		};
+		3E8D4D6A208F010C00FE36E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E8D4D48208F010C00FE36E1 /* DotTap */;
+			targetProxy = 3E8D4D69208F010C00FE36E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E332ECA20920011001AB310 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E332ECB20920011001AB310 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3E332ED120920011001AB310 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E332ED220920011001AB310 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3E8D4D50208F010C00FE36E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E8D4D51208F010C00FE36E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3E8D4D55208F010C00FE36E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E8D4D56208F010C00FE36E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E8D4D6F208F010D00FE36E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3E8D4D70208F010D00FE36E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3E8D4D72208F010D00FE36E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/DotTap/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yokoyas000.DotTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E8D4D73208F010D00FE36E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/DotTap/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yokoyas000.DotTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3E8D4D75208F010D00FE36E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = DotTapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yokoyas000.DotTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotTap.app/DotTap";
+			};
+			name = Debug;
+		};
+		3E8D4D76208F010D00FE36E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = DotTapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yokoyas000.DotTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotTap.app/DotTap";
+			};
+			name = Release;
+		};
+		3E8D4D78208F010D00FE36E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DotTapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yokoyas000.DotTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DotTap;
+			};
+			name = Debug;
+		};
+		3E8D4D79208F010D00FE36E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DotTapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yokoyas000.DotTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DotTap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E8D4D44208F010C00FE36E1 /* Build configuration list for PBXProject "DotTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E8D4D6F208F010D00FE36E1 /* Debug */,
+				3E8D4D70208F010D00FE36E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E8D4D71208F010D00FE36E1 /* Build configuration list for PBXNativeTarget "DotTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E8D4D72208F010D00FE36E1 /* Debug */,
+				3E8D4D73208F010D00FE36E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E8D4D74208F010D00FE36E1 /* Build configuration list for PBXNativeTarget "DotTapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E8D4D75208F010D00FE36E1 /* Debug */,
+				3E8D4D76208F010D00FE36E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E8D4D77208F010D00FE36E1 /* Build configuration list for PBXNativeTarget "DotTapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E8D4D78208F010D00FE36E1 /* Debug */,
+				3E8D4D79208F010D00FE36E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E8D4D41208F010C00FE36E1 /* Project object */;
+}
