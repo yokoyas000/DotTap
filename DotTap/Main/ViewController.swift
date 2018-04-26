@@ -15,19 +15,11 @@ class ViewController: UIViewController {
     private var buttonPassiveView: DotButtonPassiveView?
     private var sheetModel: DotSheetModelProtocol?
     private var sheetPassiveView: DotSheetPassiveView?
-    private var sheetController: DotSheetController?
+    private var buttonController: DotButtonController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    override func viewDidLayoutSubviews() {
         guard let view = self.view as? MainRootView else {
             return
         }
@@ -37,7 +29,7 @@ class ViewController: UIViewController {
         )
         let colorRepository = ColorRepository(
             minColorCount: DotSheet.minUsingColorCount,
-            maxColorCount: DotSheet.buttonCount
+            maxColorCount: DotSheet.maxUsingColorCount
         )
         let sheetModel = DotSheetResetModel(
             dependency: (
@@ -60,13 +52,13 @@ class ViewController: UIViewController {
             observe: buttonModel
         )
         let sheetPassiveView = DotSheetPassiveView(update: view.dotSheetView, observe: sheetModel)
-        let sheetController = DotSheetController(
-            reactTo: DotSheetController.Views(
-                button1: view.dotButtonFieldView.button1,
-                button2: view.dotButtonFieldView.button2,
-                button3: view.dotButtonFieldView.button3,
-                button4: view.dotButtonFieldView.button4
-                ),
+        let sheetController = DotButtonController(
+            reactTo: [
+                view.dotButtonFieldView.button1.rx.tap.asSignal(),
+                view.dotButtonFieldView.button2.rx.tap.asSignal(),
+                view.dotButtonFieldView.button3.rx.tap.asSignal(),
+                view.dotButtonFieldView.button4.rx.tap.asSignal()
+            ],
             depende: buttonModel,
             command: sheetModel
         )
@@ -75,6 +67,6 @@ class ViewController: UIViewController {
         self.buttonPassiveView = buttonPassiveView
         self.sheetModel = sheetModel
         self.sheetPassiveView = sheetPassiveView
-        self.sheetController = sheetController
+        self.buttonController = sheetController
     }
 }

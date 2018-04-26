@@ -38,7 +38,6 @@
 		3E3AD41220908DBE00F1347A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AD41120908DBE00F1347A /* RxTest.framework */; };
 		3E3AD41320908DCB00F1347A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */; };
 		3E3AD4162090983000F1347A /* DotSheetModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4152090983000F1347A /* DotSheetModelProtocol.swift */; };
-		3E3AD41B20909BDF00F1347A /* DotSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD41A20909BDF00F1347A /* DotSheetController.swift */; };
 		3E3AD41D2090A57400F1347A /* DotSheetPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD41C2090A57400F1347A /* DotSheetPassiveView.swift */; };
 		3E3AD4212090B3D700F1347A /* DotButtonPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */; };
 		3E8D4D4D208F010C00FE36E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D4C208F010C00FE36E1 /* AppDelegate.swift */; };
@@ -50,7 +49,7 @@
 		3E8D4D6D208F010C00FE36E1 /* DotTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D6C208F010C00FE36E1 /* DotTapUITests.swift */; };
 		3E8D4D7C208F039F00FE36E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */; };
 		3E8D4D7E208F03B300FE36E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */; };
-		3E8D4D86208F056C00FE36E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D85208F056C00FE36E1 /* Result.swift */; };
+		3EC3C80F20921DA300FD8E65 /* DotButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +131,6 @@
 		3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelTests.swift; sourceTree = "<group>"; };
 		3E3AD41120908DBE00F1347A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		3E3AD4152090983000F1347A /* DotSheetModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelProtocol.swift; sourceTree = "<group>"; };
-		3E3AD41A20909BDF00F1347A /* DotSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetController.swift; sourceTree = "<group>"; };
 		3E3AD41C2090A57400F1347A /* DotSheetPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetPassiveView.swift; sourceTree = "<group>"; };
 		3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonPassiveView.swift; sourceTree = "<group>"; };
 		3E8D4D49208F010C00FE36E1 /* DotTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +150,7 @@
 		3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		3E8D4D7F208F03C800FE36E1 /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
 		3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		3E8D4D85208F056C00FE36E1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +198,6 @@
 		3E332E932091BEE6001AB310 /* DotSheet */ = {
 			isa = PBXGroup;
 			children = (
-				3E3AD41A20909BDF00F1347A /* DotSheetController.swift */,
 				3E332ED920920A6C001AB310 /* DotSheet.swift */,
 				3E3AD4092090737300F1347A /* View */,
 				3E332E882090B9B5001AB310 /* Model */,
@@ -375,6 +372,7 @@
 		3E3AD3F6208F34A900F1347A /* DotButton */ = {
 			isa = PBXGroup;
 			children = (
+				3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */,
 				3E332E942091BF37001AB310 /* DotButtonModel.swift */,
 				3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */,
 				3E3AD40A2090739000F1347A /* View */,
@@ -449,7 +447,6 @@
 		3E8D4D4B208F010C00FE36E1 /* DotTap */ = {
 			isa = PBXGroup;
 			children = (
-				3E8D4D84208F056500FE36E1 /* Share */,
 				3E3AD3F7208F34D100F1347A /* Main */,
 				3E332E9C2091C49D001AB310 /* Color */,
 				3E3AD3FC208F36BE00F1347A /* Dot */,
@@ -494,14 +491,6 @@
 				3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3E8D4D84208F056500FE36E1 /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				3E8D4D85208F056C00FE36E1 /* Result.swift */,
-			);
-			path = Share;
 			sourceTree = "<group>";
 		};
 		3E8D4D87208F0D6000FE36E1 /* View */ = {
@@ -692,9 +681,8 @@
 			files = (
 				3E3AD40C209073BB00F1347A /* DotViewFactory.swift in Sources */,
 				3E3AD402208F37BC00F1347A /* DotSheetView.swift in Sources */,
-				3E8D4D86208F056C00FE36E1 /* Result.swift in Sources */,
-				3E3AD41B20909BDF00F1347A /* DotSheetController.swift in Sources */,
 				3E3AD400208F36FA00F1347A /* DotView.swift in Sources */,
+				3EC3C80F20921DA300FD8E65 /* DotButtonController.swift in Sources */,
 				3E3AD4082090735500F1347A /* Color.swift in Sources */,
 				3E332E872090B925001AB310 /* DotSheetResetModel.swift in Sources */,
 				3E8D4D4F208F010C00FE36E1 /* ViewController.swift in Sources */,
