@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -16,6 +15,7 @@
             <connections>
                 <outlet property="dotButtonFieldView" destination="Omx-aL-zkd" id="ZPu-Eo-a20"/>
                 <outlet property="dotSheetView" destination="opI-2M-CpD" id="Kft-sF-5Ax"/>
+                <outlet property="restartButton" destination="0VW-Ol-CZ7" id="adf-IT-8VY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,21 +23,37 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opI-2M-CpD" customClass="DotSheetView" customModule="RxExample" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opI-2M-CpD" customClass="DotSheetView" customModule="DotTap">
                     <rect key="frame" x="0.0" y="35" width="375" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="1Br-20-EhA"/>
-                        <constraint firstAttribute="width" constant="375" placeholder="YES" id="HLF-vN-x1Y"/>
+                        <constraint firstAttribute="width" constant="375" placeholder="YES" id="KFT-AY-GY1" userLabel="placeHolderwidth = 375"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-aL-zkd" customClass="DotButtonFieldView" customModule="RxExample" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-aL-zkd" customClass="DotButtonFieldView" customModuleProvider="target">
                     <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Omx-aL-zkd" secondAttribute="height" multiplier="1:1" id="TLm-bk-aW7"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VW-Ol-CZ7" customClass="RestartButton" customModuleProvider="target">
+                    <rect key="frame" x="145.5" y="554" width="83" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.912329791" blue="0.72883692769999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="EFq-SF-r5y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Restart">
+                        <color key="titleColor" red="0.45882352941176469" green="0.13333333333333333" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -45,7 +61,10 @@
                 <constraint firstItem="opI-2M-CpD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ldf-Ne-fcx"/>
                 <constraint firstItem="Omx-aL-zkd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NK7-zy-BAG"/>
                 <constraint firstItem="Omx-aL-zkd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="R6y-SJ-hgg"/>
+                <constraint firstItem="0VW-Ol-CZ7" firstAttribute="width" secondItem="Omx-aL-zkd" secondAttribute="width" multiplier="1:3" id="SBj-d2-tS1"/>
+                <constraint firstItem="0VW-Ol-CZ7" firstAttribute="top" secondItem="Omx-aL-zkd" secondAttribute="bottom" constant="95.5" id="VBf-el-SE7"/>
                 <constraint firstItem="opI-2M-CpD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="gmU-gb-Kfm"/>
+                <constraint firstItem="0VW-Ol-CZ7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qov-Ks-eTo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>

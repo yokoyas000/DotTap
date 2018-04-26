@@ -12,7 +12,8 @@ class MainRootView: UIView {
 
     @IBOutlet weak var dotSheetView: DotSheetView!
     @IBOutlet weak var dotButtonFieldView: DotButtonFieldView!
-    
+    @IBOutlet var restartButton: RestartButton!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib()

@@ -50,6 +50,7 @@
 		3E8D4D7C208F039F00FE36E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */; };
 		3E8D4D7E208F03B300FE36E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */; };
 		3EC3C80F20921DA300FD8E65 /* DotButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */; };
+		3EC3C81320922B9300FD8E65 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C81220922B9300FD8E65 /* RestartButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		3E8D4D7F208F03C800FE36E1 /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
 		3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonController.swift; sourceTree = "<group>"; };
+		3EC3C81220922B9300FD8E65 /* RestartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +449,7 @@
 		3E8D4D4B208F010C00FE36E1 /* DotTap */ = {
 			isa = PBXGroup;
 			children = (
+				3EC3C81020922B2000FD8E65 /* Restart */,
 				3E3AD3F7208F34D100F1347A /* Main */,
 				3E332E9C2091C49D001AB310 /* Color */,
 				3E3AD3FC208F36BE00F1347A /* Dot */,
@@ -499,6 +502,22 @@
 				3E8D4D50208F010C00FE36E1 /* Main.storyboard */,
 				3E3AD3F8208F352300F1347A /* MainRootView.xib */,
 				3E3AD3FA208F353500F1347A /* MainRootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3EC3C81020922B2000FD8E65 /* Restart */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3C81120922B8800FD8E65 /* View */,
+			);
+			path = Restart;
+			sourceTree = "<group>";
+		};
+		3EC3C81120922B8800FD8E65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3C81220922B9300FD8E65 /* RestartButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -695,6 +714,7 @@
 				3E3AD40E2090741D00F1347A /* DotSheetModel.swift in Sources */,
 				3E3AD40420905DEB00F1347A /* Dot.swift in Sources */,
 				3E3AD41D2090A57400F1347A /* DotSheetPassiveView.swift in Sources */,
+				3EC3C81320922B9300FD8E65 /* RestartButton.swift in Sources */,
 				3E3AD4162090983000F1347A /* DotSheetModelProtocol.swift in Sources */,
 				3E3AD3FB208F353500F1347A /* MainRootView.swift in Sources */,
 				3E3AD3F1208F2D4300F1347A /* DotButton.swift in Sources */,
