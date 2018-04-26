@@ -26,13 +26,6 @@ class DotButtonFieldView: UIView {
         self.loadFromNib()
     }
 
-//    func set(color1: Color, color2: Color, color3: Color, color4: Color) {
-//        self.button1.color = color1
-//        self.button2.color = color2
-//        self.button3.color = color3
-//        self.button4.color = color4
-//    }
-
     private func loadFromNib() {
         let className = String(describing: type(of: self))
         guard let view = Bundle(for: type(of: self))

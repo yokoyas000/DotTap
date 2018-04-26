@@ -24,16 +24,15 @@ class ViewController: UIViewController {
             return
         }
 
-        let sheetModelFactory = DotSheetModelFactory(
-            dotFactory: DotFactory()
-        )
         let colorRepository = ColorRepository(
             minColorCount: DotSheet.minUsingColorCount,
             maxColorCount: DotSheet.maxUsingColorCount
         )
         let sheetModel = DotSheetResetModel(
             dependency: (
-                innerModelFactory: sheetModelFactory,
+                innerModelFactory: DotSheetModelFactory(
+                    dotFactory: DotFactory()
+                ),
                 colorRepository: colorRepository
             )
         )
