@@ -15,10 +15,10 @@ protocol ColorRepositoryProtocol {
 
 class ColorRepository: ColorRepositoryProtocol {
 
-    private let buttonCountRepository: DotButtonCountRepositoryProtosol
+    private let buttonCountRepository: DotButtonNumberRepositoryProtocol
     private(set) var colors: [Color] = []
 
-    init(dependency buttonCountRepository: DotButtonCountRepositoryProtosol) {
+    init(dependency buttonCountRepository: DotButtonNumberRepositoryProtocol) {
         self.buttonCountRepository = buttonCountRepository
         self.colors = self.makeColors()
     }
@@ -28,8 +28,8 @@ class ColorRepository: ColorRepositoryProtocol {
     }
 
     private func makeColors() -> [Color] {
-        let minColorCount: Int = self.buttonCountRepository.count.rawValue / 2
-        let maxColorCount: Int = self.buttonCountRepository.count.rawValue
+        let minColorCount: Int = self.buttonCountRepository.number.rawValue / 2
+        let maxColorCount: Int = self.buttonCountRepository.number.rawValue
 
         var cases = Color.chromatic
         var colors: [Color] = []

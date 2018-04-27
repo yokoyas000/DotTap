@@ -12,7 +12,7 @@ import RxSwift
 class DotButtonModel: DotButtonModelProtocol {
     typealias Dependency = (
         colorRepository: ColorRepositoryProtocol,
-        buttonCountRepository: DotButtonCountRepositoryProtosol
+        buttonCountRepository: DotButtonNumberRepositoryProtocol
     )
 
     private let dependency: Dependency
@@ -62,23 +62,23 @@ class DotButtonModel: DotButtonModelProtocol {
     }
 
     private func buttonState() -> DotButtonModelState.DotButtonState {
-        return DotButtonCountFactory.createDotButtonState(
+        return DotButtonNumberFactory.createDotButtonState(
             colors: self.dependency.colorRepository.colors,
-            buttonCount: self.dependency.buttonCountRepository.count
+            buttonNumber: self.dependency.buttonCountRepository.number
         )
     }
 }
 
 extension DotButtonModel {
 
-    enum DotButtonCountFactory {
+    enum DotButtonNumberFactory {
         static func createDotButtonState(
             colors: [Color],
-            buttonCount: DotButtonCount
+            buttonNumber: DotButtonNumber
         ) -> DotButtonModelState.DotButtonState {
             var buttonColors: [Color] = colors
 
-            let more = buttonCount.rawValue - colors.count
+            let more = buttonNumber.rawValue - colors.count
             if more > 0 {
                 for _ in colors.count ..< (colors.count + more) {
                     let random = Int(arc4random_uniform(UInt32(colors.count)))
@@ -86,7 +86,7 @@ extension DotButtonModel {
                 }
             }
 
-            switch buttonCount {
+            switch buttonNumber {
             case .four:
                 return DotButtonModelState.DotButtonState.four(
                     colors: DotButtonModelState.DotButtonFourColors(
