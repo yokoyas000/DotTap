@@ -12,7 +12,7 @@ import RxSwift
 class DotButtonModel: DotButtonModelProtocol {
     typealias Dependency = (
         colorRepository: ColorRepositoryProtocol,
-        buttonCountRepository: DotButtonNumberRepositoryProtocol
+        buttonCountRepository: DotButtonCountRepositoryProtocol
     )
 
     private let dependency: Dependency
@@ -28,7 +28,7 @@ class DotButtonModel: DotButtonModelProtocol {
         case .notSet:
             return nil
         case let .resetColors(buttons: buttons),
-             let .resetNumber(buttons: buttons):
+             let .resetCount(buttons: buttons):
             return buttons
         }
     }
@@ -47,7 +47,7 @@ class DotButtonModel: DotButtonModelProtocol {
 
         // TODO: buttonRepository と colorRepository が reset されていることが前提となる
         //       Repository の reset, どこでやるべきか...
-        self.relay.accept(.resetNumber(buttons: self.buttonState()))
+        self.relay.accept(.resetCount(buttons: self.buttonState()))
     }
 
     private func observe(sheetModel: DotSheetModelProtocol) {
@@ -67,25 +67,25 @@ class DotButtonModel: DotButtonModelProtocol {
     }
 
     private func buttonState() -> DotButtonModelState.DotButtonState {
-        return DotButtonNumberFactory.createDotButtonState(
+        return DotButtonCountFactory.createDotButtonState(
             colors: self.dependency.colorRepository.colors,
-            buttonNumber: self.dependency.buttonCountRepository.number
+            buttonCount: self.dependency.buttonCountRepository.count
         )
     }
 }
 
 extension DotButtonModel {
 
-    enum DotButtonNumberFactory {
+    enum DotButtonCountFactory {
 
         static func createDotButtonState(
-            colors: [Color],
-            buttonNumber: DotButtonNumber
+                colors: [Color],
+                buttonCount: DotButtonCount
         ) -> DotButtonModelState.DotButtonState {
             var buttonColors: [Color] = colors
 
             // 色数がボタン数より少ない場合、同じ色のボタンを複数作る
-            let more = buttonNumber.rawValue - colors.count
+            let more = buttonCount.rawValue - colors.count
             if more > 0 {
                 for _ in colors.count ..< (colors.count + more) {
                     let random = Int(arc4random_uniform(UInt32(colors.count)))
@@ -93,7 +93,7 @@ extension DotButtonModel {
                 }
             }
 
-            switch buttonNumber {
+            switch buttonCount {
             case .four:
                 return DotButtonModelState.DotButtonState.four(
                     colors: DotButtonModelState.DotButtonFourColors(

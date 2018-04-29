@@ -10,7 +10,7 @@ import Foundation
 
 protocol ColorRepositoryProtocol {
     var colors: [Color] { get }
-    func resetColors(maxNumber: Int, minNumber: Int)
+    func resetColors(minCount: Int, maxCount: Int)
 }
 
 class ColorRepository: ColorRepositoryProtocol {
@@ -18,31 +18,31 @@ class ColorRepository: ColorRepositoryProtocol {
     // 画面上で利用する色
     private(set) var colors: [Color] = []
 
-    init(maxNumber: Int, minNumber: Int) {
-        assert(Color.chromatic.count >= maxNumber)
-        assert(maxNumber > minNumber)
+    init(minCount: Int, maxCount: Int) {
+        assert(Color.chromatic.count >= maxCount)
+        assert(maxCount > minCount)
 
-        self.colors = self.create(maxNumber: maxNumber, minNumber: minNumber)
+        self.colors = self.create(minCount: minCount, maxCount: maxCount)
     }
 
-    func resetColors(maxNumber: Int, minNumber: Int) {
-        self.colors = self.create(maxNumber: maxNumber, minNumber: minNumber)
+    func resetColors(minCount: Int, maxCount: Int) {
+        self.colors = self.create(minCount: minCount, maxCount: maxCount)
     }
 
-    private func create(maxNumber: Int, minNumber: Int) -> [Color] {
+    private func create(minCount: Int, maxCount: Int) -> [Color] {
         var cases = Color.chromatic
         var colors: [Color] = []
 
-        for _ in 0 ..< maxNumber {
+        for _ in 0 ..< minCount {
             let i = Int(arc4random_uniform(UInt32(cases.count)))
             colors.append(cases[i])
 
             cases.remove(at: i)
         }
 
-        let randomLength = Int(arc4random_uniform(UInt32(maxNumber)))
-        let colorLength = randomLength > minNumber ? randomLength : minNumber
+        let randomCount = Int(arc4random_uniform(UInt32(minCount)))
+        let colorCount = randomCount > minCount ? randomCount : minCount
 
-        return colors[0...colorLength].map { $0 }
+        return colors[0...colorCount].map { $0 }
     }
 }

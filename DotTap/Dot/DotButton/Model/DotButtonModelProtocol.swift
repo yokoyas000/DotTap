@@ -15,11 +15,11 @@ import RxCocoa
  [notSet]
     |----> [resetColors(buttons:)]
     |               |----> [resetColors(buttons:)]
-    |               |---- restart() --> [resetNumber(buttons:)]
+    |               |---- restart() --> [resetCount(buttons:)]
     |
-    |----> [resetNumber(buttons:)]
+    |----> [resetCount(buttons:)]
                     |----> [resetColors(buttons:)]
-                    |-- restart() --> [resetNumber(buttons:)]
+                    |-- restart() --> [resetCount(buttons:)]
  **/
 protocol DotButtonModelProtocol {
     var didChange: Driver<DotButtonModelState> { get }
@@ -32,7 +32,7 @@ enum DotButtonModelState {
     // 初期状態
     case notSet
     // ボタンの数に変更がある場合
-    case resetNumber(buttons: DotButtonModelState.DotButtonState)
+    case resetCount(buttons: DotButtonModelState.DotButtonState)
     // ボタンの色に変更がある場合
     case resetColors(buttons: DotButtonModelState.DotButtonState)
 

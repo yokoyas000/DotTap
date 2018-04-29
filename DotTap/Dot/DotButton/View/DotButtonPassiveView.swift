@@ -76,8 +76,8 @@ class DotButtonPassiveView {
             return
         case let .resetColors(buttons: buttons):
             self.resetColors(by: buttons)
-        case let .resetNumber(buttons: buttons):
-            self.resetNumber(by: buttons)
+        case let .resetCount(buttons: buttons):
+            self.resetCount(by: buttons)
         }
 
     }
@@ -93,7 +93,7 @@ class DotButtonPassiveView {
         }
     }
 
-    private func resetNumber(by buttonState: DotButtonModelState.DotButtonState) {
+    private func resetCount(by buttonState: DotButtonModelState.DotButtonState) {
         // TODO: xib, priorityの変更
         switch buttonState {
         case let .four(colors: colors):
