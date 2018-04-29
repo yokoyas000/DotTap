@@ -29,14 +29,14 @@ class DotSheetPassiveView {
 
     private func update(by state: DotSheetModelState) {
         switch state {
-        case let .notCompare(dots: dots):
+        case let .hasNotCompared(dots: dots):
             self.dotViews = DotViewFactory.create(dots: dots)
             self.sheetView.set(dotViews: self.dotViews)
         case let .compare(.match(dots: dots)):
             self.updateDotViews(dots: dots)
         case let .compare(.unmatch(dots: dots)):
             self.updateDotViews(dots: dots)
-        case let .allCompared(dots: dots):
+        case let .allDidMatch(dots: dots):
             self.updateDotViews(dots: dots)
         }
     }

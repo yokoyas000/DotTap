@@ -28,7 +28,7 @@ class DotSheetModel: DotSheetModelProtocol {
         }
 
         self.replay = BehaviorRelay<DotSheetModelState>(
-            value: .notCompare(dots: self.baseDots)
+            value: .hasNotCompared(dots: self.baseDots)
         )
     }
 
@@ -48,7 +48,7 @@ class DotSheetModel: DotSheetModelProtocol {
 
         if index == self.comparableDots.endIndex - 1 {
             self.replay.accept(
-                .allCompared(dots: self.comparableDots)
+                .allDidMatch(dots: self.comparableDots)
             )
         } else {
             self.replay.accept(

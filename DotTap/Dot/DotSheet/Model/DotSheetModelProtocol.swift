@@ -8,6 +8,19 @@
 
 import RxCocoa
 
+/**
+ 状態遷移:
+
+ [hasNotCompared]
+        |-- compare() --> [compare(.match)]
+        |                        |-- compare() --> [compare(.match)]
+        |                        |-- compare() --> [compare(.unmatch)]
+        |                        |-- compare() --> [allDidMatch]
+        |
+        |-- compare() --> [compare(.unmatch)]
+                                 |-- compare() --> [compare(.match)]
+                                 |-- compare() --> [compare(.unmatch)]
+ **/
 protocol DotSheetModelProtocol {
     var didChange: Driver<DotSheetModelState> { get }
     var currentState: DotSheetModelState { get }
@@ -15,15 +28,18 @@ protocol DotSheetModelProtocol {
 }
 
 enum DotSheetModelState: Equatable {
-    case notCompare(dots: [Dot])
+    // 何も比較していない
+    case hasNotCompared(dots: [Dot])
+    // 比較した
     case compare(Compare)
-    case allCompared(dots: [ComparableDot])
+    // 全て一致した
+    case allDidMatch(dots: [ComparableDot])
 
     static func == (lhs: DotSheetModelState, rhs: DotSheetModelState) -> Bool {
         switch (lhs, rhs) {
-        case let (.notCompare(lDots), .notCompare(rDots)):
+        case let (.hasNotCompared(lDots), .hasNotCompared(rDots)):
             return lDots == rDots
-        case let (.allCompared(lDots), .allCompared(rDots)):
+        case let (.allDidMatch(lDots), .allDidMatch(rDots)):
             return lDots == rDots
         case let (.compare(lc), .compare(rc)):
             return lc == rc

@@ -27,7 +27,8 @@ class DotButtonModel: DotButtonModelProtocol {
         switch self.relay.value {
         case .notSet:
             return nil
-        case let .reset(buttons: buttons), let .restart(buttons: buttons):
+        case let .resetColors(buttons: buttons),
+             let .resetNumber(buttons: buttons):
             return buttons
         }
     }
@@ -38,27 +39,31 @@ class DotButtonModel: DotButtonModelProtocol {
     ) {
         self.dependency = dependency
         self.relay = BehaviorRelay<DotButtonModelState>(value: .notSet)
-
-        sheetModel.didChange
-            .drive(onNext: { [weak self] state in
-                guard let this = self else { return }
-
-                switch state {
-                case .notCompare:
-                    this.relay.accept(
-                        .reset(buttons: this.buttonState())
-                    )
-                default:
-                    break
-                }
-            })
-            .disposed(by: self.disposeBag)
+        self.observe(sheetModel: sheetModel)
     }
 
-    func restart() {
-        self.relay.accept(
-            .restart(buttons: self.buttonState())
-        )
+    func restart(next sheetModel: DotSheetModelProtocol) {
+        self.observe(sheetModel: sheetModel)
+
+        // TODO: buttonRepository と colorRepository が reset されていることが前提となる
+        //       Repository の reset, どこでやるべきか...
+        self.relay.accept(.resetNumber(buttons: self.buttonState()))
+    }
+
+    private func observe(sheetModel: DotSheetModelProtocol) {
+        // DotButtonModelState が .hasNotCompared(初期状態) になった時、ボタンの色を変更する
+        sheetModel.didChange
+                .drive(onNext: { [weak self] state in
+                    guard let this = self,
+                          case let .hasNotCompared = state else {
+                        return
+                    }
+
+                    this.relay.accept(
+                            .resetColors(buttons: this.buttonState())
+                    )
+                })
+                .disposed(by: self.disposeBag)
     }
 
     private func buttonState() -> DotButtonModelState.DotButtonState {
@@ -72,12 +77,14 @@ class DotButtonModel: DotButtonModelProtocol {
 extension DotButtonModel {
 
     enum DotButtonNumberFactory {
+
         static func createDotButtonState(
             colors: [Color],
             buttonNumber: DotButtonNumber
         ) -> DotButtonModelState.DotButtonState {
             var buttonColors: [Color] = colors
 
+            // 色数がボタン数より少ない場合、同じ色のボタンを複数作る
             let more = buttonNumber.rawValue - colors.count
             if more > 0 {
                 for _ in colors.count ..< (colors.count + more) {
@@ -122,6 +129,7 @@ extension DotButtonModel {
                 )
             }
         }
+
     }
 
 }

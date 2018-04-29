@@ -18,7 +18,7 @@ class DotSheetResetModel: DotSheetModelProtocol {
 
     private let dependency: Depandency
     private var innerModel: DotSheetModelProtocol
-    private let relay: BehaviorRelay<DotSheetModelState> = BehaviorRelay<DotSheetModelState>(value: .notCompare(dots: []))
+    private let relay: BehaviorRelay<DotSheetModelState> = BehaviorRelay<DotSheetModelState>(value: .hasNotCompared(dots: []))
     private let disposeBag = DisposeBag()
 
     var didChange: Driver<DotSheetModelState> {
@@ -42,7 +42,7 @@ class DotSheetResetModel: DotSheetModelProtocol {
 
         self.relay.subscribe(onNext: { [weak self] state in
             switch state {
-            case .allCompared:
+            case .allDidMatch:
                 self?.reset()
             default:
                 break

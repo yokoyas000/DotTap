@@ -384,14 +384,13 @@
 		3E3AD3F6208F34A900F1347A /* DotButton */ = {
 			isa = PBXGroup;
 			children = (
+				3EDD97BC2094700D0002E5BA /* DotButtonNumber */,
 				3EC3C80E20921DA200FD8E65 /* DotButtonControllerHolder.swift */,
 				3EC3C81A20926C1400FD8E65 /* FourDotButtonsController.swift */,
 				3EC3C81C20926C3A00FD8E65 /* SixDotButtonsController.swift */,
 				3EC3C81E20926CA000FD8E65 /* EightDotButtonsController.swift */,
 				3EC3C8152092443B00FD8E65 /* Model */,
 				3E3AD40A2090739000F1347A /* View */,
-				3EC3C8162092445C00FD8E65 /* DotButtonNumberRepository.swift */,
-				3EC3C8182092447D00FD8E65 /* DotButtonNumber.swift */,
 			);
 			path = DotButton;
 			sourceTree = "<group>";
@@ -543,6 +542,15 @@
 				3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3EDD97BC2094700D0002E5BA /* DotButtonNumber */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3C8162092445C00FD8E65 /* DotButtonNumberRepository.swift */,
+				3EC3C8182092447D00FD8E65 /* DotButtonNumber.swift */,
+			);
+			path = DotButtonNumber;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

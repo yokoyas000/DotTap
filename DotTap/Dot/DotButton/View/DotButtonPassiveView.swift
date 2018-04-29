@@ -74,15 +74,15 @@ class DotButtonPassiveView {
         switch state {
         case .notSet:
             return
-        case let .reset(buttons: buttons):
-            self.reset(by: buttons)
-        case let .restart(buttons: buttons):
-            self.restart(by: buttons)
+        case let .resetColors(buttons: buttons):
+            self.resetColors(by: buttons)
+        case let .resetNumber(buttons: buttons):
+            self.resetNumber(by: buttons)
         }
 
     }
 
-    private func reset(by buttonState: DotButtonModelState.DotButtonState) {
+    private func resetColors(by buttonState: DotButtonModelState.DotButtonState) {
         switch buttonState {
         case let .four(colors: colors):
             self.updateFourButtons(colors: colors)
@@ -93,8 +93,8 @@ class DotButtonPassiveView {
         }
     }
 
-    private func restart(by buttonState: DotButtonModelState.DotButtonState) {
-        // TODO: priorityの変更
+    private func resetNumber(by buttonState: DotButtonModelState.DotButtonState) {
+        // TODO: xib, priorityの変更
         switch buttonState {
         case let .four(colors: colors):
             self.updateFourButtons(colors: colors)
@@ -112,8 +112,12 @@ class DotButtonPassiveView {
         self.views.fourButtonsView.button4.color = colors.four.value
     }
 
-    private func updateSixButtons(colors: DotButtonModelState.DotButtonSixColors) {}
+    private func updateSixButtons(colors: DotButtonModelState.DotButtonSixColors) {
+        // TODO
+    }
 
-    private func updateEightButtons(colors: DotButtonModelState.DotButtonEightColors) {}
+    private func updateEightButtons(colors: DotButtonModelState.DotButtonEightColors) {
+        // TODO
+    }
 
 }

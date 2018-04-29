@@ -9,17 +9,33 @@
 import RxSwift
 import RxCocoa
 
+/**
+ 状態遷移:
+
+ [notSet]
+    |----> [resetColors(buttons:)]
+    |               |----> [resetColors(buttons:)]
+    |               |---- restart() --> [resetNumber(buttons:)]
+    |
+    |----> [resetNumber(buttons:)]
+                    |----> [resetColors(buttons:)]
+                    |-- restart() --> [resetNumber(buttons:)]
+ **/
 protocol DotButtonModelProtocol {
     var didChange: Driver<DotButtonModelState> { get }
     var currentButtons: DotButtonModelState.DotButtonState? { get }
 
-    func restart()
+    func restart(next sheetModel: DotSheetModelProtocol)
 }
 
 enum DotButtonModelState {
+    // 初期状態
     case notSet
-    case reset(buttons: DotButtonModelState.DotButtonState)
-    case restart(buttons: DotButtonModelState.DotButtonState)
+    // ボタンの数に変更がある場合
+    case resetNumber(buttons: DotButtonModelState.DotButtonState)
+    // ボタンの色に変更がある場合
+    case resetColors(buttons: DotButtonModelState.DotButtonState)
+
 
     enum DotButtonState {
         case four(colors: DotButtonFourColors)
