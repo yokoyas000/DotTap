@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35C022BC71D154B4955C436A /* DotButtonCountRepositoryDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C022CBABE154AE6FF38CEE /* DotButtonCountRepositoryDouble.swift */; };
+		35C0293B666B83FFD882E081 /* ColorRepositoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02AE70ECDFE453D5D257C /* ColorRepositoryTestDouble.swift */; };
+		35C02D94C449EA44364CB7AD /* DotSheetTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C024C539D8C43C6B097A19 /* DotSheetTestDouble.swift */; };
 		3E332E872090B925001AB310 /* DotSheetResetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E862090B925001AB310 /* DotSheetResetModel.swift */; };
 		3E332E8A2091777A001AB310 /* DotFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E892091777A001AB310 /* DotFactory.swift */; };
 		3E332E8E20917C6A001AB310 /* DotSheetResetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */; };
 		3E332E9020919838001AB310 /* DotSheetModelFactoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */; };
-		3E332E922091986E001AB310 /* SpyDotSheetTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */; };
 		3E332E952091BF37001AB310 /* DotButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E942091BF37001AB310 /* DotButtonModel.swift */; };
 		3E332E9B2091C468001AB310 /* DotSheetModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9A2091C468001AB310 /* DotSheetModelFactory.swift */; };
 		3E332E9E2091C4BE001AB310 /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9D2091C4BE001AB310 /* ColorRepository.swift */; };
@@ -76,11 +78,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35C022CBABE154AE6FF38CEE /* DotButtonCountRepositoryDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountRepositoryDouble.swift; sourceTree = "<group>"; };
+		35C024C539D8C43C6B097A19 /* DotSheetTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotSheetTestDouble.swift; sourceTree = "<group>"; };
+		35C02AE70ECDFE453D5D257C /* ColorRepositoryTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorRepositoryTestDouble.swift; sourceTree = "<group>"; };
 		3E332E862090B925001AB310 /* DotSheetResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModel.swift; sourceTree = "<group>"; };
 		3E332E892091777A001AB310 /* DotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactory.swift; sourceTree = "<group>"; };
 		3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModelTests.swift; sourceTree = "<group>"; };
 		3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactoryTestDouble.swift; sourceTree = "<group>"; };
-		3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyDotSheetTestDouble.swift; sourceTree = "<group>"; };
 		3E332E942091BF37001AB310 /* DotButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonModel.swift; sourceTree = "<group>"; };
 		3E332E9A2091C468001AB310 /* DotSheetModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactory.swift; sourceTree = "<group>"; };
 		3E332E9D2091C4BE001AB310 /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
@@ -196,6 +200,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35C021805508FB0F0D5563F5 /* TestDouble */ = {
+			isa = PBXGroup;
+			children = (
+				35C024C539D8C43C6B097A19 /* DotSheetTestDouble.swift */,
+				35C02AE70ECDFE453D5D257C /* ColorRepositoryTestDouble.swift */,
+				35C022CBABE154AE6FF38CEE /* DotButtonCountRepositoryDouble.swift */,
+			);
+			path = TestDouble;
+			sourceTree = "<group>";
+		};
 		3E332E882090B9B5001AB310 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +254,7 @@
 				3E332EA52091F0DA001AB310 /* DotSheet */,
 				3E332EA32091F0C1001AB310 /* DotButton */,
 				3E332EA62091F105001AB310 /* DotFactoryTests.swift */,
+				35C021805508FB0F0D5563F5 /* TestDouble */,
 			);
 			path = Dot;
 			sourceTree = "<group>";
@@ -250,7 +265,6 @@
 				3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */,
 				3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */,
 				3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */,
-				3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */,
 			);
 			path = DotSheet;
 			sourceTree = "<group>";
@@ -757,6 +771,8 @@
 				3E332EA02091E84A001AB310 /* DotButtonModelProtocol.swift in Sources */,
 				3E3AD3F5208F340700F1347A /* DotButtonFieldView.swift in Sources */,
 				3E332E952091BF37001AB310 /* DotButtonModel.swift in Sources */,
+				35C0293B666B83FFD882E081 /* ColorRepositoryTestDouble.swift in Sources */,
+				35C022BC71D154B4955C436A /* DotButtonCountRepositoryDouble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,12 +782,12 @@
 			files = (
 				3E8D4D62208F010C00FE36E1 /* DotTapTests.swift in Sources */,
 				3E332E8E20917C6A001AB310 /* DotSheetResetModelTests.swift in Sources */,
-				3E332E922091986E001AB310 /* SpyDotSheetTestDouble.swift in Sources */,
 				3E332EA72091F105001AB310 /* DotFactoryTests.swift in Sources */,
 				3E332EA22091EAAF001AB310 /* DotButtonModelTests.swift in Sources */,
 				3E3AD4102090844900F1347A /* DotSheetModelTests.swift in Sources */,
 				3E332E9020919838001AB310 /* DotSheetModelFactoryTestDouble.swift in Sources */,
 				3E332EAA2091F170001AB310 /* ColorRepositoryTests.swift in Sources */,
+				35C02D94C449EA44364CB7AD /* DotSheetTestDouble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

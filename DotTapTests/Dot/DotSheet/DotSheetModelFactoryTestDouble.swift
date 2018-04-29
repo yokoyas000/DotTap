@@ -45,7 +45,7 @@ class StubDotSheetModelFactory: DotSheetModelFactoryProtocol {
 
     init(
         firstModel: DotSheetModelProtocol,
-        secondModel: DotSheetModelProtocol = StubDotSheetModel(firstState: .notCompare(dots: []))
+        secondModel: DotSheetModelProtocol = StubDotSheetModel(firstState: .hasNotCompared(dots: []))
         ) {
         self.firstModel = firstModel
         self.secondModel = secondModel

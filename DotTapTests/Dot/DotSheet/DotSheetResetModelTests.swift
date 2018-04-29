@@ -12,7 +12,7 @@ import RxCocoa
 
 class DotSheetResetModelTests: XCTestCase {
 
-    private let testInitState = DotSheetModelState.notCompare(
+    private let testInitState = DotSheetModelState.hasNotCompared(
         dots: [Dot(color: .lightBlue)]
     )
 
@@ -60,7 +60,7 @@ class DotSheetResetModelTests: XCTestCase {
     func testResetWhenAllCompared() {
         let testSheetModel = StubDotSheetModel(
             firstState: self.testInitState,
-            secondState: .allCompared(dots: [])
+            secondState: .allDidMatch(dots: [])
         )
         let sheetModelFactory = SpyDotSheetModelFactory(
             sheetModel: testSheetModel,
@@ -85,7 +85,7 @@ class DotSheetResetModelTests: XCTestCase {
         let sheetModelFactory = StubDotSheetModelFactory(
             firstModel: StubDotSheetModel(
                 firstState: self.testInitState,
-                secondState: .allCompared(dots: [])
+                secondState: .allDidMatch(dots: [])
             ),
             secondModel: StubDotSheetModel(
                 firstState: testState
@@ -105,14 +105,4 @@ class DotSheetResetModelTests: XCTestCase {
 
         XCTAssertEqual(actual, expected)
     }
-}
-
-class StubColorRepository: ColorRepositoryProtocol {
-    private(set) var colors: [Color]
-
-    init(colors: [Color] = []) {
-        self.colors = colors
-    }
-
-    func resetColors() {}
 }

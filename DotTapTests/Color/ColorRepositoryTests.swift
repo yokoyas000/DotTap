@@ -15,12 +15,12 @@ class DotRepositoryTests: XCTestCase {
         let minColorCount = 2
         let maxColorCount = 4
         let repository = ColorRepository(
-            minColorCount: minColorCount,
-            maxColorCount: maxColorCount
+            minCount: minColorCount,
+            maxCount: maxColorCount
         )
 
         for _ in 0..<10 {
-            repository.resetColors()
+            repository.resetColors(minCount: 2, maxCount: 4)
 
             let result = repository.colors.count >= minColorCount
                 && repository.colors.count <= maxColorCount
