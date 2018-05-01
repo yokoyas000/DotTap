@@ -7,7 +7,7 @@
 //
 
 protocol DotSheetModelFactoryProtocol {
-    func create(dotLength: Int, usingColors: [Color]) -> DotSheetModelProtocol
+    func create(dotCount: Int, usingColors: Set<Color>) -> DotSheetModelProtocol
 }
 
 struct DotSheetModelFactory: DotSheetModelFactoryProtocol {
@@ -20,9 +20,9 @@ struct DotSheetModelFactory: DotSheetModelFactoryProtocol {
         self.dotFactory = dotFactory
     }
     
-    func create(dotLength: Int, usingColors: [Color]) -> DotSheetModelProtocol {
+    func create(dotCount: Int, usingColors: Set<Color>) -> DotSheetModelProtocol {
         let dots = self.dotFactory.create(
-            length: dotLength,
+            count: dotCount,
             usingColors: usingColors
         )
         return DotSheetModel(baseDots: dots)

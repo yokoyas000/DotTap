@@ -9,38 +9,40 @@
 import Foundation
 
 protocol DotFactoryProtocol {
-    func create(length: Int, usingColors: [Color]) -> [Dot]
+    func create(count: Int, usingColors: Set<Color>) -> [Dot]
 }
 
 struct DotFactory: DotFactoryProtocol {
 
-    func create(length: Int, usingColors: [Color]) -> [Dot] {
+    func create(count: Int, usingColors: Set<Color>) -> [Dot] {
+        assert(usingColors.count > 0)
+
         var dots: [Dot] = usingColors.map { color in
             Dot(color: color)
         }
 
-        if length < usingColors.count {
-            let lessCount = usingColors.count - length
-            for _ in 0 ..< lessCount {
+        if count < dots.count {
+            let removeCount = dots.count - count
+            for _ in 0 ..< removeCount {
                 let randomDotsIndex = Int(arc4random_uniform(UInt32(dots.count)))
                 dots.remove(at: randomDotsIndex)
             }
         } else {
-            let moreAddCount = length - usingColors.count
-            for _ in 0 ..< moreAddCount {
-                let randomColorIndex = Int(arc4random_uniform(UInt32(usingColors.count)))
-                dots.append(Dot(color: usingColors[randomColorIndex]))
+            let addCount = count - dots.count
+            for _ in 0 ..< addCount {
+                let randomDotsIndex = Int(arc4random_uniform(UInt32(dots.count)))
+                dots.append(Dot(color: dots[randomDotsIndex].color))
             }
         }
 
-        var suffleDots: [Dot] = []
+        var shuffleDots: [Dot] = []
         for _ in 0 ..< dots.count {
             let i = Int(arc4random_uniform(UInt32(dots.count)))
-            suffleDots.append(dots[i])
+            shuffleDots.append(dots[i])
             dots.remove(at: i)
         }
 
-        return suffleDots
+        return shuffleDots
     }
 
 }

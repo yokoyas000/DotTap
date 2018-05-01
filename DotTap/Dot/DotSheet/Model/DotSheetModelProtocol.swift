@@ -11,15 +11,15 @@ import RxCocoa
 /**
  状態遷移:
 
- [hasNotCompared]
-        |-- compare() --> [compare(.match)]
-        |                        |-- compare() --> [compare(.match)]
-        |                        |-- compare() --> [compare(.unmatch)]
-        |                        |-- compare() --> [allDidMatch]
+ [.hasNotCompared]
+        |-- compare() --> [.compare(.match)]
+        |                        |-- compare() --> [.compare(.match)]
+        |                        |-- compare() --> [.compare(.unmatch)]
+        |                        +-- compare() --> [.allDidMatch]
         |
-        |-- compare() --> [compare(.unmatch)]
-                                 |-- compare() --> [compare(.match)]
-                                 |-- compare() --> [compare(.unmatch)]
+        +-- compare() --> [.compare(.unmatch)]
+                                 |-- compare() --> [.compare(.match)]
+                                 +-- compare() --> [.compare(.unmatch)]
  **/
 protocol DotSheetModelProtocol {
     var didChange: Driver<DotSheetModelState> { get }

@@ -9,16 +9,17 @@
 import RxCocoa
 import RxSwift
 
-class DotSheetResetModel: DotSheetModelProtocol {
+protocol DotSheetResetModelProtocol: DotSheetModelProtocol {}
 
-    typealias Depandency = (
-        innerModelFactory: DotSheetModelFactoryProtocol,
-        colorRepository: ColorRepositoryProtocol
-    )
 
-    private let dependency: Depandency
-    private var innerModel: DotSheetModelProtocol
-    private let relay: BehaviorRelay<DotSheetModelState> = BehaviorRelay<DotSheetModelState>(value: .hasNotCompared(dots: []))
+
+class DotSheetResetModel: DotSheetResetModelProtocol {
+
+    private let innerModelFactory: DotSheetModelFactoryProtocol
+    private let colorModel: UsingColorModelProtocol
+    private var innerModel: DotSheetModelProtocol? = nil
+    private let relay: BehaviorRelay<DotSheetModelState>
+        = BehaviorRelay<DotSheetModelState>(value: .hasNotCompared(dots: []))
     private let disposeBag = DisposeBag()
 
     var didChange: Driver<DotSheetModelState> {
@@ -30,43 +31,40 @@ class DotSheetResetModel: DotSheetModelProtocol {
     }
 
     init(
-        dependency: Depandency
+        sheetModelFactory: DotSheetModelFactoryProtocol,
+        bindTo colorModel: UsingColorModelProtocol
     ) {
-        self.dependency = dependency
-        // FIXME: ランダムにするなら Repository 化
-        let dotLength = DotSheet.maxUsingColorCount + 2
-        self.innerModel = dependency.innerModelFactory.create(
-            dotLength: dotLength,
-            usingColors: dependency.colorRepository.colors
-        )
+        self.innerModelFactory = sheetModelFactory
+        self.colorModel = colorModel
 
-        self.relay.subscribe(onNext: { [weak self] state in
-            switch state {
-            case .allDidMatch:
-                self?.reset()
-            default:
-                break
-            }
-        })
-        .disposed(by: self.disposeBag)
+        self.colorModel
+            .didChange.drive(onNext: { [weak self] colors in
+                self?.setInnerModel(colors: colors)
+            })
+            .disposed(by: self.disposeBag)
 
-        self.innerModel.didChange
-            .drive(self.relay)
+        self.relay
+            .subscribe(onNext: { [weak self] state in
+                guard case .allDidMatch = state else { return }
+                self?.colorModel.reset()
+            })
             .disposed(by: self.disposeBag)
     }
 
     func compare(color: Color) {
-        self.innerModel.compare(color: color)
+        self.innerModel?.compare(color: color)
     }
 
-    private func reset() {
+    private func setInnerModel(colors: Set<Color>) {
+        // FIXME: ランダムにするなら Repository 化
         let dotLength = DotSheet.maxUsingColorCount + 2
-        self.innerModel = self.dependency.innerModelFactory.create(
-            dotLength: dotLength,
-            usingColors: dependency.colorRepository.colors
+        self.innerModel = self.innerModelFactory.create(
+            dotCount: dotLength,
+            usingColors: colors
         )
-        self.innerModel.didChange
+        self.innerModel?.didChange
             .drive(self.relay)
             .disposed(by: self.disposeBag)
     }
+
 }
