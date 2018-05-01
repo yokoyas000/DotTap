@@ -1,136 +1,54 @@
 //
-//  DotButtonModel.swift
-//  DotTap
-//
-//  Created by yokoyas000 on 2018/04/25.
-//  Copyright © 2018年 yokoyas000. All rights reserved.
+// Created by yokoyas000 on 2018/04/29.
+// Copyright (c) 2018 yokoyas000. All rights reserved.
 //
 
-import RxCocoa
+protocol DotButtonModelProtocol {
+    func reset()
+}
+
+
+
+/**
+  ボタン数や表示されるドットの作成を行う
+  - 順序:
+    - ボタンの数を決める
+    - 使用する色を決める
+    - ボタンを作る
+ **/
 import RxSwift
+import RxCocoa
 
 class DotButtonModel: DotButtonModelProtocol {
-    typealias Dependency = (
-        colorRepository: ColorRepositoryProtocol,
-        buttonCountRepository: DotButtonCountRepositoryProtocol
-    )
 
-    private let dependency: Dependency
-    private let relay: BehaviorRelay<DotButtonModelState>
+    private let buttonCountModel: DotButtonCountModelProtocol
+    private let buttonColorModel: DotButtonColorModelProtocol
+    private let usingColorModel: UsingColorModelProtocol
     private let disposeBag = DisposeBag()
 
-    var didChange: Driver<DotButtonModelState> {
-        return self.relay.asDriver()
-    }
-
-    var currentButtons: DotButtonModelState.DotButtonState? {
-        switch self.relay.value {
-        case .notSet:
-            return nil
-        case let .resetColors(buttons: buttons),
-             let .resetCount(buttons: buttons):
-            return buttons
-        }
-    }
-
     init(
-        dependency: Dependency,
-        observe sheetModel: DotSheetModelProtocol
+        buttonCountModel: DotButtonCountModelProtocol,
+        buttonColorModel: DotButtonColorModelProtocol,
+        usingColorModel: UsingColorModelProtocol
     ) {
-        self.dependency = dependency
-        self.relay = BehaviorRelay<DotButtonModelState>(value: .notSet)
-        self.observe(sheetModel: sheetModel)
-    }
+        self.buttonCountModel = buttonCountModel
+        self.buttonColorModel = buttonColorModel
+        self.usingColorModel = usingColorModel
 
-    func restart(next sheetModel: DotSheetModelProtocol) {
-        self.observe(sheetModel: sheetModel)
-
-        // TODO: buttonRepository と colorRepository が reset されていることが前提となる
-        //       Repository の reset, どこでやるべきか...
-        self.relay.accept(.resetCount(buttons: self.buttonState()))
-    }
-
-    private func observe(sheetModel: DotSheetModelProtocol) {
-        // DotButtonModelState が .hasNotCompared(初期状態) になった時、ボタンの色を変更する
-        sheetModel.didChange
-                .drive(onNext: { [weak self] state in
-                    guard let this = self,
-                          case let .hasNotCompared = state else {
-                        return
-                    }
-
-                    this.relay.accept(
-                            .resetColors(buttons: this.buttonState())
-                    )
-                })
-                .disposed(by: self.disposeBag)
-    }
-
-    private func buttonState() -> DotButtonModelState.DotButtonState {
-        return DotButtonCountFactory.createDotButtonState(
-            colors: self.dependency.colorRepository.colors,
-            buttonCount: self.dependency.buttonCountRepository.count
-        )
-    }
-}
-
-extension DotButtonModel {
-
-    enum DotButtonCountFactory {
-
-        static func createDotButtonState(
-                colors: [Color],
-                buttonCount: DotButtonCount
-        ) -> DotButtonModelState.DotButtonState {
-            var buttonColors: [Color] = colors
-
-            // 色数がボタン数より少ない場合、同じ色のボタンを複数作る
-            let more = buttonCount.rawValue - colors.count
-            if more > 0 {
-                for _ in colors.count ..< (colors.count + more) {
-                    let random = Int(arc4random_uniform(UInt32(colors.count)))
-                    buttonColors.append(colors[random])
-                }
-            }
-
-            switch buttonCount {
-            case .four:
-                return DotButtonModelState.DotButtonState.four(
-                    colors: DotButtonModelState.DotButtonFourColors(
-                        one: buttonColors[0],
-                        two: buttonColors[1],
-                        three: buttonColors[2],
-                        four: buttonColors[3]
-                    )
+        // 使用する色が変わったらボタンの色も変える
+        self.usingColorModel.didChange.drive(onNext: { [weak self] colors in
+                guard let this = self else { return }
+                this.buttonColorModel.set(
+                    colors: colors,
+                    buttonCount: this.buttonCountModel.currentState
                 )
-            case .six:
-                return DotButtonModelState.DotButtonState.six(
-                    colors: DotButtonModelState.DotButtonSixColors(
-                        one: buttonColors[0],
-                        two: buttonColors[1],
-                        three: buttonColors[2],
-                        four: buttonColors[3],
-                        five: buttonColors[4],
-                        six: buttonColors[5]
-                    )
-                )
-            case .eight:
-                return DotButtonModelState.DotButtonState.eight(
-                    colors: DotButtonModelState.DotButtonEightColors(
-                        one: buttonColors[0],
-                        two: buttonColors[1],
-                        three: buttonColors[2],
-                        four: buttonColors[3],
-                        five: buttonColors[4],
-                        six: buttonColors[5],
-                        seven: buttonColors[6],
-                        eight: buttonColors[7]
-                    )
-                )
-            }
-        }
+            })
+            .disposed(by: self.disposeBag)
+    }
 
+    func reset() {
+        self.buttonCountModel.reset()
+        self.usingColorModel.reset()
     }
 
 }
-

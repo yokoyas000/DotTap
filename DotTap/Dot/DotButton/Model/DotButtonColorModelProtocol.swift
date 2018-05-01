@@ -17,6 +17,7 @@ import RxCocoa
  **/
 protocol DotButtonColorModelProtocol {
     var didChange: Driver<DotButtonColorModelState> { get }
+    var currentState: DotButtonColorModelState { get }
     func set(colors: Set<Color>, buttonCount: DotButtonCount)
 }
 

@@ -13,9 +13,22 @@ class DotButtonColorModel: DotButtonColorModelProtocol {
         return self.relay.asDriver()
     }
 
+    private(set) var currentState: DotButtonColorModelState {
+        get {
+            return self.relay.value
+        }
+        set {
+            self.relay.accept(newValue)
+        }
+    }
+
     func set(colors: Set<Color>, buttonCount: DotButtonCount) {
+        guard buttonCount.rawValue >= colors.count else {
+            return
+        }
+
         let buttonColor = DotButtonColorFactory.create(colors: colors, buttonCount: buttonCount)
-        self.relay.accept(.didSet(color: buttonColor))
+        self.currentState = .didSet(color: buttonColor)
     }
 }
 

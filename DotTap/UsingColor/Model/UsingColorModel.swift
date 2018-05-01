@@ -7,8 +7,13 @@ import RxCocoa
 
 class UsingColorModel: UsingColorModelProtocol {
 
-    private let colorRepository: ColorRepositoryProtocol
-    private let relay = BehaviorRelay<UsingColorModelState>(value: .notSet)
+    typealias Dependency = (
+        colorRepository: ColorRepositoryProtocol,
+        buttonCountModel: DotButtonCountModelProtocol
+    )
+
+    private let dependency: Dependency
+    private let relay: BehaviorRelay<UsingColorModelState>
 
     var didChange: Driver<UsingColorModelState> {
         return self.relay.asDriver()
@@ -26,18 +31,24 @@ class UsingColorModel: UsingColorModelProtocol {
 
     // - MARK: Initialize
 
-    init(dependency colorRepository: ColorRepositoryProtocol) {
-        self.colorRepository = colorRepository
-    }
+    init(
+        dependency: Dependency
+    ) {
+        self.dependency = dependency
 
-    func set(useTo buttonCount: DotButtonCount) {
-        let colors = self.colorRepository.get(
+        let buttonCount = dependency.buttonCountModel.currentState
+        let state = dependency.colorRepository.get(
             minCount: buttonCount.rawValue / 2,
             maxCount: buttonCount.rawValue
         )
+        self.relay = BehaviorRelay<UsingColorModelState>(value: state)
+    }
 
-        self.currentState = .didSet(
-            usingColors: colors
+    func reset() {
+        let buttonCount = self.dependency.buttonCountModel.currentState
+        self.currentState = self.dependency.colorRepository.get(
+            minCount: buttonCount.rawValue / 2,
+            maxCount: buttonCount.rawValue
         )
     }
 

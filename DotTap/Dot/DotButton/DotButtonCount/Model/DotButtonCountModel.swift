@@ -8,22 +8,17 @@ import RxCocoa
 class DotButtonCountModel: DotButtonCountModelProtocol {
 
     private let repository: DotButtonCountRepositoryProtocol
-    private let relay = BehaviorRelay<DotButtonCountModelState>(value: .notSet)
+    private let relay: BehaviorRelay<DotButtonCountModelState>
 
     var didChange: Driver<DotButtonCountModelState> {
         return self.relay.asDriver()
     }
 
-    var currentButtonCount: DotButtonCount? {
-        switch self.currentState {
-        case .notSet:
-            return nil
-        case let .didSet(buttonCount: buttonCount):
-            return buttonCount
-        }
+    var currentButtonCount: DotButtonCount {
+        return self.relay.value
     }
 
-    var currentState: DotButtonCountModelState {
+    private(set) var currentState: DotButtonCountModelState {
         get {
             return self.relay.value
         }
@@ -37,15 +32,13 @@ class DotButtonCountModel: DotButtonCountModelProtocol {
 
     init(dependency repository: DotButtonCountRepositoryProtocol) {
         self.repository = repository
-        self.relay.accept(
-            .didSet(buttonCount: self.repository.get())
-        )
+
+        let buttonCount = repository.get()
+        self.relay = BehaviorRelay<DotButtonCountModelState>(value: buttonCount)
     }
 
     func reset() {
-        self.relay.accept(
-            .didSet(buttonCount: self.repository.get())
-        )
+        self.currentState = self.repository.get()
     }
 
 }

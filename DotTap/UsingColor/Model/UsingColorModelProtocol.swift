@@ -5,24 +5,10 @@
 
 import RxCocoa
 
-
-/**
- 状態遷移:
-
- [.notSet]
-     |
-     +-- set() --> [.didSet]
-                       |
-                       +-- set() --> [.didSet]
-
- **/
 protocol UsingColorModelProtocol {
     var didChange: Driver<UsingColorModelState> { get }
-    func set(useTo: DotButtonCount)
+    var currentState: UsingColorModelState { get }
+    func reset()
 }
 
-enum UsingColorModelState {
-    case notSet
-    case didSet(usingColors: Set<Color>)
-}
-
+typealias UsingColorModelState =  Set<Color>

@@ -5,25 +5,11 @@
 
 import RxCocoa
 
-/**
- 状態遷移:
-
- [.notSet]
-    |
-    +-- reset() --> [.didSet(buttonCount:)]
-                    |
-                    +-- reset() --> [.didSet(buttonCount:)]
- **/
 protocol DotButtonCountModelProtocol {
     var didChange: Driver<DotButtonCountModelState> { get }
-    var currentCount: DotButtonCount? { get }
+    var currentState: DotButtonCountModelState { get }
 
     func reset()
 }
 
-enum DotButtonCountModelState {
-    // 初期状態
-    case notSet
-    // ボタンの数が決定した時
-    case didSet(buttonCount: DotButtonCount)
-}
+typealias DotButtonCountModelState = DotButtonCount
