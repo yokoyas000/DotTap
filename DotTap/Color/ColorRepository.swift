@@ -9,40 +9,30 @@
 import Foundation
 
 protocol ColorRepositoryProtocol {
-    var colors: [Color] { get }
-    func resetColors(minCount: Int, maxCount: Int)
+    func get(minCount: Int, maxCount: Int) -> Set<Color>
 }
+
+
 
 class ColorRepository: ColorRepositoryProtocol {
 
-    // 画面上で利用する色
-    private(set) var colors: [Color] = []
-
-    init(minCount: Int, maxCount: Int) {
+    func get(minCount: Int, maxCount: Int) -> Set<Color> {
         assert(Color.chromatic.count >= maxCount)
         assert(maxCount > minCount)
-
-        self.colors = self.create(minCount: minCount, maxCount: maxCount)
+        return self.selectRandom(minCount: minCount, maxCount: maxCount)
     }
 
-    func resetColors(minCount: Int, maxCount: Int) {
-        self.colors = self.create(minCount: minCount, maxCount: maxCount)
-    }
-
-    private func create(minCount: Int, maxCount: Int) -> [Color] {
+    private func selectRandom(minCount: Int, maxCount: Int) -> Set<Color> {
         var cases = Color.chromatic
-        var colors: [Color] = []
+        var colors = Set<Color>()
 
         for _ in 0 ..< minCount {
             let i = Int(arc4random_uniform(UInt32(cases.count)))
-            colors.append(cases[i])
+            colors.insert(cases[i])
 
             cases.remove(at: i)
         }
 
-        let randomCount = Int(arc4random_uniform(UInt32(minCount)))
-        let colorCount = randomCount > minCount ? randomCount : minCount
-
-        return colors[0...colorCount].map { $0 }
+        return colors
     }
 }

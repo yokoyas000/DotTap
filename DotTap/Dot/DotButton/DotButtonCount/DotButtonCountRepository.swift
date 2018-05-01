@@ -6,20 +6,17 @@
 //  Copyright © 2018年 yokoyas000. All rights reserved.
 //
 
+import Foundation
+
 protocol DotButtonCountRepositoryProtocol {
-    var count: DotButtonCount { get }
-    func reset(count: DotButtonCount)
+    func get() -> DotButtonCount
 }
 
+
+
 class DotButtonCountRepository: DotButtonCountRepositoryProtocol {
-    private(set) var count: DotButtonCount
-
-    init(count: DotButtonCount) {
-        assert(Color.chromatic.count >= count.rawValue)
-        self.count = count
-    }
-
-    func reset(count: DotButtonCount) {
-        self.count = count
+     func get() -> DotButtonCount {
+        let random = Int(arc4random_uniform(UInt32(DotButtonCount.cases.count)))
+        return DotButtonCount.cases[random]
     }
 }
