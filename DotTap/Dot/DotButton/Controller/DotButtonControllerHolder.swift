@@ -18,22 +18,22 @@ class DotButtonControllerHolder {
             sixButtonsView: SixDotButtonsViewProtocol,
             eightButtonsView: EightDotButtonsViewProtocol
         ),
-        depende buttonModel: DotButtonModelProtocol,
+        dependent buttonModel: DotButtonColorModelProtocol,
         command sheetModel: DotSheetModelProtocol
     ) {
         self.fourDotButtonsController = FourDotButtonsController(
             reactTo: views.fourButtonsView,
-            depende: buttonModel,
+            dependent: buttonModel,
             command: sheetModel
         )
         self.sixDotButtonsController = SixDotButtonsController(
             reactTo: views.sixButtonsView,
-            depende: buttonModel,
+            dependent: buttonModel,
             command: sheetModel
         )
         self.eightDotButtonsController = EightDotButtonsController(
             reactTo: views.eightButtonsView,
-            depende: buttonModel,
+            dependent: buttonModel,
             command: sheetModel
         )
     }

@@ -59,64 +59,63 @@ class DotButtonPassiveView {
 
     init(
         update views: Views,
-        observe model: DotButtonModelProtocol
+        observe models: (
+            buttonCountModel: DotButtonCountModelProtocol,
+            buttonColorModel: DotButtonColorModelProtocol
+        )
     ) {
         self.views = views
 
-        model.didChange
+        models.buttonCountModel.didChange
             .drive(onNext: { [weak self] state in
-                self?.update(by: state)
+
+            })
+            .disposed(by: self.disposeBag)
+
+        models.buttonColorModel.didChange
+            .drive(onNext: { [weak self] state in
+                self?.updateColor(by: state)
             })
             .disposed(by: self.disposeBag)
     }
 
-    private func update(by state: DotButtonModelState) {
-        switch state {
+    private func updateCount(by buttonState: DotButtonCountModelState) {
+        // TODO: priority変更
+        switch buttonState {
+        case .four:
+            return
+        case .six:
+            return
+        case .eight:
+            return
+        }
+    }
+
+    private func updateColor(by buttonState: DotButtonColorModelState) {
+        switch buttonState {
         case .notSet:
             return
-        case let .resetColors(buttons: buttons):
-            self.resetColors(by: buttons)
-        case let .resetCount(buttons: buttons):
-            self.resetCount(by: buttons)
-        }
-
-    }
-
-    private func resetColors(by buttonState: DotButtonModelState.DotButtonState) {
-        switch buttonState {
-        case let .four(colors: colors):
+        case let .didSet(.four(colors: colors)):
             self.updateFourButtons(colors: colors)
-        case let .six(colors: colors):
+        case let .didSet(.six(colors: colors)):
             self.updateSixButtons(colors: colors)
-        case let .eight(colors: colors):
+        case let .didSet(.eight(colors: colors)):
             self.updateEightButtons(colors: colors)
         }
     }
 
-    private func resetCount(by buttonState: DotButtonModelState.DotButtonState) {
-        // TODO: xib, priorityの変更
-        switch buttonState {
-        case let .four(colors: colors):
-            self.updateFourButtons(colors: colors)
-        case let .six(colors: colors):
-            self.updateSixButtons(colors: colors)
-        case let .eight(colors: colors):
-            self.updateEightButtons(colors: colors)
-        }
-    }
-
-    private func updateFourButtons(colors: DotButtonModelState.DotButtonFourColors) {
+    private func updateFourButtons(colors: DotButtonColorModelState.DotButtonFourColors) {
         self.views.fourButtonsView.button1.color = colors.one.value
         self.views.fourButtonsView.button2.color = colors.two.value
         self.views.fourButtonsView.button3.color = colors.three.value
         self.views.fourButtonsView.button4.color = colors.four.value
     }
 
-    private func updateSixButtons(colors: DotButtonModelState.DotButtonSixColors) {
+    private func updateSixButtons(colors: DotButtonColorModelState.DotButtonSixColors) {
         // TODO
     }
 
-    private func updateEightButtons(colors: DotButtonModelState.DotButtonEightColors) {
+    private func updateEightButtons(colors: DotButtonColorModelState.DotButtonEightColors) {
         // TODO
     }
 

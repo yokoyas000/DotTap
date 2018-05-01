@@ -1,5 +1,5 @@
 //
-//  SixDotButtonsController.swift
+//  EightDotButtonsController.swift
 //  DotTap
 //
 //  Created by yokoyas000 on 2018/04/27.
@@ -9,15 +9,15 @@
 import RxCocoa
 import RxSwift
 
-class SixDotButtonsController {
+class EightDotButtonsController {
 
     private let sheetModel: DotSheetModelProtocol
-    private let buttonModel: DotButtonModelProtocol
+    private let buttonModel: DotButtonColorModelProtocol
     private let disposeBag = DisposeBag()
 
     init(
-        reactTo view: SixDotButtonsViewProtocol,
-        depende buttonModel: DotButtonModelProtocol,
+        reactTo view: EightDotButtonsViewProtocol,
+        dependent buttonModel: DotButtonColorModelProtocol,
         command sheetModel: DotSheetModelProtocol
     ) {
         self.sheetModel = sheetModel
@@ -76,11 +76,28 @@ class SixDotButtonsController {
                 self?.sheetModel.compare(color: colors.six)
             })
             .disposed(by: self.disposeBag)
+
+        view.button7.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                guard let colors = self?.colors() else {
+                    return
+                }
+                self?.sheetModel.compare(color: colors.seven)
+            })
+            .disposed(by: self.disposeBag)
+
+        view.button8.rx.tap.asSignal()
+            .emit(onNext: { [weak self] in
+                guard let colors = self?.colors() else {
+                    return
+                }
+                self?.sheetModel.compare(color: colors.eight)
+            })
+            .disposed(by: self.disposeBag)
     }
 
-    private func colors() -> DotButtonModelState.DotButtonSixColors? {
-        if let current = self.buttonModel.currentButtons,
-            case let .six(colors: colors) = current {
+    private func colors() -> DotButtonColorModelState.DotButtonEightColors? {
+        if case let .didSet(.eight(colors: colors)) = self.buttonModel.currentState {
             return colors
         }
         return nil
