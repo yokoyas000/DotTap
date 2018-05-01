@@ -19,7 +19,7 @@ class UsingColorModelTests: XCTestCase {
         let usingColorModel = UsingColorModel(
             dependency: (
                 colorRepository: stubRepo,
-                buttonCountModel: StubDotButtonCountModel()
+                buttonCountModel: DotButtonCountModelStub(buttonCount: .four)
             )
         )
 
@@ -43,7 +43,7 @@ class UsingColorModelTests: XCTestCase {
         let usingColorModel = UsingColorModel(
             dependency: (
                 colorRepository: stubRepo,
-                buttonCountModel: StubDotButtonCountModel()
+                buttonCountModel: DotButtonCountModelStub(buttonCount: .four)
             )
         )
         usingColorModel.reset()

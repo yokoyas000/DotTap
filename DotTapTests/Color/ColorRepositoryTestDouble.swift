@@ -5,16 +5,14 @@
 
 @testable import DotTap
 
-
-
 class StubColorRepository: ColorRepositoryProtocol {
     private let firstColors: Set<Color>
-    private let secondColors: Set<Color>
+    private let secondColors: Set<Color>?
     private var calledCount = 0
 
     init(
         firstColors: Set<Color>,
-        secondColors: Set<Color> = []
+        secondColors: Set<Color>? = nil
     ) {
         self.firstColors = firstColors
         self.secondColors = secondColors
@@ -26,7 +24,7 @@ class StubColorRepository: ColorRepositoryProtocol {
             return self.firstColors
         }
 
-        return self.secondColors
+        return self.secondColors!
     }
 }
 
