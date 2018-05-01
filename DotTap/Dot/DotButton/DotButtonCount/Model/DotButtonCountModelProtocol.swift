@@ -16,7 +16,7 @@ import RxCocoa
  **/
 protocol DotButtonCountModelProtocol {
     var didChange: Driver<DotButtonCountModelState> { get }
-    var currentCount: DotButtonCount { get }
+    var currentCount: DotButtonCount? { get }
 
     func reset()
 }
