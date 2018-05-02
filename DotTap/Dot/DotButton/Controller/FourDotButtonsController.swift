@@ -16,7 +16,7 @@ class FourDotButtonsController {
     private let disposeBag = DisposeBag()
 
     init(
-        reactTo view: FourDotButtonsViewProtocol,
+        reactTo view: FourDotButtonsPassiveViewProtocol,
         dependent buttonModel: DotButtonColorModelProtocol,
         command sheetModel: DotSheetModelProtocol
     ) {

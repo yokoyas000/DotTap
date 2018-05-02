@@ -16,7 +16,7 @@ class EightDotButtonsController {
     private let disposeBag = DisposeBag()
 
     init(
-        reactTo view: EightDotButtonsViewProtocol,
+        reactTo view: EightDotButtonsPassiveViewProtocol,
         dependent buttonModel: DotButtonColorModelProtocol,
         command sheetModel: DotSheetModelProtocol
     ) {

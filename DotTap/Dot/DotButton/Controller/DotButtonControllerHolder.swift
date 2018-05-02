@@ -14,9 +14,9 @@ class DotButtonControllerHolder {
 
     init(
         reactTo views: (
-            fourButtonsView: FourDotButtonsViewProtocol,
-            sixButtonsView: SixDotButtonsViewProtocol,
-            eightButtonsView: EightDotButtonsViewProtocol
+            fourButtonsView: FourDotButtonsPassiveViewProtocol,
+            sixButtonsView: SixDotButtonsPassiveViewProtocol,
+            eightButtonsView: EightDotButtonsPassiveViewProtocol
         ),
         dependent buttonModel: DotButtonColorModelProtocol,
         command sheetModel: DotSheetModelProtocol

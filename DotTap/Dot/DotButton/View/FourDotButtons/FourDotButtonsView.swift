@@ -1,21 +1,17 @@
 //
-//  MainRootView.swift
-//  DotTap
-//
-//  Created by yokoyas000 on 2018/04/24.
+//  Created by yokoyas000 on 2018/05/02.
 //  Copyright © 2018年 yokoyas000. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class MainRootView: UIView {
+class FourDotButtonsView: UIView {
 
-    @IBOutlet weak var dotSheetView: DotSheetView!
-    @IBOutlet var fourDotButtonsView: FourDotButtonsView!
-    @IBOutlet weak var sixDotButtonsView: SixDotButtonsView!
-    @IBOutlet weak var eightDotButtonsView: EightDotButtonsView!
-    @IBOutlet var restartButton: RestartButton!
+    @IBOutlet weak var button1: DotButton!
+    @IBOutlet weak var button2: DotButton!
+    @IBOutlet weak var button3: DotButton!
+    @IBOutlet weak var button4: DotButton!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,13 +27,13 @@ class MainRootView: UIView {
         let className = String(describing: type(of: self))
         guard let view = Bundle(for: type(of: self))
             .loadNibNamed(className, owner: self, options: nil)?
-            .first as? UIView else {
+            .first as? UIView
+        else {
                 print("Failed to load \(className)")
                 return
         }
 
-        view.frame = self.frame
+        view.frame = self.bounds
         self.addSubview(view)
     }
-
 }

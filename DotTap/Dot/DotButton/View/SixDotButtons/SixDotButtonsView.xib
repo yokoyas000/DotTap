@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SixDotButtonsView" customModule="DotTap" customModuleProvider="target">
+            <connections>
+                <outlet property="button1" destination="Xt6-Is-qYu" id="Cbi-Gx-vJf"/>
+                <outlet property="button2" destination="FlU-c3-JSr" id="ATj-3i-qkv"/>
+                <outlet property="button3" destination="8eT-XG-Qgf" id="t0d-8y-QMi"/>
+                <outlet property="button4" destination="kNg-zC-4TQ" id="bwS-CV-Dgl"/>
+                <outlet property="button5" destination="CMR-8r-PW6" id="FKb-xj-4zb"/>
+                <outlet property="button6" destination="KlN-tN-x2U" id="svq-FW-dLI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mdg-Oc-MT5">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt6-Is-qYu" userLabel="Button1" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
+                    <rect key="frame" x="27" y="0.0" width="54" height="54.5"/>
+                    <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Xt6-Is-qYu" secondAttribute="height" multiplier="1:1" id="jzb-ui-2r6"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlU-c3-JSr" userLabel="Button2" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
+                    <rect key="frame" x="101" y="0.0" width="54" height="54"/>
+                    <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="FlU-c3-JSr" secondAttribute="height" multiplier="1:1" id="lUg-eg-jhT"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eT-XG-Qgf" userLabel="Button3" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="63" width="54" height="54"/>
+                    <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8eT-XG-Qgf" secondAttribute="height" multiplier="1:1" id="hvL-Ku-AnW"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNg-zC-4TQ" userLabel="Button4" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
+                    <rect key="frame" x="126" y="63" width="54" height="54"/>
+                    <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="kNg-zC-4TQ" secondAttribute="height" multiplier="1:1" id="peo-uV-Rdr"/>
+                    </constraints>
+                    <state key="normal" title=""/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMR-8r-PW6" userLabel="Button5" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
+                    <rect key="frame" x="27.5" y="126" width="54" height="54"/>
+                    <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="CMR-8r-PW6" secondAttribute="height" multiplier="1:1" id="bwo-8z-Jwg"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-tN-x2U" userLabel="Button6" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
+                    <rect key="frame" x="101" y="126" width="54" height="54"/>
+                    <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KlN-tN-x2U" secondAttribute="height" multiplier="1:1" id="PT6-24-2rV"/>
+                    </constraints>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="FlU-c3-JSr" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="1NF-zk-flC"/>
+                <constraint firstItem="8eT-XG-Qgf" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="4EM-UD-0tA"/>
+                <constraint firstItem="KlN-tN-x2U" firstAttribute="centerX" secondItem="FlU-c3-JSr" secondAttribute="centerX" id="8ow-zm-r5d"/>
+                <constraint firstItem="FlU-c3-JSr" firstAttribute="leading" secondItem="kNg-zC-4TQ" secondAttribute="leading" multiplier="0.8" id="9Ih-pc-C1V"/>
+                <constraint firstAttribute="bottom" secondItem="KlN-tN-x2U" secondAttribute="bottom" id="GXH-dT-37q"/>
+                <constraint firstItem="8eT-XG-Qgf" firstAttribute="leading" secondItem="mdg-Oc-MT5" secondAttribute="leading" id="IQc-uv-gQN"/>
+                <constraint firstItem="8eT-XG-Qgf" firstAttribute="centerY" secondItem="mdg-Oc-MT5" secondAttribute="centerY" id="KNs-Rv-sHe"/>
+                <constraint firstItem="KlN-tN-x2U" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="M84-HG-Z1N"/>
+                <constraint firstItem="FlU-c3-JSr" firstAttribute="top" secondItem="mdg-Oc-MT5" secondAttribute="top" id="RVh-i5-pgN"/>
+                <constraint firstAttribute="trailing" secondItem="kNg-zC-4TQ" secondAttribute="trailing" id="USS-Uq-E0E"/>
+                <constraint firstItem="kNg-zC-4TQ" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="W6q-Sy-JIE"/>
+                <constraint firstItem="CMR-8r-PW6" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="XTt-Ka-Tv9"/>
+                <constraint firstItem="kNg-zC-4TQ" firstAttribute="centerY" secondItem="mdg-Oc-MT5" secondAttribute="centerY" id="YOm-ls-928"/>
+                <constraint firstAttribute="bottom" secondItem="CMR-8r-PW6" secondAttribute="bottom" id="cN0-LH-cUK"/>
+                <constraint firstItem="Xt6-Is-qYu" firstAttribute="leading" secondItem="8eT-XG-Qgf" secondAttribute="trailing" multiplier="0.5" id="pBk-Kw-Uvn"/>
+                <constraint firstItem="Xt6-Is-qYu" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="xMb-2t-Ygs"/>
+                <constraint firstItem="Xt6-Is-qYu" firstAttribute="top" secondItem="mdg-Oc-MT5" secondAttribute="top" id="ygC-e9-HAw"/>
+                <constraint firstItem="CMR-8r-PW6" firstAttribute="centerX" secondItem="Xt6-Is-qYu" secondAttribute="centerX" id="yyi-NN-u1Y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-236" y="-179"/>
+        </view>
+    </objects>
+</document>
