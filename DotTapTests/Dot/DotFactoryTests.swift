@@ -15,7 +15,7 @@ class DotFactoryTests: XCTestCase {
     struct TestCase {
         let description: String
         let length: Int
-        let colors: [Color]
+        let colors: Set<Color>
     }
 
     func testCreate() {
@@ -39,7 +39,7 @@ class DotFactoryTests: XCTestCase {
 
         testCases.forEach { (line, testCase) in
             let dots = DotFactory().create(
-                length: testCase.length,
+                count: testCase.length,
                 usingColors: testCase.colors
             )
             let colors = NSOrderedSet(array: dots.map { $0.color })

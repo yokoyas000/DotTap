@@ -23,8 +23,8 @@ class RestartButtonController: RestartButtonControllerProtocol {
         self.model = model
 
         restartButton.rx.tap
-            .asDriver()
-            .drive(onNext: { [weak self] in
+            .asSignal()
+            .emit(onNext: { [weak self] in
                 self?.model.reset()
             })
             .disposed(by: self.disposeBag)

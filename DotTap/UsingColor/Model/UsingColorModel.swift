@@ -38,7 +38,7 @@ class UsingColorModel: UsingColorModelProtocol {
 
         let buttonCount = dependency.buttonCountModel.currentState
         let state = dependency.colorRepository.get(
-            minCount: buttonCount.rawValue / 2,
+            minCount: ColorCountFactory.createMinCount(maxCount: buttonCount.rawValue),
             maxCount: buttonCount.rawValue
         )
         self.relay = BehaviorRelay<UsingColorModelState>(value: state)
@@ -47,9 +47,20 @@ class UsingColorModel: UsingColorModelProtocol {
     func reset() {
         let buttonCount = self.dependency.buttonCountModel.currentState
         self.currentState = self.dependency.colorRepository.get(
-            minCount: buttonCount.rawValue / 2,
+            minCount: ColorCountFactory.createMinCount(maxCount: buttonCount.rawValue),
             maxCount: buttonCount.rawValue
         )
     }
 
+}
+
+extension UsingColorModel {
+    enum ColorCountFactory {
+        static func createMinCount(maxCount: Int) -> Int {
+            if maxCount <= 4 {
+                return 4
+            }
+            return maxCount - 2
+        }
+    }
 }

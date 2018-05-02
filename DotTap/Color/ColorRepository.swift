@@ -18,7 +18,7 @@ class ColorRepository: ColorRepositoryProtocol {
 
     func get(minCount: Int, maxCount: Int) -> Set<Color> {
         assert(Color.chromatic.count >= maxCount)
-        assert(maxCount > minCount)
+        assert(maxCount >= minCount)
         return self.selectRandom(minCount: minCount, maxCount: maxCount)
     }
 
@@ -26,7 +26,9 @@ class ColorRepository: ColorRepositoryProtocol {
         var cases = Color.chromatic
         var colors = Set<Color>()
 
-        for _ in 0 ..< minCount {
+        let random = Int(arc4random_uniform(UInt32(maxCount)))
+        let usingColorCount = random > minCount ? random : minCount
+        for _ in 0 ..< usingColorCount {
             let i = Int(arc4random_uniform(UInt32(cases.count)))
             colors.insert(cases[i])
 

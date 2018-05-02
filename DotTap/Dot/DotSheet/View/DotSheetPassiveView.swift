@@ -36,8 +36,9 @@ class DotSheetPassiveView {
             self.updateDotViews(dots: dots)
         case let .compare(.unmatch(dots: dots)):
             self.updateDotViews(dots: dots)
-        case let .allDidMatch(dots: dots):
-            self.updateDotViews(dots: dots)
+        case .allDidMatch:
+            // 何もしない
+            return
         }
     }
 

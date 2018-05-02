@@ -11,14 +11,14 @@ import RxCocoa
 class DotSheetModel: DotSheetModelProtocol {
     private let baseDots: [Dot]
     private var comparableDots: [ComparableDot] = []
-    private let replay: BehaviorRelay<DotSheetModelState>
+    private let relay: BehaviorRelay<DotSheetModelState>
 
     var didChange: Driver<DotSheetModelState> {
-        return self.replay.asDriver()
+        return self.relay.asDriver()
     }
 
     var currentState: DotSheetModelState {
-        return self.replay.value
+        return self.relay.value
     }
 
     init(baseDots: [Dot]) {
@@ -27,7 +27,7 @@ class DotSheetModel: DotSheetModelProtocol {
             return ComparableDot(color: dot.color, isDidMatch: false)
         }
 
-        self.replay = BehaviorRelay<DotSheetModelState>(
+        self.relay = BehaviorRelay<DotSheetModelState>(
             value: .hasNotCompared(dots: self.baseDots)
         )
     }
@@ -47,11 +47,11 @@ class DotSheetModel: DotSheetModelProtocol {
         self.comparableDots[index].isDidMatch = true
 
         if index == self.comparableDots.endIndex - 1 {
-            self.replay.accept(
+            self.relay.accept(
                 .allDidMatch(dots: self.comparableDots)
             )
         } else {
-            self.replay.accept(
+            self.relay.accept(
                 .compare(.match(dots: self.comparableDots))
             )
         }
@@ -59,7 +59,7 @@ class DotSheetModel: DotSheetModelProtocol {
     }
 
     private func unmatch() {
-        self.replay.accept(
+        self.relay.accept(
             .compare(.unmatch(dots: self.comparableDots))
         )
     }
