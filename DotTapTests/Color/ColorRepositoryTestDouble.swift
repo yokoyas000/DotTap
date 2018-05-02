@@ -5,7 +5,7 @@
 
 @testable import DotTap
 
-class StubColorRepository: ColorRepositoryProtocol {
+class ColorRepositoryStub: ColorRepositoryProtocol {
     private let firstColors: Set<Color>
     private let secondColors: Set<Color>?
     private var calledCount = 0
@@ -30,7 +30,7 @@ class StubColorRepository: ColorRepositoryProtocol {
 
 
 
-class SpyColorRepository: ColorRepositoryProtocol {
+class ColorRepositorySpy: ColorRepositoryProtocol {
 
     enum CallArgs {
         case get(minCount: Int, maxCount: Int)

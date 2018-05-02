@@ -9,6 +9,7 @@ import RxCocoa
 class UsingColorModelStub: UsingColorModelProtocol {
 
     private let relay: BehaviorRelay<UsingColorModelState>
+    private let colors: Set<Color>
 
     var didChange: Driver<UsingColorModelState> {
         return self.relay.asDriver()
@@ -18,10 +19,13 @@ class UsingColorModelStub: UsingColorModelProtocol {
     }
 
     init(colors: Set<Color>) {
+        self.colors = colors
         self.relay = BehaviorRelay<UsingColorModelState>(value: colors)
     }
 
-    func reset() {}
+    func reset() {
+        self.relay.accept(self.colors)
+    }
 }
 
 

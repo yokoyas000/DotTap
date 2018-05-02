@@ -14,7 +14,7 @@ class UsingColorModelTests: XCTestCase {
     // 状態: 初期化直後
     func testGetColorFromRepositoryWhenInitialize() {
         let expected: Set<Color> = [.lightBlue, .pink]
-        let stubRepo = StubColorRepository(firstColors: expected)
+        let stubRepo = ColorRepositoryStub(firstColors: expected)
 
         let usingColorModel = UsingColorModel(
             dependency: (
@@ -35,7 +35,7 @@ class UsingColorModelTests: XCTestCase {
     // 状態: UsingColorModel#reset() の後
     func testGetColorFromRepositoryWhenReset() {
         let expected: Set<Color> = [.lightBlue, .pink]
-        let stubRepo = StubColorRepository(
+        let stubRepo = ColorRepositoryStub(
             firstColors: [.orange],
             secondColors: expected
         )

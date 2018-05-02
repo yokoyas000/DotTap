@@ -8,36 +8,23 @@
 
 @testable import DotTap
 
-class SpyDotSheetModelFactory: DotSheetModelFactoryProtocol {
+class DotSheetModelFactorySpy: DotSheetModelFactoryProtocol {
 
     enum CallArgs {
-        case create(dotLength: Int, usingColors: [Color])
+        case create(dotCount: Int, usingColors: Set<Color>)
     }
 
-    private let sheetModel: DotSheetModelProtocol
-    private let secondModel: DotSheetModelProtocol?
-
-    init(
-        sheetModel: DotSheetModelProtocol,
-        secondModel: DotSheetModelProtocol?
-    ) {
-        self.sheetModel = sheetModel
-        self.secondModel = secondModel
-    }
+    init() {}
 
     private(set) var callArgs: [CallArgs] = []
 
-    func create(dotLength: Int, usingColors: [Color]) -> DotSheetModelProtocol {
-        self.callArgs.append(.create(dotLength: dotLength, usingColors: usingColors))
-
-        if self.callArgs.count == 2, let secondModel = self.secondModel {
-            return secondModel
-        }
-        return self.sheetModel
+    func create(dotCount: Int, usingColors: Set<Color>) -> DotSheetModelProtocol {
+        self.callArgs.append(.create(dotCount: dotCount, usingColors: usingColors))
+        return DotSheetModelStub(firstState: .hasNotCompared(dots: []))
     }
 }
 
-class StubDotSheetModelFactory: DotSheetModelFactoryProtocol {
+class DotSheetModelFactoryStub: DotSheetModelFactoryProtocol {
 
     private let firstModel: DotSheetModelProtocol
     private let secondModel: DotSheetModelProtocol
@@ -45,13 +32,13 @@ class StubDotSheetModelFactory: DotSheetModelFactoryProtocol {
 
     init(
         firstModel: DotSheetModelProtocol,
-        secondModel: DotSheetModelProtocol = StubDotSheetModel(firstState: .hasNotCompared(dots: []))
-        ) {
+        secondModel: DotSheetModelProtocol = DotSheetModelStub(firstState: .hasNotCompared(dots: []))
+    ) {
         self.firstModel = firstModel
         self.secondModel = secondModel
     }
 
-    func create(dotLength: Int, usingColors: [Color]) -> DotSheetModelProtocol {
+    func create(dotCount: Int, usingColors: Set<Color>) -> DotSheetModelProtocol {
         if self.createCount == 0 {
             self.createCount += 1
             return self.firstModel
