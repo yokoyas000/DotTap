@@ -10,21 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
-
-
-
-class StubDotButtonView: FourDotButtonsPassiveViewProtocol, SixDotButtonsPassiveViewProtocol, EightDotButtonsPassiveViewProtocol {
-    var button1: DotButton = DotButton()
-    var button2: DotButton = DotButton()
-    var button3: DotButton = DotButton()
-    var button4: DotButton = DotButton()
-    var button5: DotButton = DotButton()
-    var button6: DotButton = DotButton()
-    var button7: DotButton = DotButton()
-    var button8: DotButton = DotButton()
-}
-
 protocol DotButtonFieldPassiveViewProtocol {}
 
 
@@ -53,14 +38,19 @@ class DotButtonFieldPassiveView: DotButtonFieldPassiveViewProtocol {
     }
 
     private func updateCount(by buttonState: DotButtonCountModelState) {
-        // TODO: priority変更
         switch buttonState {
         case .four:
-            return
+            self.views.fourButtonsView.isHidden = false
+            self.views.sixButtonsView.isHidden = true
+            self.views.eightButtonsView.isHidden = true
         case .six:
-            return
+            self.views.fourButtonsView.isHidden = true
+            self.views.sixButtonsView.isHidden = false
+            self.views.eightButtonsView.isHidden = true
         case .eight:
-            return
+            self.views.fourButtonsView.isHidden = true
+            self.views.sixButtonsView.isHidden = true
+            self.views.eightButtonsView.isHidden = false
         }
     }
 
