@@ -27,11 +27,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opI-2M-CpD" customClass="DotSheetView" customModule="DotTap" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="35" width="375" height="128"/>
+                    <rect key="frame" x="40" y="35" width="295" height="120"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="1Br-20-EhA"/>
-                        <constraint firstAttribute="width" constant="375" placeholder="YES" id="KFT-AY-GY1" userLabel="placeHolderwidth = 375"/>
+                        <constraint firstAttribute="height" constant="120" id="1Br-20-EhA"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-aL-zkd" customClass="FourDotButtonsView" customModule="DotTap" customModuleProvider="target">
@@ -81,6 +80,8 @@
                 <constraint firstItem="Jg2-Dn-DFm" firstAttribute="top" secondItem="Omx-aL-zkd" secondAttribute="top" id="Jiy-7s-rfM"/>
                 <constraint firstItem="opI-2M-CpD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ldf-Ne-fcx"/>
                 <constraint firstItem="Omx-aL-zkd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NK7-zy-BAG"/>
+                <constraint firstItem="opI-2M-CpD" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-40" id="Ova-xW-e4V"/>
+                <constraint firstItem="opI-2M-CpD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="QEg-I1-LXF"/>
                 <constraint firstItem="Omx-aL-zkd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="R6y-SJ-hgg"/>
                 <constraint firstItem="0VW-Ol-CZ7" firstAttribute="width" secondItem="Omx-aL-zkd" secondAttribute="width" multiplier="1:3" id="SBj-d2-tS1"/>
                 <constraint firstItem="AwT-Ic-ODD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Xej-Kr-RRn"/>

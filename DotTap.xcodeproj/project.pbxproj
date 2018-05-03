@@ -12,10 +12,13 @@
 		35C022C6E678EBE05D6CCB79 /* DotButtonColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02F3C723AFFE66C6645FD /* DotButtonColorModel.swift */; };
 		35C022F29768FBFAE72AFDC6 /* RestartButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C024C317C7C27106896F07 /* RestartButtonController.swift */; };
 		35C0233E975C4949CF1A1E72 /* ColorRepositoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C027D2F4365117A5EDFF5E /* ColorRepositoryTestDouble.swift */; };
+		35C0244E578BE7234EEBCBDD /* DotSheetView+Calclate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0229FFE5CAE5B180B2030 /* DotSheetView+Calclate.swift */; };
 		35C024DA5E192C17DF05ADF9 /* DotButtonCountModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0246ABE2043C3C615564B /* DotButtonCountModelTests.swift */; };
+		35C0250141836FABA05AC462 /* DotCountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02B70E0AF9BF393867FDC /* DotCountRepository.swift */; };
 		35C025317C2A2649F18E55F8 /* UsingColorModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02140A771264B60D8A007 /* UsingColorModelProtocol.swift */; };
 		35C0268445990D96D4553C45 /* DotButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C023BC4A772A6A35AC5938 /* DotButtonModel.swift */; };
 		35C026CCEA272D8A9E62B7FD /* DotButtonCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C026A92CA0212261F75177 /* DotButtonCountModel.swift */; };
+		35C028DAD83F26DCF5C5E432 /* DotSheetView+CalculateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02EDCF5F30A231AC27F09 /* DotSheetView+CalculateTests.swift */; };
 		35C028F073DC632BD5B8DA5B /* DotButtonCountModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02821392C2C8F5C2F6020 /* DotButtonCountModelProtocol.swift */; };
 		35C02960F9A6AF49431A99D7 /* DotButtonColorModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02883CDA815226AA96440 /* DotButtonColorModelProtocol.swift */; };
 		35C02CF3647939B690C1E0E9 /* DotButtonControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02572C431FD114D4B0ED2 /* DotButtonControllerHolder.swift */; };
@@ -94,6 +97,7 @@
 		35C02140A771264B60D8A007 /* UsingColorModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingColorModelProtocol.swift; sourceTree = "<group>"; };
 		35C022359C16E299C5AE09B0 /* EightDotButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EightDotButtonsController.swift; sourceTree = "<group>"; };
 		35C02267ADE76969F1402397 /* FourDotButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourDotButtonsController.swift; sourceTree = "<group>"; };
+		35C0229FFE5CAE5B180B2030 /* DotSheetView+Calclate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DotSheetView+Calclate.swift"; sourceTree = "<group>"; };
 		35C022E3F7EE930165B39C7E /* SixDotButtonsPassiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixDotButtonsPassiveView.swift; sourceTree = "<group>"; };
 		35C02372D9B8680BAE92C5F6 /* DotButtonColorFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorFactoryTests.swift; sourceTree = "<group>"; };
 		35C023BC4A772A6A35AC5938 /* DotButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonModel.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		35C027D2F4365117A5EDFF5E /* ColorRepositoryTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorRepositoryTestDouble.swift; sourceTree = "<group>"; };
 		35C02821392C2C8F5C2F6020 /* DotButtonCountModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountModelProtocol.swift; sourceTree = "<group>"; };
 		35C02883CDA815226AA96440 /* DotButtonColorModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorModelProtocol.swift; sourceTree = "<group>"; };
+		35C02B70E0AF9BF393867FDC /* DotCountRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotCountRepository.swift; sourceTree = "<group>"; };
 		35C02B97D7F1E5053934C937 /* DotButtonColorModelTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorModelTestDouble.swift; sourceTree = "<group>"; };
 		35C02BA918991E228A4A7A3B /* DotButtonCountRepositoryTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountRepositoryTestDouble.swift; sourceTree = "<group>"; };
 		35C02C39F0ACE2D42B62EF71 /* DotButtonCountModelTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountModelTestDouble.swift; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 		35C02DD4D10B317F69713B09 /* EightDotButtonsPassiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EightDotButtonsPassiveView.swift; sourceTree = "<group>"; };
 		35C02EA4D9B3C4494E7D271E /* UsingColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingColorModel.swift; sourceTree = "<group>"; };
 		35C02EB25EC42C14B956BF7A /* SixDotButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixDotButtonsController.swift; sourceTree = "<group>"; };
+		35C02EDCF5F30A231AC27F09 /* DotSheetView+CalculateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DotSheetView+CalculateTests.swift"; sourceTree = "<group>"; };
 		35C02F3C723AFFE66C6645FD /* DotButtonColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorModel.swift; sourceTree = "<group>"; };
 		3E332E862090B925001AB310 /* DotSheetResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModel.swift; sourceTree = "<group>"; };
 		3E332E892091777A001AB310 /* DotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactory.swift; sourceTree = "<group>"; };
@@ -293,6 +299,7 @@
 				3E332ED920920A6C001AB310 /* DotSheet.swift */,
 				3E3AD4092090737300F1347A /* View */,
 				3E332E882090B9B5001AB310 /* Model */,
+				35C02B70E0AF9BF393867FDC /* DotCountRepository.swift */,
 			);
 			path = DotSheet;
 			sourceTree = "<group>";
@@ -334,6 +341,7 @@
 				3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */,
 				3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */,
 				3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */,
+				35C02EDCF5F30A231AC27F09 /* DotSheetView+CalculateTests.swift */,
 			);
 			path = DotSheet;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 				3E3AD401208F37BC00F1347A /* DotSheetView.swift */,
 				3E3AD3FF208F36FA00F1347A /* DotView.swift */,
 				3E3AD40B209073BB00F1347A /* DotViewFactory.swift */,
+				35C0229FFE5CAE5B180B2030 /* DotSheetView+Calclate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -754,6 +763,8 @@
 				35C02DB059F8DD41E0A43518 /* DotButtonCountRepositoryTestDouble.swift in Sources */,
 				35C02F91248816C307667518 /* SixDotButtonsPassiveView.swift in Sources */,
 				35C02FF0891606A1EEC434F6 /* EightDotButtonsPassiveView.swift in Sources */,
+				35C0244E578BE7234EEBCBDD /* DotSheetView+Calclate.swift in Sources */,
+				35C0250141836FABA05AC462 /* DotCountRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +787,7 @@
 				35C02D833B8CD70AD8732660 /* DotButtonColorFactoryTests.swift in Sources */,
 				35C0223F0877BFD933028C8C /* DotButtonColorModelTestDouble.swift in Sources */,
 				35C02DCD375143601C24F360 /* UsingColorModelTestDouble.swift in Sources */,
+				35C028DAD83F26DCF5C5E432 /* DotSheetView+CalculateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

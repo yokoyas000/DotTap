@@ -28,15 +28,6 @@ class ViewController: UIViewController {
 
         // TODO: stub
         //let buttonCountRepository = DotButtonCountRepository()
-        class StubDotButtonRepository: DotButtonCountRepositoryProtocol {
-            let counts: [DotButtonCount] = [.four, .six, .eight]
-            var calledCount = 0
-            func get() -> DotButtonCount {
-                let i = (calledCount % 3)
-                calledCount += 1
-                return counts[i]
-            }
-        }
         let buttonCountRepository = StubDotButtonRepository()
         let buttonCountModel = DotButtonCountModel(dependency: buttonCountRepository)
         self.buttonPassiveView = DotButtonFieldPassiveView(
@@ -95,10 +86,15 @@ class ViewController: UIViewController {
                 buttonCountModel: buttonCountModel
             )
         )
+
+        // TODO: stub
+        //let dotCountRepository = DotCountRepository()
+        let dotCountRepository = StubDotCountRepository()
         let sheetModel = DotSheetResetModel(
             sheetModelFactory: DotSheetModelFactory(
                 dotFactory: DotFactory()
             ),
+            dotCountRepository: dotCountRepository,
             bindTo: usingColorModel
         )
         self.sheetPassiveView = DotSheetPassiveView(
@@ -127,4 +123,28 @@ class ViewController: UIViewController {
 
     }
 
+}
+
+extension ViewController {
+    class StubDotButtonRepository: DotButtonCountRepositoryProtocol {
+        private let counts: [DotButtonCount] = [.four, .six, .eight]
+        private var calledCount = 0
+
+        func get() -> DotButtonCount {
+            let i = (calledCount % 3)
+            calledCount += 1
+            return counts[i]
+        }
+    }
+
+    class StubDotCountRepository: DotCountRepositoryProtocol {
+        private let count: [Int] = [6, 8]
+        private var calledCount = 0
+
+        func get(minCount: Int, maxCount: Int) -> Int {
+            let i = calledCount % count.count
+            calledCount += 1
+            return count[i]
+        }
+    }
 }

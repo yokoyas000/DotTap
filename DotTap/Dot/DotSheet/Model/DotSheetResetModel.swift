@@ -11,10 +11,9 @@ import RxSwift
 
 protocol DotSheetResetModelProtocol: DotSheetModelProtocol {}
 
-
-
 class DotSheetResetModel: DotSheetResetModelProtocol {
 
+    private let dotCountRepository: DotCountRepositoryProtocol
     private let innerModelFactory: DotSheetModelFactoryProtocol
     private let colorModel: UsingColorModelProtocol
     private var innerModel: DotSheetModelProtocol? = nil
@@ -32,8 +31,10 @@ class DotSheetResetModel: DotSheetResetModelProtocol {
 
     init(
         sheetModelFactory: DotSheetModelFactoryProtocol,
+        dotCountRepository: DotCountRepositoryProtocol,
         bindTo colorModel: UsingColorModelProtocol
     ) {
+        self.dotCountRepository = dotCountRepository
         self.innerModelFactory = sheetModelFactory
         self.colorModel = colorModel
 
@@ -56,8 +57,10 @@ class DotSheetResetModel: DotSheetResetModelProtocol {
     }
 
     private func setInnerModel(colors: Set<Color>) {
-        // FIXME: ランダムにするなら Repository 化
-        let dotLength = DotSheet.maxUsingColorCount + 2
+        let dotLength = self.dotCountRepository.get(
+            minCount: colors.count,
+            maxCount: colors.count + 2
+        )
         self.innerModel = self.innerModelFactory.create(
             dotCount: dotLength,
             usingColors: colors
