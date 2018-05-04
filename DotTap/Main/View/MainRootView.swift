@@ -8,11 +8,15 @@
 
 import UIKit
 
+@IBDesignable
 class MainRootView: UIView {
 
     @IBOutlet weak var dotSheetView: DotSheetView!
-    @IBOutlet weak var dotButtonFieldView: DotButtonFieldView!
-    
+    @IBOutlet var fourDotButtonsView: FourDotButtonsView!
+    @IBOutlet weak var sixDotButtonsView: SixDotButtonsView!
+    @IBOutlet weak var eightDotButtonsView: EightDotButtonsView!
+    @IBOutlet var restartButton: RestartButton!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.loadFromNib()

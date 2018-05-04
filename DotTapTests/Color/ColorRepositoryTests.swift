@@ -11,20 +11,25 @@ import XCTest
 
 class DotRepositoryTests: XCTestCase {
 
+    struct TestCase {
+        let min: Int
+        let max: Int
+    }
+
     func testColors() {
-        let minColorCount = 2
-        let maxColorCount = 4
-        let repository = ColorRepository(
-            minColorCount: minColorCount,
-            maxColorCount: maxColorCount
-        )
+        let testCases: [UInt: TestCase] = [
+            #line: TestCase(min: 2, max: 4),
+            #line: TestCase(min: 3, max: 6),
+            #line: TestCase(min: 4, max: 8),
+        ]
+        let repository = ColorRepository()
 
-        for _ in 0..<10 {
-            repository.resetColors()
+        testCases.forEach { (line, testCase) in
+            let colors = repository.get(minCount: testCase.min, maxCount: testCase.max)
 
-            let result = repository.colors.count >= minColorCount
-                && repository.colors.count <= maxColorCount
-            XCTAssert(result, "colors.count: \(repository.colors.count)")
+            let result = colors.count >= testCase.min
+                && colors.count <= testCase.max
+            XCTAssert(result, "colors.count: \(colors.count)")
         }
 
     }

@@ -6,36 +6,52 @@
 //  Copyright © 2018年 yokoyas000. All rights reserved.
 //
 
+import UIKit
 import RxSwift
 import RxCocoa
 
-class DotButtonPassiveView {
+protocol DotButtonFieldPassiveViewProtocol {}
 
-    typealias Views = [DotButton]
 
+
+class DotButtonFieldPassiveView: DotButtonFieldPassiveViewProtocol {
+
+    typealias Views = (
+        fourButtonsView: UIView,
+        sixButtonsView: UIView,
+        eightButtonsView: UIView
+    )
     private let views: Views
     private let disposeBag = DisposeBag()
 
     init(
         update views: Views,
-        observe model: DotButtonModelProtocol
+        observe buttonCountModel: DotButtonCountModelProtocol
     ) {
         self.views = views
 
-        model.didChange
-            .drive(onNext: { state in
-                self.update(by: state)
+        buttonCountModel.didChange
+            .drive(onNext: { [weak self] state in
+                self?.updateCount(by: state)
             })
             .disposed(by: self.disposeBag)
     }
 
-    private func update(by state: DotButtonModelState) {
-        guard self.views.count == state.count else {
-            return
-        }
-
-        state.enumerated().forEach { i, color in
-            self.views[i].color = color.value
+    private func updateCount(by buttonState: DotButtonCountModelState) {
+        switch buttonState {
+        case .four:
+            self.views.fourButtonsView.isHidden = false
+            self.views.sixButtonsView.isHidden = true
+            self.views.eightButtonsView.isHidden = true
+        case .six:
+            self.views.fourButtonsView.isHidden = true
+            self.views.sixButtonsView.isHidden = false
+            self.views.eightButtonsView.isHidden = true
+        case .eight:
+            self.views.fourButtonsView.isHidden = true
+            self.views.sixButtonsView.isHidden = true
+            self.views.eightButtonsView.isHidden = false
         }
     }
+
 }

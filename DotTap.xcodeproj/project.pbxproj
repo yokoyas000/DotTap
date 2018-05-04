@@ -7,39 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35C0211ED18E2EBBCB06F9C3 /* UsingColorModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02C6912AFD8A05324643D /* UsingColorModelTests.swift */; };
+		35C0223F0877BFD933028C8C /* DotButtonColorModelTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02B97D7F1E5053934C937 /* DotButtonColorModelTestDouble.swift */; };
+		35C022C6E678EBE05D6CCB79 /* DotButtonColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02F3C723AFFE66C6645FD /* DotButtonColorModel.swift */; };
+		35C022F29768FBFAE72AFDC6 /* RestartButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C024C317C7C27106896F07 /* RestartButtonController.swift */; };
+		35C0233E975C4949CF1A1E72 /* ColorRepositoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C027D2F4365117A5EDFF5E /* ColorRepositoryTestDouble.swift */; };
+		35C0244E578BE7234EEBCBDD /* DotSheetView+Calclate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0229FFE5CAE5B180B2030 /* DotSheetView+Calclate.swift */; };
+		35C024DA5E192C17DF05ADF9 /* DotButtonCountModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0246ABE2043C3C615564B /* DotButtonCountModelTests.swift */; };
+		35C0250141836FABA05AC462 /* DotCountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02B70E0AF9BF393867FDC /* DotCountRepository.swift */; };
+		35C025317C2A2649F18E55F8 /* UsingColorModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02140A771264B60D8A007 /* UsingColorModelProtocol.swift */; };
+		35C0268445990D96D4553C45 /* DotButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C023BC4A772A6A35AC5938 /* DotButtonModel.swift */; };
+		35C026CCEA272D8A9E62B7FD /* DotButtonCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C026A92CA0212261F75177 /* DotButtonCountModel.swift */; };
+		35C028DAD83F26DCF5C5E432 /* DotSheetView+CalculateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02EDCF5F30A231AC27F09 /* DotSheetView+CalculateTests.swift */; };
+		35C028F073DC632BD5B8DA5B /* DotButtonCountModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02821392C2C8F5C2F6020 /* DotButtonCountModelProtocol.swift */; };
+		35C02960F9A6AF49431A99D7 /* DotButtonColorModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02883CDA815226AA96440 /* DotButtonColorModelProtocol.swift */; };
+		35C02CF3647939B690C1E0E9 /* DotButtonControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02572C431FD114D4B0ED2 /* DotButtonControllerHolder.swift */; };
+		35C02D833B8CD70AD8732660 /* DotButtonColorFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02372D9B8680BAE92C5F6 /* DotButtonColorFactoryTests.swift */; };
+		35C02D94C449EA44364CB7AD /* DotSheetTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C024C539D8C43C6B097A19 /* DotSheetTestDouble.swift */; };
+		35C02DB059F8DD41E0A43518 /* DotButtonCountRepositoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02BA918991E228A4A7A3B /* DotButtonCountRepositoryTestDouble.swift */; };
+		35C02DCD375143601C24F360 /* UsingColorModelTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02CC504CF64B9975F348B /* UsingColorModelTestDouble.swift */; };
+		35C02DE7326649F35542E178 /* DotButtonCountModelTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02C39F0ACE2D42B62EF71 /* DotButtonCountModelTestDouble.swift */; };
+		35C02DEC239E76F9D4367ADC /* UsingColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02EA4D9B3C4494E7D271E /* UsingColorModel.swift */; };
+		35C02E5ECA037C67104485FA /* SixDotButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02EB25EC42C14B956BF7A /* SixDotButtonsController.swift */; };
+		35C02F13147723A66AD25C7A /* FourDotButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02267ADE76969F1402397 /* FourDotButtonsController.swift */; };
+		35C02F91248816C307667518 /* SixDotButtonsPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C022E3F7EE930165B39C7E /* SixDotButtonsPassiveView.swift */; };
+		35C02FD170EBE2FF229023EF /* EightDotButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C022359C16E299C5AE09B0 /* EightDotButtonsController.swift */; };
+		35C02FF0891606A1EEC434F6 /* EightDotButtonsPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02DD4D10B317F69713B09 /* EightDotButtonsPassiveView.swift */; };
 		3E332E872090B925001AB310 /* DotSheetResetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E862090B925001AB310 /* DotSheetResetModel.swift */; };
 		3E332E8A2091777A001AB310 /* DotFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E892091777A001AB310 /* DotFactory.swift */; };
 		3E332E8E20917C6A001AB310 /* DotSheetResetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */; };
 		3E332E9020919838001AB310 /* DotSheetModelFactoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */; };
-		3E332E922091986E001AB310 /* SpyDotSheetTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */; };
-		3E332E952091BF37001AB310 /* DotButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E942091BF37001AB310 /* DotButtonModel.swift */; };
 		3E332E9B2091C468001AB310 /* DotSheetModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9A2091C468001AB310 /* DotSheetModelFactory.swift */; };
 		3E332E9E2091C4BE001AB310 /* ColorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9D2091C4BE001AB310 /* ColorRepository.swift */; };
-		3E332EA02091E84A001AB310 /* DotButtonModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */; };
 		3E332EA22091EAAF001AB310 /* DotButtonModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332EA12091EAAF001AB310 /* DotButtonModelTests.swift */; };
 		3E332EA72091F105001AB310 /* DotFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332EA62091F105001AB310 /* DotFactoryTests.swift */; };
 		3E332EAA2091F170001AB310 /* ColorRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332EA92091F170001AB310 /* ColorRepositoryTests.swift */; };
-		3E332ED82092001C001AB310 /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E332ED72092001C001AB310 /* MirrorDiffKit.framework */; };
 		3E332EDA20920A6C001AB310 /* DotSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E332ED920920A6C001AB310 /* DotSheet.swift */; };
 		3E3AD3F1208F2D4300F1347A /* DotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F0208F2D4300F1347A /* DotButton.swift */; };
-		3E3AD3F3208F329C00F1347A /* DotButtonFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F2208F329C00F1347A /* DotButtonFieldView.xib */; };
-		3E3AD3F5208F340700F1347A /* DotButtonFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F4208F340700F1347A /* DotButtonFieldView.swift */; };
 		3E3AD3F9208F352300F1347A /* MainRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AD3F8208F352300F1347A /* MainRootView.xib */; };
 		3E3AD3FB208F353500F1347A /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3FA208F353500F1347A /* MainRootView.swift */; };
 		3E3AD3FE208F36DF00F1347A /* DotSheetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3AD3FD208F36DF00F1347A /* DotSheetView.xib */; };
 		3E3AD400208F36FA00F1347A /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD3FF208F36FA00F1347A /* DotView.swift */; };
 		3E3AD402208F37BC00F1347A /* DotSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD401208F37BC00F1347A /* DotSheetView.swift */; };
 		3E3AD40420905DEB00F1347A /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40320905DEB00F1347A /* Dot.swift */; };
-		3E3AD40620905EAD00F1347A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AD40520905EAD00F1347A /* SnapKit.framework */; };
 		3E3AD4082090735500F1347A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4072090735500F1347A /* Color.swift */; };
 		3E3AD40C209073BB00F1347A /* DotViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40B209073BB00F1347A /* DotViewFactory.swift */; };
 		3E3AD40E2090741D00F1347A /* DotSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40D2090741D00F1347A /* DotSheetModel.swift */; };
 		3E3AD4102090844900F1347A /* DotSheetModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */; };
-		3E3AD41220908DBE00F1347A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AD41120908DBE00F1347A /* RxTest.framework */; };
-		3E3AD41320908DCB00F1347A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */; };
 		3E3AD4162090983000F1347A /* DotSheetModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4152090983000F1347A /* DotSheetModelProtocol.swift */; };
 		3E3AD41D2090A57400F1347A /* DotSheetPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD41C2090A57400F1347A /* DotSheetPassiveView.swift */; };
 		3E3AD4212090B3D700F1347A /* DotButtonPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */; };
+		3E6CD52620997B5400890894 /* FourDotButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CD52520997B5400890894 /* FourDotButtonsView.swift */; };
+		3E6CD52820997B6000890894 /* SixDotButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CD52720997B6000890894 /* SixDotButtonsView.swift */; };
+		3E6CD52A20997B7C00890894 /* EightDotButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CD52920997B7C00890894 /* EightDotButtonsView.swift */; };
+		3E6CD52C20997D2A00890894 /* FourDotButtonsPassiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CD52B20997D2A00890894 /* FourDotButtonsPassiveView.swift */; };
 		3E8D4D4D208F010C00FE36E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D4C208F010C00FE36E1 /* AppDelegate.swift */; };
 		3E8D4D4F208F010C00FE36E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D4E208F010C00FE36E1 /* ViewController.swift */; };
 		3E8D4D52208F010C00FE36E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D4D50208F010C00FE36E1 /* Main.storyboard */; };
@@ -47,9 +68,12 @@
 		3E8D4D57208F010C00FE36E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8D4D55208F010C00FE36E1 /* LaunchScreen.storyboard */; };
 		3E8D4D62208F010C00FE36E1 /* DotTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D61208F010C00FE36E1 /* DotTapTests.swift */; };
 		3E8D4D6D208F010C00FE36E1 /* DotTapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D4D6C208F010C00FE36E1 /* DotTapUITests.swift */; };
-		3E8D4D7C208F039F00FE36E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */; };
-		3E8D4D7E208F03B300FE36E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */; };
-		3EC3C80F20921DA300FD8E65 /* DotButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */; };
+		3EC0D5902099BBE1005964FE /* EightDotButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC0D58F2099BBE1005964FE /* EightDotButtonsView.xib */; };
+		3EC3C81320922B9300FD8E65 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C81220922B9300FD8E65 /* RestartButton.swift */; };
+		3EC3C8172092445C00FD8E65 /* DotButtonCountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C8162092445C00FD8E65 /* DotButtonCountRepository.swift */; };
+		3EC3C8192092447D00FD8E65 /* DotButtonCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C8182092447D00FD8E65 /* DotButtonCount.swift */; };
+		3ECA3CED2099A6BF002CE63A /* FourDotButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3151209991AE003F104A /* FourDotButtonsView.xib */; };
+		3ECB314F20999167003F104A /* SixDotButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB314E20999167003F104A /* SixDotButtonsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,69 +94,60 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35C02140A771264B60D8A007 /* UsingColorModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingColorModelProtocol.swift; sourceTree = "<group>"; };
+		35C022359C16E299C5AE09B0 /* EightDotButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EightDotButtonsController.swift; sourceTree = "<group>"; };
+		35C02267ADE76969F1402397 /* FourDotButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourDotButtonsController.swift; sourceTree = "<group>"; };
+		35C0229FFE5CAE5B180B2030 /* DotSheetView+Calclate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DotSheetView+Calclate.swift"; sourceTree = "<group>"; };
+		35C022E3F7EE930165B39C7E /* SixDotButtonsPassiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixDotButtonsPassiveView.swift; sourceTree = "<group>"; };
+		35C02372D9B8680BAE92C5F6 /* DotButtonColorFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorFactoryTests.swift; sourceTree = "<group>"; };
+		35C023BC4A772A6A35AC5938 /* DotButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonModel.swift; sourceTree = "<group>"; };
+		35C0246ABE2043C3C615564B /* DotButtonCountModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountModelTests.swift; sourceTree = "<group>"; };
+		35C024C317C7C27106896F07 /* RestartButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartButtonController.swift; sourceTree = "<group>"; };
+		35C024C539D8C43C6B097A19 /* DotSheetTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotSheetTestDouble.swift; sourceTree = "<group>"; };
+		35C02572C431FD114D4B0ED2 /* DotButtonControllerHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonControllerHolder.swift; sourceTree = "<group>"; };
+		35C026A92CA0212261F75177 /* DotButtonCountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountModel.swift; sourceTree = "<group>"; };
+		35C027D2F4365117A5EDFF5E /* ColorRepositoryTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorRepositoryTestDouble.swift; sourceTree = "<group>"; };
+		35C02821392C2C8F5C2F6020 /* DotButtonCountModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountModelProtocol.swift; sourceTree = "<group>"; };
+		35C02883CDA815226AA96440 /* DotButtonColorModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorModelProtocol.swift; sourceTree = "<group>"; };
+		35C02B70E0AF9BF393867FDC /* DotCountRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotCountRepository.swift; sourceTree = "<group>"; };
+		35C02B97D7F1E5053934C937 /* DotButtonColorModelTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorModelTestDouble.swift; sourceTree = "<group>"; };
+		35C02BA918991E228A4A7A3B /* DotButtonCountRepositoryTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountRepositoryTestDouble.swift; sourceTree = "<group>"; };
+		35C02C39F0ACE2D42B62EF71 /* DotButtonCountModelTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonCountModelTestDouble.swift; sourceTree = "<group>"; };
+		35C02C6912AFD8A05324643D /* UsingColorModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingColorModelTests.swift; sourceTree = "<group>"; };
+		35C02CC504CF64B9975F348B /* UsingColorModelTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingColorModelTestDouble.swift; sourceTree = "<group>"; };
+		35C02DD4D10B317F69713B09 /* EightDotButtonsPassiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EightDotButtonsPassiveView.swift; sourceTree = "<group>"; };
+		35C02EA4D9B3C4494E7D271E /* UsingColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingColorModel.swift; sourceTree = "<group>"; };
+		35C02EB25EC42C14B956BF7A /* SixDotButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixDotButtonsController.swift; sourceTree = "<group>"; };
+		35C02EDCF5F30A231AC27F09 /* DotSheetView+CalculateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DotSheetView+CalculateTests.swift"; sourceTree = "<group>"; };
+		35C02F3C723AFFE66C6645FD /* DotButtonColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonColorModel.swift; sourceTree = "<group>"; };
 		3E332E862090B925001AB310 /* DotSheetResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModel.swift; sourceTree = "<group>"; };
 		3E332E892091777A001AB310 /* DotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactory.swift; sourceTree = "<group>"; };
 		3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModelTests.swift; sourceTree = "<group>"; };
 		3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactoryTestDouble.swift; sourceTree = "<group>"; };
-		3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyDotSheetTestDouble.swift; sourceTree = "<group>"; };
-		3E332E942091BF37001AB310 /* DotButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonModel.swift; sourceTree = "<group>"; };
 		3E332E9A2091C468001AB310 /* DotSheetModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactory.swift; sourceTree = "<group>"; };
 		3E332E9D2091C4BE001AB310 /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
-		3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModelProtocol.swift; sourceTree = "<group>"; };
 		3E332EA12091EAAF001AB310 /* DotButtonModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModelTests.swift; sourceTree = "<group>"; };
 		3E332EA62091F105001AB310 /* DotFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactoryTests.swift; sourceTree = "<group>"; };
 		3E332EA92091F170001AB310 /* ColorRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepositoryTests.swift; sourceTree = "<group>"; };
-		3E332EAF20920011001AB310 /* DotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButton.swift; sourceTree = "<group>"; };
-		3E332EB020920011001AB310 /* DotButtonFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotButtonFieldView.xib; sourceTree = "<group>"; };
-		3E332EB120920011001AB310 /* DotButtonPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonPassiveView.swift; sourceTree = "<group>"; };
-		3E332EB220920011001AB310 /* DotButtonFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonFieldView.swift; sourceTree = "<group>"; };
-		3E332EB320920011001AB310 /* DotButtonModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModelProtocol.swift; sourceTree = "<group>"; };
-		3E332EB420920011001AB310 /* DotButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonModel.swift; sourceTree = "<group>"; };
-		3E332EB520920011001AB310 /* DotColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotColorModel.swift; sourceTree = "<group>"; };
-		3E332EB720920011001AB310 /* DotSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetController.swift; sourceTree = "<group>"; };
-		3E332EB920920011001AB310 /* DotSheetModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelProtocol.swift; sourceTree = "<group>"; };
-		3E332EBA20920011001AB310 /* DotSheetResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetResetModel.swift; sourceTree = "<group>"; };
-		3E332EBB20920011001AB310 /* DotSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModel.swift; sourceTree = "<group>"; };
-		3E332EBC20920011001AB310 /* DotSheetModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelFactory.swift; sourceTree = "<group>"; };
-		3E332EBE20920011001AB310 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
-		3E332EBF20920011001AB310 /* DotSheetPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetPassiveView.swift; sourceTree = "<group>"; };
-		3E332EC020920011001AB310 /* DotSheetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotSheetView.xib; sourceTree = "<group>"; };
-		3E332EC120920011001AB310 /* DotSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetView.swift; sourceTree = "<group>"; };
-		3E332EC220920011001AB310 /* DotViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotViewFactory.swift; sourceTree = "<group>"; };
-		3E332EC320920011001AB310 /* DotFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotFactory.swift; sourceTree = "<group>"; };
-		3E332EC420920011001AB310 /* DotColorModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotColorModelProtocol.swift; sourceTree = "<group>"; };
-		3E332EC520920011001AB310 /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
-		3E332EC720920011001AB310 /* ColorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepository.swift; sourceTree = "<group>"; };
-		3E332EC820920011001AB310 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		3E332EC920920011001AB310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3E332ECB20920011001AB310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3E332ECC20920011001AB310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E332ECE20920011001AB310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3E332ED020920011001AB310 /* MainRootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainRootView.xib; sourceTree = "<group>"; };
-		3E332ED220920011001AB310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3E332ED320920011001AB310 /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
-		3E332ED420920011001AB310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E332ED620920011001AB310 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		3E332ED72092001C001AB310 /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
 		3E332ED920920A6C001AB310 /* DotSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheet.swift; sourceTree = "<group>"; };
 		3E3AD3F0208F2D4300F1347A /* DotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButton.swift; sourceTree = "<group>"; };
-		3E3AD3F2208F329C00F1347A /* DotButtonFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotButtonFieldView.xib; sourceTree = "<group>"; };
-		3E3AD3F4208F340700F1347A /* DotButtonFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonFieldView.swift; sourceTree = "<group>"; };
 		3E3AD3F8208F352300F1347A /* MainRootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainRootView.xib; sourceTree = "<group>"; };
 		3E3AD3FA208F353500F1347A /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
 		3E3AD3FD208F36DF00F1347A /* DotSheetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DotSheetView.xib; sourceTree = "<group>"; };
 		3E3AD3FF208F36FA00F1347A /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
 		3E3AD401208F37BC00F1347A /* DotSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetView.swift; sourceTree = "<group>"; };
 		3E3AD40320905DEB00F1347A /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
-		3E3AD40520905EAD00F1347A /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		3E3AD4072090735500F1347A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3E3AD40B209073BB00F1347A /* DotViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotViewFactory.swift; sourceTree = "<group>"; };
 		3E3AD40D2090741D00F1347A /* DotSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModel.swift; sourceTree = "<group>"; };
 		3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelTests.swift; sourceTree = "<group>"; };
-		3E3AD41120908DBE00F1347A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		3E3AD4152090983000F1347A /* DotSheetModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetModelProtocol.swift; sourceTree = "<group>"; };
 		3E3AD41C2090A57400F1347A /* DotSheetPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSheetPassiveView.swift; sourceTree = "<group>"; };
 		3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonPassiveView.swift; sourceTree = "<group>"; };
+		3E6CD52520997B5400890894 /* FourDotButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourDotButtonsView.swift; sourceTree = "<group>"; };
+		3E6CD52720997B6000890894 /* SixDotButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixDotButtonsView.swift; sourceTree = "<group>"; };
+		3E6CD52920997B7C00890894 /* EightDotButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightDotButtonsView.swift; sourceTree = "<group>"; };
+		3E6CD52B20997D2A00890894 /* FourDotButtonsPassiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourDotButtonsPassiveView.swift; sourceTree = "<group>"; };
 		3E8D4D49208F010C00FE36E1 /* DotTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E8D4D4C208F010C00FE36E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E8D4D4E208F010C00FE36E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,11 +161,12 @@
 		3E8D4D68208F010C00FE36E1 /* DotTapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotTapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E8D4D6C208F010C00FE36E1 /* DotTapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotTapUITests.swift; sourceTree = "<group>"; };
 		3E8D4D6E208F010D00FE36E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		3E8D4D7F208F03C800FE36E1 /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
-		3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotButtonController.swift; sourceTree = "<group>"; };
+		3EC0D58F2099BBE1005964FE /* EightDotButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EightDotButtonsView.xib; sourceTree = "<group>"; };
+		3EC3C81220922B9300FD8E65 /* RestartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
+		3EC3C8162092445C00FD8E65 /* DotButtonCountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonCountRepository.swift; sourceTree = "<group>"; };
+		3EC3C8182092447D00FD8E65 /* DotButtonCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotButtonCount.swift; sourceTree = "<group>"; };
+		3ECB314E20999167003F104A /* SixDotButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SixDotButtonsView.xib; sourceTree = "<group>"; };
+		3ECB3151209991AE003F104A /* FourDotButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FourDotButtonsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,9 +174,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E3AD40620905EAD00F1347A /* SnapKit.framework in Frameworks */,
-				3E8D4D7E208F03B300FE36E1 /* RxCocoa.framework in Frameworks */,
-				3E8D4D7C208F039F00FE36E1 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,9 +181,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E332ED82092001C001AB310 /* MirrorDiffKit.framework in Frameworks */,
-				3E3AD41320908DCB00F1347A /* RxBlocking.framework in Frameworks */,
-				3E3AD41220908DBE00F1347A /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +194,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35C020681C7CF7BE90747575 /* TestDouble */ = {
+			isa = PBXGroup;
+			children = (
+				35C02C39F0ACE2D42B62EF71 /* DotButtonCountModelTestDouble.swift */,
+				35C02B97D7F1E5053934C937 /* DotButtonColorModelTestDouble.swift */,
+			);
+			path = TestDouble;
+			sourceTree = "<group>";
+		};
+		35C021805508FB0F0D5563F5 /* TestDouble */ = {
+			isa = PBXGroup;
+			children = (
+				35C024C539D8C43C6B097A19 /* DotSheetTestDouble.swift */,
+			);
+			path = TestDouble;
+			sourceTree = "<group>";
+		};
+		35C021C6F32117FF8F9EFED3 /* DotButtonCount */ = {
+			isa = PBXGroup;
+			children = (
+				35C0246ABE2043C3C615564B /* DotButtonCountModelTests.swift */,
+				35C02E16F4D5A66A667E0E86 /* TestDouble */,
+			);
+			path = DotButtonCount;
+			sourceTree = "<group>";
+		};
+		35C02390EF387058B4EE6FB3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35C022359C16E299C5AE09B0 /* EightDotButtonsController.swift */,
+				35C02EB25EC42C14B956BF7A /* SixDotButtonsController.swift */,
+				35C02267ADE76969F1402397 /* FourDotButtonsController.swift */,
+				35C02572C431FD114D4B0ED2 /* DotButtonControllerHolder.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		35C024C3C80BA14FA68952DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35C02821392C2C8F5C2F6020 /* DotButtonCountModelProtocol.swift */,
+				35C026A92CA0212261F75177 /* DotButtonCountModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35C02918F15A977165AFB925 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35C02140A771264B60D8A007 /* UsingColorModelProtocol.swift */,
+				35C02EA4D9B3C4494E7D271E /* UsingColorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35C029EF3EEE8A725B65C6D4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35C024C317C7C27106896F07 /* RestartButtonController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		35C02A856EB4262740F349B0 /* UsingColor */ = {
+			isa = PBXGroup;
+			children = (
+				35C02C6912AFD8A05324643D /* UsingColorModelTests.swift */,
+				35C02CC504CF64B9975F348B /* UsingColorModelTestDouble.swift */,
+			);
+			path = UsingColor;
+			sourceTree = "<group>";
+		};
+		35C02E16F4D5A66A667E0E86 /* TestDouble */ = {
+			isa = PBXGroup;
+			children = (
+				35C02BA918991E228A4A7A3B /* DotButtonCountRepositoryTestDouble.swift */,
+			);
+			path = TestDouble;
+			sourceTree = "<group>";
+		};
+		35C02E54081A40CFE71ECA04 /* UsingColor */ = {
+			isa = PBXGroup;
+			children = (
+				35C02918F15A977165AFB925 /* Model */,
+			);
+			path = UsingColor;
+			sourceTree = "<group>";
+		};
 		3E332E882090B9B5001AB310 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +299,7 @@
 				3E332ED920920A6C001AB310 /* DotSheet.swift */,
 				3E3AD4092090737300F1347A /* View */,
 				3E332E882090B9B5001AB310 /* Model */,
+				35C02B70E0AF9BF393867FDC /* DotCountRepository.swift */,
 			);
 			path = DotSheet;
 			sourceTree = "<group>";
@@ -218,6 +317,9 @@
 			isa = PBXGroup;
 			children = (
 				3E332EA12091EAAF001AB310 /* DotButtonModelTests.swift */,
+				35C020681C7CF7BE90747575 /* TestDouble */,
+				35C021C6F32117FF8F9EFED3 /* DotButtonCount */,
+				35C02372D9B8680BAE92C5F6 /* DotButtonColorFactoryTests.swift */,
 			);
 			path = DotButton;
 			sourceTree = "<group>";
@@ -228,6 +330,7 @@
 				3E332EA52091F0DA001AB310 /* DotSheet */,
 				3E332EA32091F0C1001AB310 /* DotButton */,
 				3E332EA62091F105001AB310 /* DotFactoryTests.swift */,
+				35C021805508FB0F0D5563F5 /* TestDouble */,
 			);
 			path = Dot;
 			sourceTree = "<group>";
@@ -238,7 +341,7 @@
 				3E332E8D20917C6A001AB310 /* DotSheetResetModelTests.swift */,
 				3E3AD40F2090844900F1347A /* DotSheetModelTests.swift */,
 				3E332E8F20919838001AB310 /* DotSheetModelFactoryTestDouble.swift */,
-				3E332E912091986E001AB310 /* SpyDotSheetTestDouble.swift */,
+				35C02EDCF5F30A231AC27F09 /* DotSheetView+CalculateTests.swift */,
 			);
 			path = DotSheet;
 			sourceTree = "<group>";
@@ -247,135 +350,18 @@
 			isa = PBXGroup;
 			children = (
 				3E332EA92091F170001AB310 /* ColorRepositoryTests.swift */,
+				35C027D2F4365117A5EDFF5E /* ColorRepositoryTestDouble.swift */,
 			);
 			path = Color;
-			sourceTree = "<group>";
-		};
-		3E332EAB20920011001AB310 /* DotTap */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EAC20920011001AB310 /* Dot */,
-				3E332EC620920011001AB310 /* Color */,
-				3E332EC920920011001AB310 /* Assets.xcassets */,
-				3E332ECA20920011001AB310 /* LaunchScreen.storyboard */,
-				3E332ECC20920011001AB310 /* AppDelegate.swift */,
-				3E332ECD20920011001AB310 /* Main */,
-				3E332ED420920011001AB310 /* Info.plist */,
-				3E332ED520920011001AB310 /* Share */,
-			);
-			path = DotTap;
-			sourceTree = "<group>";
-		};
-		3E332EAC20920011001AB310 /* Dot */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EAD20920011001AB310 /* DotButton */,
-				3E332EB520920011001AB310 /* DotColorModel.swift */,
-				3E332EB620920011001AB310 /* DotSheet */,
-				3E332EC320920011001AB310 /* DotFactory.swift */,
-				3E332EC420920011001AB310 /* DotColorModelProtocol.swift */,
-				3E332EC520920011001AB310 /* Dot.swift */,
-			);
-			path = Dot;
-			sourceTree = "<group>";
-		};
-		3E332EAD20920011001AB310 /* DotButton */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EAE20920011001AB310 /* View */,
-				3E332EB320920011001AB310 /* DotButtonModelProtocol.swift */,
-				3E332EB420920011001AB310 /* DotButtonModel.swift */,
-			);
-			path = DotButton;
-			sourceTree = "<group>";
-		};
-		3E332EAE20920011001AB310 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EAF20920011001AB310 /* DotButton.swift */,
-				3E332EB020920011001AB310 /* DotButtonFieldView.xib */,
-				3E332EB120920011001AB310 /* DotButtonPassiveView.swift */,
-				3E332EB220920011001AB310 /* DotButtonFieldView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3E332EB620920011001AB310 /* DotSheet */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EB720920011001AB310 /* DotSheetController.swift */,
-				3E332EB820920011001AB310 /* Model */,
-				3E332EBD20920011001AB310 /* View */,
-			);
-			path = DotSheet;
-			sourceTree = "<group>";
-		};
-		3E332EB820920011001AB310 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EB920920011001AB310 /* DotSheetModelProtocol.swift */,
-				3E332EBA20920011001AB310 /* DotSheetResetModel.swift */,
-				3E332EBB20920011001AB310 /* DotSheetModel.swift */,
-				3E332EBC20920011001AB310 /* DotSheetModelFactory.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		3E332EBD20920011001AB310 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EBE20920011001AB310 /* DotView.swift */,
-				3E332EBF20920011001AB310 /* DotSheetPassiveView.swift */,
-				3E332EC020920011001AB310 /* DotSheetView.xib */,
-				3E332EC120920011001AB310 /* DotSheetView.swift */,
-				3E332EC220920011001AB310 /* DotViewFactory.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3E332EC620920011001AB310 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				3E332EC720920011001AB310 /* ColorRepository.swift */,
-				3E332EC820920011001AB310 /* Color.swift */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
-		3E332ECD20920011001AB310 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				3E332ECE20920011001AB310 /* ViewController.swift */,
-				3E332ECF20920011001AB310 /* View */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		3E332ECF20920011001AB310 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3E332ED020920011001AB310 /* MainRootView.xib */,
-				3E332ED120920011001AB310 /* Main.storyboard */,
-				3E332ED320920011001AB310 /* MainRootView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3E332ED520920011001AB310 /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				3E332ED620920011001AB310 /* Result.swift */,
-			);
-			path = Share;
 			sourceTree = "<group>";
 		};
 		3E3AD3F6208F34A900F1347A /* DotButton */ = {
 			isa = PBXGroup;
 			children = (
-				3EC3C80E20921DA200FD8E65 /* DotButtonController.swift */,
-				3E332E942091BF37001AB310 /* DotButtonModel.swift */,
-				3E332E9F2091E84A001AB310 /* DotButtonModelProtocol.swift */,
+				3EDD97BC2094700D0002E5BA /* DotButtonCount */,
+				3EC3C8152092443B00FD8E65 /* Model */,
 				3E3AD40A2090739000F1347A /* View */,
+				35C02390EF387058B4EE6FB3 /* Controller */,
 			);
 			path = DotButton;
 			sourceTree = "<group>";
@@ -408,6 +394,7 @@
 				3E3AD401208F37BC00F1347A /* DotSheetView.swift */,
 				3E3AD3FF208F36FA00F1347A /* DotView.swift */,
 				3E3AD40B209073BB00F1347A /* DotViewFactory.swift */,
+				35C0229FFE5CAE5B180B2030 /* DotSheetView+Calclate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,12 +402,43 @@
 		3E3AD40A2090739000F1347A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E6CD52420997B3100890894 /* FourDotButtons */,
+				3E6CD52320997B2900890894 /* SixDotButtons */,
+				3E6CD52220997B2500890894 /* EightDotButtons */,
 				3E3AD3F0208F2D4300F1347A /* DotButton.swift */,
 				3E3AD4202090B3D700F1347A /* DotButtonPassiveView.swift */,
-				3E3AD3F2208F329C00F1347A /* DotButtonFieldView.xib */,
-				3E3AD3F4208F340700F1347A /* DotButtonFieldView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3E6CD52220997B2500890894 /* EightDotButtons */ = {
+			isa = PBXGroup;
+			children = (
+				3E6CD52920997B7C00890894 /* EightDotButtonsView.swift */,
+				3EC0D58F2099BBE1005964FE /* EightDotButtonsView.xib */,
+				35C02DD4D10B317F69713B09 /* EightDotButtonsPassiveView.swift */,
+			);
+			path = EightDotButtons;
+			sourceTree = "<group>";
+		};
+		3E6CD52320997B2900890894 /* SixDotButtons */ = {
+			isa = PBXGroup;
+			children = (
+				3E6CD52720997B6000890894 /* SixDotButtonsView.swift */,
+				3ECB314E20999167003F104A /* SixDotButtonsView.xib */,
+				35C022E3F7EE930165B39C7E /* SixDotButtonsPassiveView.swift */,
+			);
+			path = SixDotButtons;
+			sourceTree = "<group>";
+		};
+		3E6CD52420997B3100890894 /* FourDotButtons */ = {
+			isa = PBXGroup;
+			children = (
+				3E6CD52520997B5400890894 /* FourDotButtonsView.swift */,
+				3E6CD52B20997D2A00890894 /* FourDotButtonsPassiveView.swift */,
+				3ECB3151209991AE003F104A /* FourDotButtonsView.xib */,
+			);
+			path = FourDotButtons;
 			sourceTree = "<group>";
 		};
 		3E8D4D40208F010C00FE36E1 = {
@@ -430,7 +448,6 @@
 				3E8D4D60208F010C00FE36E1 /* DotTapTests */,
 				3E8D4D6B208F010C00FE36E1 /* DotTapUITests */,
 				3E8D4D4A208F010C00FE36E1 /* Products */,
-				3E8D4D7A208F039F00FE36E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -447,6 +464,7 @@
 		3E8D4D4B208F010C00FE36E1 /* DotTap */ = {
 			isa = PBXGroup;
 			children = (
+				3EC3C81020922B2000FD8E65 /* Restart */,
 				3E3AD3F7208F34D100F1347A /* Main */,
 				3E332E9C2091C49D001AB310 /* Color */,
 				3E3AD3FC208F36BE00F1347A /* Dot */,
@@ -454,6 +472,7 @@
 				3E8D4D53208F010C00FE36E1 /* Assets.xcassets */,
 				3E8D4D55208F010C00FE36E1 /* LaunchScreen.storyboard */,
 				3E8D4D58208F010C00FE36E1 /* Info.plist */,
+				35C02E54081A40CFE71ECA04 /* UsingColor */,
 			);
 			path = DotTap;
 			sourceTree = "<group>";
@@ -465,6 +484,7 @@
 				3E332EA82091F15E001AB310 /* Color */,
 				3E332EA42091F0D2001AB310 /* Dot */,
 				3E8D4D63208F010C00FE36E1 /* Info.plist */,
+				35C02A856EB4262740F349B0 /* UsingColor */,
 			);
 			path = DotTapTests;
 			sourceTree = "<group>";
@@ -478,21 +498,6 @@
 			path = DotTapUITests;
 			sourceTree = "<group>";
 		};
-		3E8D4D7A208F039F00FE36E1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3E332ED72092001C001AB310 /* MirrorDiffKit.framework */,
-				3E332EAB20920011001AB310 /* DotTap */,
-				3E3AD41120908DBE00F1347A /* RxTest.framework */,
-				3E3AD40520905EAD00F1347A /* SnapKit.framework */,
-				3E8D4D81208F03DA00FE36E1 /* RxBlocking.framework */,
-				3E8D4D7F208F03C800FE36E1 /* RxBlocking.framework.dSYM */,
-				3E8D4D7D208F03B300FE36E1 /* RxCocoa.framework */,
-				3E8D4D7B208F039F00FE36E1 /* RxSwift.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3E8D4D87208F0D6000FE36E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +506,43 @@
 				3E3AD3FA208F353500F1347A /* MainRootView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3EC3C81020922B2000FD8E65 /* Restart */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3C81120922B8800FD8E65 /* View */,
+				35C029EF3EEE8A725B65C6D4 /* Controller */,
+			);
+			path = Restart;
+			sourceTree = "<group>";
+		};
+		3EC3C81120922B8800FD8E65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3C81220922B9300FD8E65 /* RestartButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3EC3C8152092443B00FD8E65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35C02883CDA815226AA96440 /* DotButtonColorModelProtocol.swift */,
+				35C02F3C723AFFE66C6645FD /* DotButtonColorModel.swift */,
+				35C023BC4A772A6A35AC5938 /* DotButtonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3EDD97BC2094700D0002E5BA /* DotButtonCount */ = {
+			isa = PBXGroup;
+			children = (
+				3EC3C8162092445C00FD8E65 /* DotButtonCountRepository.swift */,
+				3EC3C8182092447D00FD8E65 /* DotButtonCount.swift */,
+				35C024C3C80BA14FA68952DC /* Model */,
+			);
+			path = DotButtonCount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,11 +655,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8D4D57208F010C00FE36E1 /* LaunchScreen.storyboard in Resources */,
+				3ECA3CED2099A6BF002CE63A /* FourDotButtonsView.xib in Resources */,
 				3E8D4D54208F010C00FE36E1 /* Assets.xcassets in Resources */,
+				3EC0D5902099BBE1005964FE /* EightDotButtonsView.xib in Resources */,
 				3E3AD3F9208F352300F1347A /* MainRootView.xib in Resources */,
-				3E3AD3F3208F329C00F1347A /* DotButtonFieldView.xib in Resources */,
 				3E3AD3FE208F36DF00F1347A /* DotSheetView.xib in Resources */,
 				3E8D4D52208F010C00FE36E1 /* Main.storyboard in Resources */,
+				3ECB314F20999167003F104A /* SixDotButtonsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,9 +725,12 @@
 			files = (
 				3E3AD40C209073BB00F1347A /* DotViewFactory.swift in Sources */,
 				3E3AD402208F37BC00F1347A /* DotSheetView.swift in Sources */,
+				3EC3C8192092447D00FD8E65 /* DotButtonCount.swift in Sources */,
+				3E6CD52C20997D2A00890894 /* FourDotButtonsPassiveView.swift in Sources */,
 				3E3AD400208F36FA00F1347A /* DotView.swift in Sources */,
-				3EC3C80F20921DA300FD8E65 /* DotButtonController.swift in Sources */,
+				3E6CD52620997B5400890894 /* FourDotButtonsView.swift in Sources */,
 				3E3AD4082090735500F1347A /* Color.swift in Sources */,
+				3EC3C8172092445C00FD8E65 /* DotButtonCountRepository.swift in Sources */,
 				3E332E872090B925001AB310 /* DotSheetResetModel.swift in Sources */,
 				3E8D4D4F208F010C00FE36E1 /* ViewController.swift in Sources */,
 				3E332E8A2091777A001AB310 /* DotFactory.swift in Sources */,
@@ -695,12 +742,29 @@
 				3E3AD40E2090741D00F1347A /* DotSheetModel.swift in Sources */,
 				3E3AD40420905DEB00F1347A /* Dot.swift in Sources */,
 				3E3AD41D2090A57400F1347A /* DotSheetPassiveView.swift in Sources */,
+				3EC3C81320922B9300FD8E65 /* RestartButton.swift in Sources */,
 				3E3AD4162090983000F1347A /* DotSheetModelProtocol.swift in Sources */,
 				3E3AD3FB208F353500F1347A /* MainRootView.swift in Sources */,
 				3E3AD3F1208F2D4300F1347A /* DotButton.swift in Sources */,
-				3E332EA02091E84A001AB310 /* DotButtonModelProtocol.swift in Sources */,
-				3E3AD3F5208F340700F1347A /* DotButtonFieldView.swift in Sources */,
-				3E332E952091BF37001AB310 /* DotButtonModel.swift in Sources */,
+				35C025317C2A2649F18E55F8 /* UsingColorModelProtocol.swift in Sources */,
+				3E6CD52820997B6000890894 /* SixDotButtonsView.swift in Sources */,
+				35C02DEC239E76F9D4367ADC /* UsingColorModel.swift in Sources */,
+				3E6CD52A20997B7C00890894 /* EightDotButtonsView.swift in Sources */,
+				35C028F073DC632BD5B8DA5B /* DotButtonCountModelProtocol.swift in Sources */,
+				35C026CCEA272D8A9E62B7FD /* DotButtonCountModel.swift in Sources */,
+				35C02960F9A6AF49431A99D7 /* DotButtonColorModelProtocol.swift in Sources */,
+				35C022C6E678EBE05D6CCB79 /* DotButtonColorModel.swift in Sources */,
+				35C02FD170EBE2FF229023EF /* EightDotButtonsController.swift in Sources */,
+				35C02E5ECA037C67104485FA /* SixDotButtonsController.swift in Sources */,
+				35C02F13147723A66AD25C7A /* FourDotButtonsController.swift in Sources */,
+				35C02CF3647939B690C1E0E9 /* DotButtonControllerHolder.swift in Sources */,
+				35C0268445990D96D4553C45 /* DotButtonModel.swift in Sources */,
+				35C022F29768FBFAE72AFDC6 /* RestartButtonController.swift in Sources */,
+				35C02DB059F8DD41E0A43518 /* DotButtonCountRepositoryTestDouble.swift in Sources */,
+				35C02F91248816C307667518 /* SixDotButtonsPassiveView.swift in Sources */,
+				35C02FF0891606A1EEC434F6 /* EightDotButtonsPassiveView.swift in Sources */,
+				35C0244E578BE7234EEBCBDD /* DotSheetView+Calclate.swift in Sources */,
+				35C0250141836FABA05AC462 /* DotCountRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,12 +774,20 @@
 			files = (
 				3E8D4D62208F010C00FE36E1 /* DotTapTests.swift in Sources */,
 				3E332E8E20917C6A001AB310 /* DotSheetResetModelTests.swift in Sources */,
-				3E332E922091986E001AB310 /* SpyDotSheetTestDouble.swift in Sources */,
 				3E332EA72091F105001AB310 /* DotFactoryTests.swift in Sources */,
 				3E332EA22091EAAF001AB310 /* DotButtonModelTests.swift in Sources */,
 				3E3AD4102090844900F1347A /* DotSheetModelTests.swift in Sources */,
 				3E332E9020919838001AB310 /* DotSheetModelFactoryTestDouble.swift in Sources */,
 				3E332EAA2091F170001AB310 /* ColorRepositoryTests.swift in Sources */,
+				35C02D94C449EA44364CB7AD /* DotSheetTestDouble.swift in Sources */,
+				35C0211ED18E2EBBCB06F9C3 /* UsingColorModelTests.swift in Sources */,
+				35C0233E975C4949CF1A1E72 /* ColorRepositoryTestDouble.swift in Sources */,
+				35C02DE7326649F35542E178 /* DotButtonCountModelTestDouble.swift in Sources */,
+				35C024DA5E192C17DF05ADF9 /* DotButtonCountModelTests.swift in Sources */,
+				35C02D833B8CD70AD8732660 /* DotButtonColorFactoryTests.swift in Sources */,
+				35C0223F0877BFD933028C8C /* DotButtonColorModelTestDouble.swift in Sources */,
+				35C02DCD375143601C24F360 /* UsingColorModelTestDouble.swift in Sources */,
+				35C028DAD83F26DCF5C5E432 /* DotSheetView+CalculateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,22 +815,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3E332ECA20920011001AB310 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E332ECB20920011001AB310 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		3E332ED120920011001AB310 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E332ED220920011001AB310 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3E8D4D50208F010C00FE36E1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,5 +1,5 @@
 //
-//  SpyDotSheetTestDouble.swift
+//  DotSheetTestDouble.swift
 //  DotTapTests
 //
 //  Created by yokoyas000 on 2018/04/26.
@@ -9,47 +9,47 @@
 import RxCocoa
 @testable import DotTap
 
-class StubDotSheetModel: DotSheetModelProtocol {
+class DotSheetModelStub: DotSheetModelProtocol {
 
     var didChange: Driver<DotSheetModelState> {
-        return self.replay.asDriver()
+        return self.relay.asDriver()
     }
     var currentState: DotSheetModelState {
-        return self.replay.value
+        return self.relay.value
     }
 
-    private let replay: BehaviorRelay<DotSheetModelState>
+    private let relay: BehaviorRelay<DotSheetModelState>
     private let secondState: DotSheetModelState
 
     init(
         firstState: DotSheetModelState,
-        secondState: DotSheetModelState = .notCompare(dots: [])
-        ) {
-        self.replay = BehaviorRelay<DotSheetModelState>(
+        secondState: DotSheetModelState = .hasNotCompared(dots: [])
+    ) {
+        self.relay = BehaviorRelay<DotSheetModelState>(
             value: firstState
         )
         self.secondState = secondState
     }
 
     func compare(color: Color) {
-        self.replay.accept(self.secondState)
+        self.relay.accept(self.secondState)
     }
 
 }
 
-class SpyDotSheetModel: DotSheetModelProtocol {
+class DotSheetModelSpy: DotSheetModelProtocol {
 
     enum CallArgs {
         case compare(color: Color)
     }
 
     var didChange: Driver<DotSheetModelState> {
-        return BehaviorRelay<DotSheetModelState>(value: .notCompare(dots: []))
+        return BehaviorRelay<DotSheetModelState>(value: .hasNotCompared(dots: []))
             .asDriver()
     }
 
     var currentState: DotSheetModelState {
-        return .notCompare(dots: [])
+        return .hasNotCompared(dots: [])
     }
 
     private(set) var callArgs: [CallArgs] = []

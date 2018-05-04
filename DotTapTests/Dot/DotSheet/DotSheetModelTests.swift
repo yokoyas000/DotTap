@@ -36,7 +36,7 @@ class DotSheetModelTests: XCTestCase {
         let prepare = TestPrepare()
         let model = DotSheetModel(baseDots: prepare.baseDots)
 
-        let expected = DotSheetModelState.notCompare(
+        let expected = DotSheetModelState.hasNotCompared(
             dots: prepare.baseDots
         )
 
@@ -75,7 +75,7 @@ class DotSheetModelTests: XCTestCase {
             prepare.makeMatchComparableDots(index: i)
         }
 
-        let expected = DotSheetModelState.allCompared(dots: prepare.comparableDots)
+        let expected = DotSheetModelState.allDidMatch(dots: prepare.comparableDots)
 
         prepare.baseDots.forEach { dot in
             model.compare(color: dot.color)

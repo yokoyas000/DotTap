@@ -11,62 +11,140 @@ import RxCocoa
 
 class ViewController: UIViewController {
 
-    private var buttonModel: DotButtonModelProtocol?
-    private var buttonPassiveView: DotButtonPassiveView?
+    private var buttonPassiveView: DotButtonFieldPassiveView?
+    private var fourButtonsPassiveView: FourDotButtonsPassiveViewProtocol?
+    private var sixButtonsPassiveView: SixDotButtonsPassiveViewProtocol?
+    private var eightButtonsPassiveView: EightDotButtonsPassiveViewProtocol?
     private var sheetModel: DotSheetModelProtocol?
     private var sheetPassiveView: DotSheetPassiveView?
-    private var buttonController: DotButtonController?
+    private var buttonControllerHolder: DotButtonControllerHolder?
+    private var restartButtonController: RestartButtonControllerProtocol?
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
         guard let view = self.view as? MainRootView else {
             return
         }
 
-        let sheetModelFactory = DotSheetModelFactory(
-            dotFactory: DotFactory()
-        )
-        let colorRepository = ColorRepository(
-            minColorCount: DotSheet.minUsingColorCount,
-            maxColorCount: DotSheet.maxUsingColorCount
-        )
-        let sheetModel = DotSheetResetModel(
-            dependency: (
-                innerModelFactory: sheetModelFactory,
-                colorRepository: colorRepository
-            )
-        )
-        let buttonModel = DotButtonModel(
-            observe: sheetModel,
-            colorRepository: colorRepository
+        // TODO: stub
+        //let buttonCountRepository = DotButtonCountRepository()
+        let buttonCountRepository = StubDotButtonRepository()
+        let buttonCountModel = DotButtonCountModel(dependency: buttonCountRepository)
+        self.buttonPassiveView = DotButtonFieldPassiveView(
+            update: (
+                fourButtonsView: view.fourDotButtonsView,
+                sixButtonsView: view.sixDotButtonsView,
+                eightButtonsView: view.eightDotButtonsView
+            ),
+            observe: buttonCountModel
         )
 
-        let buttonPassiveView = DotButtonPassiveView(
-            update: [
-                view.dotButtonFieldView.button1,
-                view.dotButtonFieldView.button2,
-                view.dotButtonFieldView.button3,
-                view.dotButtonFieldView.button4
-            ],
-            observe: buttonModel
+        let buttonColorModel = DotButtonColorModel()
+        let fourButtonsPassiveView = FourDotButtonsPassiveView(
+            views: (
+                button1: view.fourDotButtonsView.button1,
+                button2: view.fourDotButtonsView.button2,
+                button3: view.fourDotButtonsView.button3,
+                button4: view.fourDotButtonsView.button4
+            ),
+            observe: buttonColorModel
         )
-        let sheetPassiveView = DotSheetPassiveView(update: view.dotSheetView, observe: sheetModel)
-        let sheetController = DotButtonController(
-            reactTo: [
-                view.dotButtonFieldView.button1.rx.tap.asSignal(),
-                view.dotButtonFieldView.button2.rx.tap.asSignal(),
-                view.dotButtonFieldView.button3.rx.tap.asSignal(),
-                view.dotButtonFieldView.button4.rx.tap.asSignal()
-            ],
-            depende: buttonModel,
+        self.fourButtonsPassiveView = fourButtonsPassiveView
+
+        let sixButtonsPassiveView = SixDotButtonsPassiveView(
+            views: (
+                button1: view.sixDotButtonsView.button1,
+                button2: view.sixDotButtonsView.button2,
+                button3: view.sixDotButtonsView.button3,
+                button4: view.sixDotButtonsView.button4,
+                button5: view.sixDotButtonsView.button5,
+                button6: view.sixDotButtonsView.button6
+            ),
+            observe: buttonColorModel
+        )
+        self.sixButtonsPassiveView = sixButtonsPassiveView
+
+        let eightButtonsPassiveView = EightDotButtonsPassiveView(
+            views: (
+                button1: view.eightDotButtonsView.button1,
+                button2: view.eightDotButtonsView.button2,
+                button3: view.eightDotButtonsView.button3,
+                button4: view.eightDotButtonsView.button4,
+                button5: view.eightDotButtonsView.button5,
+                button6: view.eightDotButtonsView.button6,
+                button7: view.eightDotButtonsView.button7,
+                button8: view.eightDotButtonsView.button8
+            ),
+            observe: buttonColorModel
+        )
+        self.eightButtonsPassiveView = eightButtonsPassiveView
+
+        let colorRepository = ColorRepository()
+        let usingColorModel = UsingColorModel(
+            dependency: (
+                colorRepository: colorRepository,
+                buttonCountModel: buttonCountModel
+            )
+        )
+
+        // TODO: stub
+        //let dotCountRepository = DotCountRepository()
+        let dotCountRepository = StubDotCountRepository()
+        let sheetModel = DotSheetResetModel(
+            sheetModelFactory: DotSheetModelFactory(
+                dotFactory: DotFactory()
+            ),
+            dotCountRepository: dotCountRepository,
+            bindTo: usingColorModel
+        )
+        self.sheetPassiveView = DotSheetPassiveView(
+            update: view.dotSheetView,
+            observe: sheetModel
+        )
+        self.buttonControllerHolder = DotButtonControllerHolder(
+            reactTo: (
+                fourButtonsView: fourButtonsPassiveView,
+                sixButtonsView: sixButtonsPassiveView,
+                eightButtonsView: eightButtonsPassiveView
+            ),
+            dependent: buttonColorModel,
             command: sheetModel
         )
 
-        self.buttonModel = buttonModel
-        self.buttonPassiveView = buttonPassiveView
-        self.sheetModel = sheetModel
-        self.sheetPassiveView = sheetPassiveView
-        self.buttonController = sheetController
+        let buttonModel = DotButtonModel(
+            buttonCountModel: buttonCountModel,
+            buttonColorModel: buttonColorModel,
+            usingColorModel: usingColorModel
+        )
+        self.restartButtonController = RestartButtonController(
+            reactTo: view.restartButton,
+            command: buttonModel
+        )
+
+    }
+
+}
+
+extension ViewController {
+    class StubDotButtonRepository: DotButtonCountRepositoryProtocol {
+        private let counts: [DotButtonCount] = [.four, .six, .eight]
+        private var calledCount = 0
+
+        func get() -> DotButtonCount {
+            let i = (calledCount % 3)
+            calledCount += 1
+            return counts[i]
+        }
+    }
+
+    class StubDotCountRepository: DotCountRepositoryProtocol {
+        private let count: [Int] = [6, 8]
+        private var calledCount = 0
+
+        func get(minCount: Int, maxCount: Int) -> Int {
+            let i = calledCount % count.count
+            calledCount += 1
+            return count[i]
+        }
     }
 }
