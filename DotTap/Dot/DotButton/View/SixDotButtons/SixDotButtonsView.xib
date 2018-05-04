@@ -34,7 +34,7 @@
                     </constraints>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlU-c3-JSr" userLabel="Button2" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
-                    <rect key="frame" x="101" y="0.0" width="54" height="54"/>
+                    <rect key="frame" x="99" y="0.0" width="54" height="54"/>
                     <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="FlU-c3-JSr" secondAttribute="height" multiplier="1:1" id="lUg-eg-jhT"/>
@@ -63,7 +63,7 @@
                     </constraints>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-tN-x2U" userLabel="Button6" customClass="DotButton" customModule="DotTap" customModuleProvider="target">
-                    <rect key="frame" x="101" y="126" width="54" height="54"/>
+                    <rect key="frame" x="99" y="126" width="54" height="54"/>
                     <color key="backgroundColor" red="0.88186546669999999" green="0.70825531009999998" blue="0.87340657870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="KlN-tN-x2U" secondAttribute="height" multiplier="1:1" id="PT6-24-2rV"/>
@@ -75,7 +75,7 @@
                 <constraint firstItem="FlU-c3-JSr" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="1NF-zk-flC"/>
                 <constraint firstItem="8eT-XG-Qgf" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="4EM-UD-0tA"/>
                 <constraint firstItem="KlN-tN-x2U" firstAttribute="centerX" secondItem="FlU-c3-JSr" secondAttribute="centerX" id="8ow-zm-r5d"/>
-                <constraint firstItem="FlU-c3-JSr" firstAttribute="leading" secondItem="kNg-zC-4TQ" secondAttribute="leading" multiplier="0.8" id="9Ih-pc-C1V"/>
+                <constraint firstItem="Xt6-Is-qYu" firstAttribute="centerX" secondItem="mdg-Oc-MT5" secondAttribute="centerX" multiplier="0.6" id="EOE-8z-emn"/>
                 <constraint firstAttribute="bottom" secondItem="KlN-tN-x2U" secondAttribute="bottom" id="GXH-dT-37q"/>
                 <constraint firstItem="8eT-XG-Qgf" firstAttribute="leading" secondItem="mdg-Oc-MT5" secondAttribute="leading" id="IQc-uv-gQN"/>
                 <constraint firstItem="8eT-XG-Qgf" firstAttribute="centerY" secondItem="mdg-Oc-MT5" secondAttribute="centerY" id="KNs-Rv-sHe"/>
@@ -86,7 +86,7 @@
                 <constraint firstItem="CMR-8r-PW6" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="XTt-Ka-Tv9"/>
                 <constraint firstItem="kNg-zC-4TQ" firstAttribute="centerY" secondItem="mdg-Oc-MT5" secondAttribute="centerY" id="YOm-ls-928"/>
                 <constraint firstAttribute="bottom" secondItem="CMR-8r-PW6" secondAttribute="bottom" id="cN0-LH-cUK"/>
-                <constraint firstItem="Xt6-Is-qYu" firstAttribute="leading" secondItem="8eT-XG-Qgf" secondAttribute="trailing" multiplier="0.5" id="pBk-Kw-Uvn"/>
+                <constraint firstItem="FlU-c3-JSr" firstAttribute="centerX" secondItem="mdg-Oc-MT5" secondAttribute="centerX" multiplier="1.4" id="dzD-AZ-J4V"/>
                 <constraint firstItem="Xt6-Is-qYu" firstAttribute="width" secondItem="mdg-Oc-MT5" secondAttribute="width" multiplier="1.2:4" id="xMb-2t-Ygs"/>
                 <constraint firstItem="Xt6-Is-qYu" firstAttribute="top" secondItem="mdg-Oc-MT5" secondAttribute="top" id="ygC-e9-HAw"/>
                 <constraint firstItem="CMR-8r-PW6" firstAttribute="centerX" secondItem="Xt6-Is-qYu" secondAttribute="centerX" id="yyi-NN-u1Y"/>

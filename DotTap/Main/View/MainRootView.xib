@@ -48,7 +48,7 @@
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwT-Ic-ODD" customClass="EightDotButtonsView" customModule="DotTap" customModuleProvider="target">
-                    <rect key="frame" x="62.5" y="171" width="250" height="325"/>
+                    <rect key="frame" x="62.5" y="209" width="250" height="325"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="AwT-Ic-ODD" secondAttribute="height" multiplier="1:1.3" id="GCJ-OQ-JFg"/>
@@ -84,7 +84,7 @@
                 <constraint firstItem="opI-2M-CpD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="QEg-I1-LXF"/>
                 <constraint firstItem="Omx-aL-zkd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="R6y-SJ-hgg"/>
                 <constraint firstItem="0VW-Ol-CZ7" firstAttribute="width" secondItem="Omx-aL-zkd" secondAttribute="width" multiplier="1:3" id="SBj-d2-tS1"/>
-                <constraint firstItem="AwT-Ic-ODD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Xej-Kr-RRn"/>
+                <constraint firstItem="AwT-Ic-ODD" firstAttribute="top" secondItem="Omx-aL-zkd" secondAttribute="top" id="VFV-mF-Kgu"/>
                 <constraint firstItem="Jg2-Dn-DFm" firstAttribute="width" secondItem="Omx-aL-zkd" secondAttribute="width" id="ako-w8-RSd"/>
                 <constraint firstItem="AwT-Ic-ODD" firstAttribute="width" secondItem="Omx-aL-zkd" secondAttribute="width" id="d2l-sw-723"/>
                 <constraint firstItem="opI-2M-CpD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="gmU-gb-Kfm"/>
