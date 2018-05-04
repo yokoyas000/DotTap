@@ -27,43 +27,43 @@ class DotSheetView: UIView {
     }
 
     func set(dotViews: [DotView]) {
-        let info = Calculate.infoForConstraints(
+        let info = Calculate.constraintsInfo(
             maxWidth: self.frame.size.width,
             dotOneSideLength: DotSheetView.dotOneSideLength,
             marginBetweenDots: DotSheetView.marginBetweenDots,
-            dotCount: dotViews.count
+            dotViews: dotViews
         )
-        let oneSide = DotSheetView.dotOneSideLength
 
+        // Dot列が表示されるUIView
         self.dotSheet?.removeFromSuperview()
         let dotSheet = UIView()
         self.dotSheet = dotSheet
         self.addSubview(dotSheet)
+
+        let oneSide = DotSheetView.dotOneSideLength
         let rowHeight = oneSide + DotSheetView.marginBetweenDotRows
         dotSheet.snp.makeConstraints { make in
             make.width.equalTo(info.sheetWidth)
-            make.height.equalTo(rowHeight * info.dotRowCount)
+            make.height.equalTo(rowHeight * info.dotRows.count)
             make.center.equalToSuperview()
         }
 
-        for row in 0 ..< info.dotRowCount {
+        // Dot列を一列ずつ作成し、 dotSheetに追加していく
+        info.dotRows.enumerated().forEach { (rowIndex, dots) in
             let rowView = UIView()
             dotSheet.addSubview(rowView)
 
-            let startIndex = row * info.dotColumnCount
-            var endIndex = startIndex + info.dotColumnCount
-            endIndex = endIndex < dotViews.endIndex ? endIndex : dotViews.endIndex
-            let rowDots = dotViews[startIndex ..< endIndex]
-
             let dotWidth = DotSheetView.dotOneSideLength + DotSheetView.marginBetweenDots
+            let rowWidth = (dots.count * dotWidth) - DotSheetView.marginBetweenDots
             rowView.snp.makeConstraints { make in
-                make.width.equalTo((rowDots.count * dotWidth) - DotSheetView.marginBetweenDots)
+                make.width.equalTo(rowWidth)
                 make.height.equalTo(rowHeight)
-                make.top.equalToSuperview().offset(row * rowHeight)
+                make.top.equalToSuperview().offset(rowIndex * rowHeight)
                 make.centerX.equalToSuperview()
             }
 
-            rowDots.enumerated().forEach { (i, dot) in
+            // Dot列にDotを追加していく
+            dots.enumerated().forEach { (i, dot) in
                 rowView.addSubview(dot)
 
                 dot.snp.makeConstraints { make in

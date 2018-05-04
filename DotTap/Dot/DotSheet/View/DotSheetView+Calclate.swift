@@ -6,22 +6,39 @@
 import CoreGraphics
 
 extension DotSheetView {
+
+    struct ConstraintsInfo {
+        let sheetWidth: CGFloat
+        let dotColumnCount: Int
+        let dotRows: [[DotView]]
+    }
+
     enum Calculate {
-        static func infoForConstraints(
+        static func constraintsInfo(
             maxWidth: CGFloat,
             dotOneSideLength: Int,
             marginBetweenDots: Int,
-            dotCount: Int
-        ) -> (sheetWidth: CGFloat, dotRowCount: Int, dotColumnCount: Int) {
+            dotViews: [DotView]
+        ) -> ConstraintsInfo {
             let dotWidth = dotOneSideLength + marginBetweenDots
-            let allDotsWidth = CGFloat((dotWidth * dotCount) - marginBetweenDots) // 末尾のmarginを削除
+            let allDotsWidth = CGFloat((dotWidth * dotViews.count) - marginBetweenDots) // 末尾のmarginを削除
             let dotRowCount = self.calcDotRowCount(maxWidth, dotsWidth: allDotsWidth)
             let sheetWidth = dotRowCount > 1 ? maxWidth : allDotsWidth
+            let dotColumnCount = (Int(sheetWidth) + marginBetweenDots) / dotWidth
 
-            return (
+            var dotRows: [[DotView]] = []
+            for i in 0 ..< dotRowCount {
+                let startIndex = i * dotColumnCount
+                var endIndex = startIndex + dotColumnCount
+                endIndex = endIndex < dotViews.endIndex ? endIndex : dotViews.endIndex
+                let rowDots = dotViews[startIndex ..< endIndex].map { $0 }
+                dotRows.append(rowDots)
+            }
+
+            return ConstraintsInfo(
                 sheetWidth: sheetWidth,
-                dotRowCount: dotRowCount,
-                dotColumnCount: (Int(sheetWidth) + marginBetweenDots) / dotWidth
+                dotColumnCount: dotRowCount,
+                dotRows: dotRows
             )
         }
 
