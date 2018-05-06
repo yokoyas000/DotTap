@@ -13,7 +13,16 @@ class DotSheetView_CalculateTests: XCTestCase {
         let dotOneSideLength: Int
         let marginBetweenDots: Int
         let dotCount: Int
-        let expected: (sheetWidth: CGFloat, dotRowCount: Int, dotColumnCount: Int)
+        let expected: DotSheetView.ConstraintsInfo
+
+        static func dotViews(count: Int) -> [DotView] {
+            var dotViews: [DotView] = []
+            for _ in 0 ..< count {
+                dotViews.append(DotView())
+            }
+
+            return dotViews
+        }
     }
 
     func testCalculate() {
@@ -23,10 +32,10 @@ class DotSheetView_CalculateTests: XCTestCase {
                 dotOneSideLength: 10,
                 marginBetweenDots: 10,
                 dotCount: 10,
-                expected: (
+                expected: DotSheetView.ConstraintsInfo(
                     sheetWidth: 190.0,
-                    dotRowCount: 1,
-                    dotColumnCount: 10
+                    dotColumnCount: 10,
+                    dotRows: [TestCase.dotViews(count: 10)]
                 )
             ),
             #line: TestCase(
@@ -34,25 +43,28 @@ class DotSheetView_CalculateTests: XCTestCase {
                 dotOneSideLength: 10,
                 marginBetweenDots: 10,
                 dotCount: 11,
-                expected: (
+                expected: DotSheetView.ConstraintsInfo(
                     sheetWidth: 200.0,
-                    dotRowCount: 2,
-                    dotColumnCount: 10
+                    dotColumnCount: 10,
+                    dotRows: [
+                        TestCase.dotViews(count: 10),
+                        TestCase.dotViews(count: 1)
+                    ]
                 )
             ),
         ]
 
         testCases.forEach { (line, testCase) in
-            let actual = DotSheetView.Calculate.infoForConstraints(
+            let actual = DotSheetView.Calculate.constraintsInfo(
                 maxWidth: testCase.maxWidth,
                 dotOneSideLength: testCase.dotOneSideLength,
                 marginBetweenDots: testCase.marginBetweenDots,
-                dotCount: testCase.dotCount
+                dotViews: TestCase.dotViews(count: testCase.dotCount)
             )
 
-            XCTAssertEqual(actual.sheetWidth, testCase.expected.sheetWidth, line: line)
-            XCTAssertEqual(actual.dotRowCount, testCase.expected.dotRowCount, line: line)
-            XCTAssertEqual(actual.dotColumnCount, testCase.expected.dotColumnCount, line: line)
+            XCTAssertEqual(testCase.expected.dotRows.count, actual.dotRows.count, line: line)
+            XCTAssertEqual(testCase.expected.dotColumnCount, actual.dotColumnCount, line: line)
+            XCTAssertEqual(testCase.expected.sheetWidth, actual.sheetWidth, line: line)
         }
     }
 }

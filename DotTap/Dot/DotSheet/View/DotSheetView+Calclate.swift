@@ -37,7 +37,7 @@ extension DotSheetView {
 
             return ConstraintsInfo(
                 sheetWidth: sheetWidth,
-                dotColumnCount: dotRowCount,
+                dotColumnCount: dotColumnCount,
                 dotRows: dotRows
             )
         }

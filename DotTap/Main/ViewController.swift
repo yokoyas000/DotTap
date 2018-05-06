@@ -28,7 +28,7 @@ class ViewController: UIViewController {
 
         // TODO: stub
         //let buttonCountRepository = DotButtonCountRepository()
-        let buttonCountRepository = StubDotButtonRepository()
+        let buttonCountRepository = DotButtonRepositoryStub()
         let buttonCountModel = DotButtonCountModel(dependency: buttonCountRepository)
         self.buttonPassiveView = DotButtonFieldPassiveView(
             update: (
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
 
         // TODO: stub
         //let dotCountRepository = DotCountRepository()
-        let dotCountRepository = StubDotCountRepository()
+        let dotCountRepository = DotCountRepositoryStub()
         let sheetModel = DotSheetResetModel(
             sheetModelFactory: DotSheetModelFactory(
                 dotFactory: DotFactory()
@@ -125,26 +125,27 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController {
-    class StubDotButtonRepository: DotButtonCountRepositoryProtocol {
-        private let counts: [DotButtonCount] = [.four, .six, .eight]
-        private var calledCount = 0
+// - MARK: Stub
 
-        func get() -> DotButtonCount {
-            let i = (calledCount % 3)
-            calledCount += 1
-            return counts[i]
-        }
-    }
+class DotButtonRepositoryStub: DotButtonCountRepositoryProtocol {
+    private let counts: [DotButtonCount] = [.four, .six, .eight]
+    private var calledCount = 0
 
-    class StubDotCountRepository: DotCountRepositoryProtocol {
-        private let count: [Int] = [6, 8]
-        private var calledCount = 0
-
-        func get(minCount: Int, maxCount: Int) -> Int {
-            let i = calledCount % count.count
-            calledCount += 1
-            return count[i]
-        }
+    func get() -> DotButtonCount {
+        let i = (calledCount % 3)
+        calledCount += 1
+        return counts[i]
     }
 }
+
+class DotCountRepositoryStub: DotCountRepositoryProtocol {
+    private let count: [Int] = [6, 8, 11]
+    private var calledCount = 0
+
+    func get(minCount: Int, maxCount: Int) -> Int {
+        let i = calledCount % count.count
+        calledCount += 1
+        return count[i]
+    }
+}
+
