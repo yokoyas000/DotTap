@@ -15,25 +15,21 @@ import RxBlocking
 class DotSheetModelTests: XCTestCase {
     struct TestPrepare {
         let baseDots: [Dot]
-        private(set) var comparableDots: [ComparableDot]
+        var comparableDots: [ComparableDot]
 
-        init() {
-            self.baseDots = [
-                Dot(color: .lightBlue),
-                Dot(color: .pink)
-            ]
-            self.comparableDots = self.baseDots.map { dot in
-                ComparableDot(color: dot.color, isDidMatch: false)
+        init(_ dotColors: [Color]) {
+            self.baseDots = dotColors.map { color in
+                Dot(color: color)
             }
-        }
 
-        mutating func makeMatchComparableDots(index: Int) {
-            self.comparableDots[index].isDidMatch = true
+            self.comparableDots = dotColors.map { color in
+                ComparableDot(color: color, isDidMatch: false)
+            }
         }
     }
 
     func testInit() {
-        let prepare = TestPrepare()
+        let prepare = TestPrepare([.lightBlue])
         let model = DotSheetModel(baseDots: prepare.baseDots)
 
         let expected = DotSheetModelState.hasNotCompared(
@@ -43,40 +39,44 @@ class DotSheetModelTests: XCTestCase {
         XCTAssertEqual(model.currentState, expected)
     }
 
-    func testTransitCompareMatch() {
-        var prepare = TestPrepare()
+    // 確認: [.hasNotCompared] -- compare() --> [.compare(.match)]
+    func testStateTransitionFromHasNotComparedToCompareMatch() {
+        var prepare = TestPrepare([.lightBlue, .pink])
+        let testIndex = 0
+        prepare.comparableDots[testIndex].isDidMatch = true
+
+        let expected = DotSheetModelState.compare(
+            .match(dots: prepare.comparableDots)
+        )
+
         let model = DotSheetModel(baseDots: prepare.baseDots)
-        prepare.makeMatchComparableDots(index: 0)
-
-        let expected = DotSheetModelState.compare(.match(dots: prepare.comparableDots))
-
-        model.compare(color: prepare.baseDots.first!.color)
+        model.compare(color: prepare.baseDots[testIndex].color)
         let actual = try! model.didChange.toBlocking().first()!
 
         XCTAssertEqual(actual, expected)
     }
 
-    func testTransitCompareUnmatch() {
-        let prepare = TestPrepare()
-        let model = DotSheetModel(baseDots: prepare.baseDots)
-
+    // 確認: [.hasNotCompared] -- compare() --> [.compare(.unmatch)]
+    func testStateTransitionFromHasNotComparedToCompareUnmatch() {
+        let prepare = TestPrepare([.lightBlue, .pink])
         let expected = DotSheetModelState.compare(.unmatch(dots: prepare.comparableDots))
 
+        let model = DotSheetModel(baseDots: prepare.baseDots)
         model.compare(color: .gray)
         let actual = try! model.didChange.toBlocking().first()!
 
         XCTAssertEqual(actual, expected)
     }
 
+    // 確認: [.compare(.match)] -- compare() --> [.allDidMatch]
     func testTransitAllCompared() {
-        var prepare = TestPrepare()
-        let model = DotSheetModel(baseDots: prepare.baseDots)
-        prepare.comparableDots.enumerated().forEach { (i, dot) in
-            prepare.makeMatchComparableDots(index: i)
+        var prepare = TestPrepare([.lightBlue, .pink])
+        for i in 0 ..< prepare.comparableDots.count {
+            prepare.comparableDots[i].isDidMatch = true
         }
-
         let expected = DotSheetModelState.allDidMatch(dots: prepare.comparableDots)
 
+        let model = DotSheetModel(baseDots: prepare.baseDots)
         prepare.baseDots.forEach { dot in
             model.compare(color: dot.color)
         }

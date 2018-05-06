@@ -22,16 +22,17 @@ class DotSheetResetModelTests: XCTestCase {
     // 確認: 色の状態が流れてきたら、内部Modelを生成していること
     func testSetInnerModelWhenColorDidSet() {
         // 内部で生成される Model の状態
-        let testState = DotSheetModelState.allDidMatch(dots: [TestValue.blueDot])
+        let testState = DotSheetModelState.compare(.match(dots: []))
         let model = DotSheetResetModel(
             sheetModelFactory: DotSheetModelFactoryStub(
                 firstModel: DotSheetModelStub(firstState: testState)
             ),
+            dotCountRepository: DotCountRepositoryStub(),
             bindTo: UsingColorModelStub(colors: [])
         )
 
         let expected = testState
-        let actual = self.waitUntilAllDidMatch(model)
+        let actual = try! model.didChange.toBlocking().first()!
 
         XCTAssertEqual(actual, expected)
     }
@@ -39,7 +40,7 @@ class DotSheetResetModelTests: XCTestCase {
     // 確認: 内部Modelの didChange が流れてくること
     func testDidChangeUsingInnerModel() {
         // 流れてくる予定の状態
-        let testState = DotSheetModelState.allDidMatch(dots: [TestValue.blueDot])
+        let testState = DotSheetModelState.compare(.match(dots: []))
         let model = DotSheetResetModel(
             sheetModelFactory: DotSheetModelFactoryStub(
                 firstModel: DotSheetModelStub(
@@ -47,6 +48,7 @@ class DotSheetResetModelTests: XCTestCase {
                     secondState: testState
                 )
             ),
+            dotCountRepository: DotCountRepositoryStub(),
             bindTo: UsingColorModelStub(colors: [])
         )
         let expected = testState
@@ -70,6 +72,7 @@ class DotSheetResetModelTests: XCTestCase {
 
         let model = DotSheetResetModel(
             sheetModelFactory: sheetModelFactory,
+            dotCountRepository: DotCountRepositoryStub(),
             bindTo: spyColorModel
         )
         model.compare(color: .blue)
@@ -81,7 +84,7 @@ class DotSheetResetModelTests: XCTestCase {
 
     // 確認: 色を変更した後も内部Modelの didChange が流れてくること
     func testDidChangeAfterReset() {
-        let testState = DotSheetModelState.allDidMatch(dots: [TestValue.pinkDot])
+        let testState = DotSheetModelState.compare(.match(dots: []))
         let sheetModelFactory = DotSheetModelFactoryStub(
             firstModel: DotSheetModelStub(
                 firstState: .compare(.unmatch(dots: [TestValue.blueDot])),
@@ -95,11 +98,10 @@ class DotSheetResetModelTests: XCTestCase {
 
         let model = DotSheetResetModel(
             sheetModelFactory: sheetModelFactory,
+            dotCountRepository: DotCountRepositoryStub(),
             bindTo: UsingColorModelStub(colors: [])
         )
         model.compare(color: .blue)
-        _ = self.waitUntilAllDidMatch(model)
-
         let actual = try! model.didChange.toBlocking().first()!
 
         XCTAssertEqual(actual, expected)
