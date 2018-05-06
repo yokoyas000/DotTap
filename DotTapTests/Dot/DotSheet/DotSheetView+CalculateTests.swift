@@ -34,7 +34,6 @@ class DotSheetView_CalculateTests: XCTestCase {
                 dotCount: 10,
                 expected: DotSheetView.ConstraintsInfo(
                     sheetWidth: 190.0,
-                    dotColumnCount: 10,
                     dotRows: [TestCase.dotViews(count: 10)]
                 )
             ),
@@ -45,7 +44,6 @@ class DotSheetView_CalculateTests: XCTestCase {
                 dotCount: 11,
                 expected: DotSheetView.ConstraintsInfo(
                     sheetWidth: 200.0,
-                    dotColumnCount: 10,
                     dotRows: [
                         TestCase.dotViews(count: 10),
                         TestCase.dotViews(count: 1)
@@ -63,7 +61,6 @@ class DotSheetView_CalculateTests: XCTestCase {
             )
 
             XCTAssertEqual(testCase.expected.dotRows.count, actual.dotRows.count, line: line)
-            XCTAssertEqual(testCase.expected.dotColumnCount, actual.dotColumnCount, line: line)
             XCTAssertEqual(testCase.expected.sheetWidth, actual.sheetWidth, line: line)
         }
     }

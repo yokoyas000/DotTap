@@ -9,7 +9,6 @@ extension DotSheetView {
 
     struct ConstraintsInfo {
         let sheetWidth: CGFloat
-        let dotColumnCount: Int
         let dotRows: [[DotView]]
     }
 
@@ -37,7 +36,6 @@ extension DotSheetView {
 
             return ConstraintsInfo(
                 sheetWidth: sheetWidth,
-                dotColumnCount: dotColumnCount,
                 dotRows: dotRows
             )
         }
